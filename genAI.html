@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Your Company | Home</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="../lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+
+        <style>
+            /* Override navbar styles for genAI page */
+            .navbar-light .navbar-nav .nav-link {
+                color: var(--bs-white) !important;
+            }
+            
+            .sticky-top.navbar-light .navbar-nav .nav-link {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar-light .navbar-brand h1 {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar-toggler .fa-bars {
+                color: var(--bs-white) !important;
+            }
+            
+            @media (max-width: 992px) {
+                .navbar-light .navbar-nav .nav-link,
+                .sticky-top.navbar-light .navbar-nav .nav-link {
+                    color: var(--bs-white) !important;
+                }
+            }
+
+            .btn-square.bg-orange {
+                background-color: #FE3B15 !important;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header position-relative overflow-hidden p-0">
+            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <style>
+                    @media (max-width: 992px) {
+                        .navbar-collapse {
+                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                            padding: 20px;
+                            border-radius: 10px;
+                            margin-top: 15px;
+                        }
+                        
+                        .navbar.navbar-expand-lg {
+                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                        }
+                        
+                        .navbar-toggler {
+                            border-color: rgba(255, 255, 255, 0.5) !important;
+                        }
+                        
+                        .dropdown-menu {
+                            background: transparent !important;
+                            border: none;
+                            padding-left: 20px;
+                        }
+                        
+                        .dropdown-item {
+                            color: white !important;
+                        }
+                        
+                        .dropdown-item:hover {
+                            background: rgba(255, 255, 255, 0.1) !important;
+                        }
+
+                        /* Add these new rules */
+                        .nav-item .nav-link {
+                            color: white !important;
+                        }
+                        
+                        .nav-item .nav-link:hover {
+                            color: var(--bs-primary) !important;
+                        }
+                    }
+                </style>
+                <a href="../index.html" class="navbar-brand p-0">
+                    <H1 class="text-white">Company Logo</H1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars text-white"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="../index.html" class="nav-item nav-link active text-white">Home</a>
+                        <a href="#" class="nav-item nav-link text-white">Company</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#" class="dropdown-item">GenAI solutions</a>
+                                <a href="#" class="dropdown-item">Cloud and Security</a>
+                                <a href="#" class="dropdown-item">Product Development</a>
+                                <a href="#" class="dropdown-item">Technology Consulting</a>
+                            </div>
+                        </div>
+                        <a href="#" class="nav-item nav-link text-white">Join Us</a>
+                    </div>
+                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                        Build With Us
+                    </a>
+                </div>
+            </nav>
+            
+              <!-- Hero Header Start -->
+              <div class="hero-header overflow-hidden px-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+                <div class="rotate-img">
+                    <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
+                    <div class="rotate-sty-2"></div>
+                </div>
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="display-4 mb-4 wow fadeInUp text-white" data-wow-delay="0.3s">The Future of <span class="text-primary">Artificial Intelligence</span> is now</h1>
+                        <div class="wow fadeInUp ai-animation-container" data-wow-delay="0.5s">
+                            <img src="../img/genAihead.gif?raw=true" alt="AI Animation" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!-- Add subtle shine effect -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
+              </div>
+            
+              <!-- Hero Header End -->
+
+               <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5 about-section" style="margin-top: 6rem;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="chatbot-container">
+                            <img src="../img/chatbot.jpg" 
+                                class="chatbot-image" 
+                                alt="AI Chatbot"
+                            >
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <h4 class="mb-1" style="color: #FE3B15">Chat Bot</h4>
+                        <h1 class="display-5 mb-4">Supercharge your Company's <span class="text-primary">Knowledge Base</span> with a Natural Language Chatbot</h1>
+                        <p class="mb-4">We turn AI into your superpower. Using cutting-edge LLMs, we craft personalized chatbots that boost engagement, automate support, and elevate your user experience.</p>
+                        
+                        <h5 class="mb-3">What We Do:</h5>
+                        <ul class="list-unstyled feature-list">
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-brain text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Custom AI Models</h6>
+                                        <span>Tailored LLMs to fit your brand and data.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-cloud text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Cloud-Powered</h6>
+                                        <span>Scalable, secure, and lightning-fast.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fab fa-docker text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Dockerized & Seamless</h6>
+                                        <span>Effortless deployment for smooth performance.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-code text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">API Ready</h6>
+                                        <span>Easy integration into your website or app.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-sync-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Always Evolving</h6>
+                                        <span>Continuous optimization for peak performance.</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Features Section -->
+        <div class="container-fluid overflow-hidden py-5 about-section" style="background: linear-gradient(rgba(254, 59, 21, 0.05), rgba(254, 59, 21, 0.02));">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <h4 class="mb-1" style="color: #FE3B15">AI Agents</h4>
+                        <h1 class="display-5 mb-4">Create your custom AI agents to boost <span class="text-primary">Efficiency</span></h1>
+                        <p class="mb-4">We build powerful AI agents that enhance everything from work management to operational efficiency. Our AI-driven solutions are tailored to help your business thrive in today's fast-paced world.</p>
+                        
+                        <ul class="list-unstyled feature-list">
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-robot text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Custom AI Agents</h6>
+                                        <span>Tailored solutions to streamline operations, enhance customer interactions, and automate processes.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-link text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">LangChain Integration</h6>
+                                        <span>Maximize the potential of AI agents with LangChain, enabling complex workflows, multi-agent coordination, and dynamic data processing.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">AI Agents for Document Processing</h6>
+                                        <span>Automate the extraction, analysis, and categorization of content from documents, such as PDFs, Word files, and scanned images.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.4s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-image text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">AI Agents for Image Processing</h6>
+                                        <span>Leverage deep learning to analyze and interpret images for tasks like quality control, image tagging, and facial recognition.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-file-word text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">AI Agents for Word Processing</h6>
+                                        <span>Improve productivity with content generation, grammar correction, and summarization in word processing.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.6s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-database text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Data-Driven Intelligence</h6>
+                                        <span>Use AI agents to process and analyze large datasets, providing actionable insights in real-time.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-cogs text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Automated Workflows</h6>
+                                        <span>Simplify business operations by automating repetitive tasks and improving team productivity.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.8s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-chart-line text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Advanced Analytics</h6>
+                                        <span>Leverage AI-driven insights to make data-backed decisions and unlock hidden opportunities.</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="mb-3 wow fadeInUp" data-wow-delay="0.9s">
+                                <div class="d-flex align-items-center">
+                                    <div class="btn-square bg-orange rounded-circle me-3">
+                                        <i class="fas fa-sync text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1" style="color: #FE3B15">Continuous Optimization</h6>
+                                        <span>We constantly fine-tune and optimize AI agents to ensure long-term success and adaptability.</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="chatbot-container">
+                            <img src="../img/GenAI2.jpg" 
+                                class="chatbot-image" 
+                                alt="AI Training"
+                                loading="lazy"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Features End -->
+
+            
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
+                        <div class="footer-item d-flex flex-column">
+                            <a href="../index.html" class="mb-3 company-logo">
+                                <h1 class="text-white">Company Logo</h1>
+                            </a>
+                        </div>
+                        <div class="vertical-line mx-4"></div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Company</h4>
+                            <a href="">About Us</a>
+                            <a href="">Case Study</a>
+                            <h4 class="mb-4 text-white mt-4">Join Us</h4>
+                            <a href="">Career</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Services</h4>
+                            <a href="">GenAI Solutions</a>
+                            <a href="">Cloud and Security</a>
+                            <a href="">Product Development</a>
+                            <a href="">Technology Consulting</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-dark">Contact Info</h4>
+                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
+                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    </body>
+
+</html>
