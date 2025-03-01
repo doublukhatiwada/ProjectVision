@@ -141,7 +141,7 @@
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
     padding: 20px 0;
-    color: var(--dark) !important;
+    color: var(--bs-dark) !important;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
@@ -212,13 +212,13 @@
 
     .navbar {
         position: relative;
-        background: var(--bs-light);
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
         z-index: 2;
     }
 
     .sticky-top.navbar-light {
         position: relative;
-        background: var(--bs-white) !important;
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
         padding: 0 20px 20px 20px !important;
     }
 
@@ -238,14 +238,17 @@
 
     .navbar-light .navbar-collapse {
         margin-top: 15px;
-        border-top: 1px solid #DDDDDD;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        padding: 15px;
+        border-radius: 10px;
     }
 
     .navbar-light .navbar-nav .nav-link,
     .sticky-top.navbar-light .navbar-nav .nav-link {
         padding: 10px 0;
         margin-left: 0;
-        color: var(--bs-dark) !important;
+        color: var(--bs-white) !important;
     }
 
 
@@ -270,10 +273,51 @@
     
     .sticky-top.navbar-light {
         position: fixed;
-        background: var(--bs-light) !important;
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .sticky-top.navbar-light .navbar-nav .nav-link {
+        color: var(--bs-white) !important;
+    }
+
+    .sticky-top.navbar-light .dropdown-menu {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+    }
+
+    .sticky-top.navbar-light .dropdown-item {
+        color: var(--bs-white) !important;
     }
 }
 /*** Navbar End ***/
+
+/*** Navbar Dropdown Styles ***/
+.navbar-light .dropdown-menu .dropdown-item {
+    color: var(--bs-dark) !important;
+}
+
+.navbar-light .dropdown-menu .dropdown-item:hover {
+    color: var(--bs-primary) !important;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Fix for sticky navbar dropdown */
+.sticky-top.navbar-light .dropdown-menu .dropdown-item {
+    color: var(--bs-dark) !important;
+}
+
+.sticky-top.navbar-light .dropdown-menu .dropdown-item:hover {
+    color: var(--bs-primary) !important;
+}
+
+@media (max-width: 992px) {
+    .navbar-light .dropdown-menu,
+    .sticky-top.navbar-light .dropdown-menu {
+        background: white !important;
+        border: 1px solid rgba(0,0,0,.15);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+}
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
@@ -1307,4 +1351,86 @@
 
 .footer-item {
     flex: 1;
+}
+
+/*** GenAI Hero Section ***/
+.hero-header .ai-animation-container {
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;  /* Changed from 20px 0 to center */
+    max-width: 70%;     /* Added max-width 70% */
+    padding: 0 15px;    /* Added padding */
+}
+
+.hero-header .ai-animation-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, transparent 50%, #1a1a1a 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-header .ai-animation-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 20px rgba(254, 59, 21, 0.2));
+}
+
+@media (max-width: 768px) {
+    .hero-header .ai-animation-container {
+        max-width: 90%;  /* Increased width on mobile */
+        margin: 10px auto;
+    }
+    
+    .hero-header .ai-animation-container img {
+        border-radius: 10px;
+    }
+}
+
+/*** GenAI About Section ***/
+.about-section .chatbot-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    min-height: 650px;  /* Increased height */
+    padding: 10px;  /* Reduced padding */
+}
+
+.about-section .chatbot-image {
+    width: 100%;  /* Increased from 95% */
+    max-height: 100%;  /* Increased from 95% */
+    object-fit: contain;
+    border-radius: 2rem;  /* Increased border radius */
+    box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);  /* Enhanced shadow */
+    filter: drop-shadow(0 0 30px rgba(254, 59, 21, 0.15));  /* Softer glow */
+    transition: transform 0.3s ease;
+    margin-right: 0;
+    margin-left: auto;
+    backdrop-filter: blur(5px);  /* Added blur effect */
+}
+
+/* Add gradient overlay for smoother edges */
+.about-section .chatbot-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: radial-gradient(circle at center, transparent 80%, rgba(254, 59, 21, 0.03) 100%);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .about-section .chatbot-container {
+        min-height: 450px;  /* Adjusted for mobile */
+    }
 }
