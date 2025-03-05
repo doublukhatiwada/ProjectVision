@@ -137,7 +137,7 @@
 }
 
 .shake {
-  /* animation-name: shake; */
+  animation-name: shake;
 }
 
 @keyframes headShake {
