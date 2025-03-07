@@ -2124,3 +2124,1056 @@ html {
         left: 200%;
     }
 }
+
+/* Contact Form Styles */
+.contact-form .form-group {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.contact-form .custom-input {
+    width: 100%;
+    height: 45px;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #e9ecef;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.contact-form textarea.custom-input {
+    height: auto;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contact-form .form-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    padding: 0 4px;
+    transform: translateY(-1.8rem);
+    font-size: 0.95rem;
+}
+
+.contact-form .custom-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom-color: var(--bs-primary);
+}
+
+.contact-form .custom-input:focus + .form-label {
+    color: var(--bs-primary);
+}
+
+.contact-form .custom-input:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Remove autofill background */
+.contact-form .custom-input:-webkit-autofill,
+.contact-form .custom-input:-webkit-autofill:hover,
+.contact-form .custom-input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Phone group styles */
+.contact-form .phone-group {
+    margin-bottom: 2rem;
+}
+
+.contact-form .phone-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form .phone-inputs {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.contact-form .country-code {
+    width: 180px;
+    position: relative;
+}
+
+.contact-form .phone-number {
+    flex: 1;
+    position: relative;
+}
+
+/* Country code select styles */
+.contact-form .country-code select.custom-input {
+    width: 100%;
+    height: 45px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #e9ecef;
+    border-radius: 0;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    cursor: pointer;
+}
+
+/* Phone number input styles */
+.contact-form .phone-number .custom-input {
+    width: 100%;
+    height: 45px;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 2px solid #e9ecef;
+    border-radius: 0;
+}
+
+/* Focus states */
+.contact-form .country-code select.custom-input:focus,
+.contact-form .phone-number .custom-input:focus {
+    outline: none;
+    border-bottom-color: var(--bs-primary);
+}
+
+/* Hover states */
+.contact-form .country-code select.custom-input:hover {
+    border-bottom-color: var(--bs-primary);
+}
+
+/* Dropdown options */
+.contact-form .country-code select.custom-input option {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Remove browser default styling */
+.contact-form .country-code select.custom-input::-ms-expand {
+    display: none;
+}
+
+/* Ensure consistent spacing with other form groups */
+.contact-form .form-group:not(.phone-group) {
+    margin-bottom: 2rem;
+}
+
+/* Validation Styles */
+.contact-form .custom-input:invalid:not(:placeholder-shown) {
+    border-bottom-color: #dc3545;
+}
+
+.contact-form .custom-input:invalid:not(:placeholder-shown) + .form-label {
+    color: #dc3545;
+}
+
+.contact-form .invalid-feedback {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.25rem;
+}
+
+/* Form Header Styles */
+.contact-form h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2d2d2d;
+}
+
+.contact-form p.text-muted {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #6c757d;
+}
+
+/* Required asterisk style */
+.contact-form .phone-label span.text-danger {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+/* Input text style to match */
+.contact-form .custom-input {
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+/* Placeholder styles */
+.contact-form .custom-input::placeholder {
+    color: #adb5bd;
+    opacity: 0.65;
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Hide placeholder on focus */
+.contact-form .custom-input:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+/* Ensure placeholder doesn't interfere with label */
+.contact-form .custom-input:not(:placeholder-shown) + .form-label {
+    transform: translateY(-1.8rem);
+    font-size: 0.95rem;
+}
+
+/* Error message styles */
+.contact-form .error-message {
+    display: none;  /* Hide by default */
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show error message only when input is invalid AND has been interacted with */
+.contact-form .custom-input.is-invalid ~ .error-message {
+    display: block;
+    opacity: 1;
+}
+
+/* Style invalid state only after interaction */
+.contact-form .custom-input.is-invalid {
+    border-bottom-color: #dc3545;
+}
+
+.contact-form .custom-input.is-invalid + .form-label {
+    color: #dc3545;
+}
+
+/* Remove any :invalid pseudo-class styling */
+.contact-form .custom-input:invalid {
+    border-bottom-color: #e9ecef;
+}
+
+.contact-form .custom-input:invalid + .form-label {
+    color: #495057;
+}
+
+/* Increase bottom margin of form groups to accommodate error messages */
+.contact-form .form-group {
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+/* Remove default browser validation styling */
+.contact-form .custom-input:invalid:not(.is-invalid) {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Custom Select Styles */
+.contact-form .custom-select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8.825L1.175 4 2.238 2.938 6 6.7l3.763-3.763L10.825 4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+}
+
+/* Selected option style */
+.contact-form .custom-select option:checked {
+    background-color: #FF6B00; /* Brand orange */
+    color: white;
+}
+
+/* Custom select focus state */
+.contact-form .custom-select:focus {
+    border-bottom-color: #FF6B00;
+    outline: none;
+}
+
+/* Add checkmark to selected option */
+.contact-form .custom-select option:checked::after {
+    content: "✓";
+    float: right;
+    margin-left: 10px;
+}
+
+/* Style for the select container */
+.contact-form .form-group {
+    position: relative;
+}
+
+/* Custom dropdown arrow container */
+.contact-form .select-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when select is open */
+.contact-form .custom-select:focus + .form-label + .error-message + .select-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Remove required indicator from phone label */
+.contact-form .phone-label .text-danger {
+    display: none;
+}
+
+/* Style for disabled placeholder option */
+.contact-form .custom-select option[disabled] {
+    color: #adb5bd;
+}
+
+/* Hover effect for options */
+.contact-form .custom-select option:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+}
+
+/* Service selection styles */
+.contact-form .service-group {
+    margin: 2rem 0 3rem 0;
+}
+
+.contact-form .service-label {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .service-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.contact-form .service-option {
+    position: relative;
+    flex: 0 0 calc(50% - 0.75rem);
+}
+
+.contact-form .service-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.contact-form .service-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 0.75rem 1.25rem; /* Reduced padding */
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-form .service-icon {
+    font-size: 1.1rem; /* Slightly smaller icon */
+    margin-right: 1.25rem;
+    color: #6c757d;
+    transition: color 0.3s ease;
+    min-width: 20px; /* Reduced min-width */
+    padding-top: 2px;
+}
+
+.contact-form .service-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #495057;
+    text-align: left;
+    flex: 1;
+    padding-right: 2rem;
+}
+
+/* Hover state */
+.contact-form .service-box:hover {
+    border-color: #FF6B00;
+}
+
+/* Selected state */
+.contact-form .service-input:checked + .service-box {
+    border-color: #FF6B00;
+    background-color: rgba(255, 107, 0, 0.05);
+}
+
+.contact-form .service-input:checked + .service-box .service-icon,
+.contact-form .service-input:checked + .service-box .service-text {
+    color: #FF6B00;
+}
+
+/* Add checkmark for selected option */
+.contact-form .service-input:checked + .service-box::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    right: 1.25rem;
+    transform: translateY(-50%);
+    color: #FF6B00;
+    font-weight: bold;
+    font-size: 1rem; /* Slightly smaller checkmark */
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .contact-form .service-option {
+        flex: 0 0 100%;
+    }
+}
+
+/* Form validation styles */
+.form-control:valid {
+    border-color: #FE3B15;
+    background-color: rgba(254, 59, 21, 0.05) !important;
+}
+
+.form-control:valid:focus {
+    border-color: #FE3B15;
+    box-shadow: 0 0 0 0.2rem rgba(254, 59, 21, 0.25);
+    background-color: rgba(254, 59, 21, 0.05) !important;
+}
+
+.form-control:valid + label {
+    color: #FE3B15 !important;
+}
+
+.form-select:valid {
+    border-color: #FE3B15;
+    background-color: rgba(254, 59, 21, 0.05) !important;
+}
+
+.form-select:valid:focus {
+    border-color: #FE3B15;
+    box-shadow: 0 0 0 0.2rem rgba(254, 59, 21, 0.25);
+    background-color: rgba(254, 59, 21, 0.05) !important;
+}
+
+.form-select:valid + label {
+    color: #FE3B15 !important;
+}
+
+/* Service radio validation */
+.service-input:checked + .service-box {
+    border-color: #FE3B15;
+    background-color: rgba(254, 59, 21, 0.1);
+}
+
+.service-input:checked + .service-box .service-icon {
+    color: #FE3B15;
+}
+
+/* Remove validation styles from optional phone input */
+#phone:valid {
+    border-color: inherit;
+    background-color: #F8F9FA !important;
+}
+
+#phone:valid + label {
+    color: inherit !important;
+}
+
+/* Form validation styles */
+.form-control:focus {
+    border-color: #FE3B15;
+    box-shadow: none;
+    background: #F8F9FA;
+}
+
+.form-floating>.form-control:focus~label {
+    color: #FE3B15;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: #6C757D;
+}
+
+.form-floating>.form-control:focus:not(:placeholder-shown)~label {
+    color: #FE3B15;
+}
+
+/* Service selection styles */
+.service-input:checked + .service-box {
+    border: 2px solid #FE3B15;
+}
+
+.service-box:hover {
+    border: 2px solid #FE3B15;
+}
+
+/* Button hover effect */
+.btn-primary {
+    background-color: #FE3B15;
+    border-color: #FE3B15;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #e63512;
+    border-color: #e63512;
+    transform: translateY(-2px);
+}
+
+/* Link hover colors */
+a:hover {
+    color: #FE3B15;
+}
+
+/* Text primary color */
+.text-primary {
+    color: #FE3B15 !important;
+}
+
+/* Basic form styles without effects */
+.form-control {
+    background: #F8F9FA;
+    border: none;
+}
+
+.form-control:focus {
+    background: #F8F9FA;
+    border: none;
+    box-shadow: none;
+}
+
+.form-floating>.form-control~label {
+    color: #6C757D;
+}
+
+/* Service selection styles */
+.service-input:checked + .service-box {
+    border: 2px solid #FE3B15;
+}
+
+.service-box:hover {
+    border: 2px solid #FE3B15;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #FE3B15;
+    border-color: #FE3B15;
+}
+
+.btn-primary:hover {
+    background-color: #e63512;
+    border-color: #e63512;
+}
+
+/* Text colors */
+.text-primary {
+    color: #FE3B15 !important;
+}
+
+/* Reset all form effects */
+.form-control,
+.form-select,
+.form-floating>.form-control,
+.form-floating>.form-select {
+    background-color: #F8F9FA !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-floating>.form-control:focus,
+.form-floating>.form-select:focus {
+    background-color: #F8F9FA !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.form-floating>label {
+    transition: none !important;
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-select~label {
+    transform: none !important;
+    color: #6C757D !important;
+    background: none !important;
+    opacity: 1 !important;
+}
+
+/* Keep other styles unchanged */
+.text-primary {
+    color: #FE3B15 !important;
+}
+
+.btn-primary {
+    background-color: #FE3B15;
+    border-color: #FE3B15;
+}
+
+.service-input:checked + .service-box {
+    border: 2px solid #FE3B15;
+}
+
+/* Remove only form focus effects */
+.form-control:focus,
+.form-select:focus {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background-color: #F8F9FA !important;
+}
+
+/* Restore floating label effects */
+.form-floating>.form-control~label {
+    color: #6C757D;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    opacity: .65;
+    transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+}
+
+/* Service selection styles */
+.service-input:checked + .service-box {
+    border: 2px solid #FE3B15;
+    background-color: rgba(254, 59, 21, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-box:hover {
+    border: 2px solid #FE3B15;
+    background-color: rgba(254, 59, 21, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Button styles with effects */
+.btn-primary {
+    background-color: #FE3B15;
+    border-color: #FE3B15;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e63512;
+    border-color: #e63512;
+    transform: translateY(-2px);
+    box-shadow: 0 0 45px rgba(254, 59, 21, 0.3);
+}
+
+/* Text colors */
+.text-primary {
+    color: #FE3B15 !important;
+}
+
+/* Clean input styles with only underline */
+.form-control,
+.form-select {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 30px !important; /* Space for tick mark */
+}
+
+/* Override all validation states and colors */
+.form-control:valid,
+.form-control:invalid,
+.form-control.is-valid,
+.form-control.is-invalid,
+.was-validated .form-control:valid,
+.was-validated .form-control:invalid,
+.form-select:valid,
+.form-select:invalid,
+.form-select.is-valid,
+.form-select.is-invalid,
+.was-validated .form-select:valid,
+.was-validated .form-select:invalid {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Add tick mark for valid inputs */
+.form-control:valid,
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: 16px 16px !important;
+}
+
+/* Override focus states */
+.form-control:focus,
+.form-select:focus,
+.form-control:valid:focus,
+.form-control:invalid:focus,
+.form-select:valid:focus,
+.form-select:invalid:focus {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    box-shadow: none !important;
+    background-color: transparent !important;
+}
+
+/* Most specific label overrides */
+.form-floating>label,
+.form-floating>.form-control~label,
+.form-floating>.form-select~label,
+.form-floating>.form-control:valid~label,
+.form-floating>.form-control:invalid~label,
+.form-floating>.form-control.is-valid~label,
+.form-floating>.form-control.is-invalid~label,
+.was-validated .form-floating>.form-control:valid~label,
+.was-validated .form-floating>.form-control:invalid~label,
+.form-floating>.form-control:not(:placeholder-shown)~label,
+.form-floating>.form-control:valid:not(:placeholder-shown)~label,
+.form-floating>.form-control.is-valid:not(:placeholder-shown)~label,
+.was-validated .form-floating>.form-control:valid:not(:placeholder-shown)~label {
+    color: #6C757D !important;
+    padding-left: 0;
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    opacity: .65;
+    transform: scale(.85) translateY(-.5rem) translateX(0);
+}
+
+/* Hide validation feedback */
+.valid-feedback,
+.invalid-feedback {
+    display: none !important;
+}
+
+/* Service selection styles */
+.service-input:checked + .service-box {
+    border: 2px solid #FE3B15;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #FE3B15;
+    border-color: #FE3B15;
+}
+
+/* Text colors */
+.text-primary {
+    color: #FE3B15 !important;
+}
+
+/* Remove validation specifically for company field */
+#company,
+#company:valid,
+#company:invalid,
+#company.is-valid,
+#company.is-invalid,
+.was-validated #company:valid,
+.was-validated #company:invalid {
+    background-image: none !important;
+    padding-right: 0.75rem !important;
+}
+
+#company ~ label,
+#company:valid ~ label,
+#company:invalid ~ label,
+#company.is-valid ~ label,
+#company.is-invalid ~ label,
+.was-validated #company:valid ~ label,
+.was-validated #company:invalid ~ label {
+    color: #6C757D !important;
+}
+
+/* Rest of the existing styles */
+.form-control,
+.form-select {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 30px !important;
+}
+
+/* ... rest of your existing CSS ... */
+
+/* Remove validation specifically for phone field */
+#phone,
+#phone:valid,
+#phone:invalid,
+#phone.is-valid,
+#phone.is-invalid,
+.was-validated #phone:valid,
+.was-validated #phone:invalid {
+    background-color: transparent !important;
+    background-image: none !important;
+    padding-right: 0.75rem !important;
+}
+
+#phone ~ label,
+#phone:valid ~ label,
+#phone:invalid ~ label,
+#phone.is-valid ~ label,
+#phone.is-invalid ~ label,
+.was-validated #phone:valid ~ label,
+.was-validated #phone:invalid ~ label {
+    color: #6C757D !important;
+}
+
+/* Rest of the existing styles */
+.form-control,
+.form-select {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 30px !important;
+}
+
+/* ... rest of your existing CSS ... */
+
+/* Phone field specific styles */
+#phone,
+#phone:valid,
+#phone:invalid,
+#phone.is-valid,
+#phone.is-invalid,
+.was-validated #phone:valid,
+.was-validated #phone:invalid {
+    background-color: transparent !important;
+    padding-right: 30px !important;
+}
+
+#phone:valid,
+#phone.is-valid,
+.was-validated #phone:valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right center !important;
+    background-size: 16px 16px !important;
+}
+
+#phone ~ label,
+#phone:valid ~ label,
+#phone:invalid ~ label,
+#phone.is-valid ~ label,
+#phone.is-invalid ~ label,
+.was-validated #phone:valid ~ label,
+.was-validated #phone:invalid ~ label {
+    color: #6C757D !important;
+}
+
+/* Rest of the existing styles */
+.form-control,
+.form-select {
+    border: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    padding-left: 0 !important;
+    padding-right: 30px !important;
+}
+
+/* ... rest of your existing CSS ... */
+
+/* Enhanced smooth navbar transition */
+.navbar {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px 0;
+    will-change: transform, opacity, background-color, padding;
+}
+
+.navbar.sticky-top {
+    padding: 15px 0;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Keep mobile styles */
+@media (max-width: 992px) {
+    .navbar.navbar-expand-lg {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        padding: 15px 0;
+    }
+}
+
+/* Add padding between nav and banner */
+.contact-banner {
+    padding-top: 30px;
+}
+
+/* Update banner styles */
+.page-header {
+    margin-top: 70px;
+    margin-bottom: 0;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03));
+    pointer-events: none;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .page-header {
+        margin-top: 80px;
+        padding-top: 60px !important;
+    }
+}
+
+/* Form floating label fixes */
+.form-floating input::placeholder,
+.form-floating textarea::placeholder {
+    color: transparent;
+}
+
+.form-floating input:not(:placeholder-shown),
+.form-floating textarea:not(:placeholder-shown) {
+    padding-top: 1.625rem;
+    padding-bottom: 0.625rem;
+}
+
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label {
+    opacity: 0.65;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0);
+}
+
+/* Form floating label behavior */
+.form-floating input::placeholder,
+.form-floating textarea::placeholder {
+    color: transparent;
+}
+
+.form-floating input:focus ~ label,
+.form-floating textarea:focus ~ label,
+.form-floating input:not(:placeholder-shown) ~ label,
+.form-floating textarea:not(:placeholder-shown) ~ label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2rem);
+    transition: all 0.2s ease-in-out;
+}
+
+.form-floating input:focus,
+.form-floating textarea:focus,
+.form-floating input:not(:placeholder-shown),
+.form-floating textarea:not(:placeholder-shown) {
+    padding-top: 1rem;
+    padding-bottom: 0.625rem;
+}
+
+/* Keep asterisk visible for empty required fields */
+.form-floating input:placeholder-shown ~ label,
+.form-floating textarea:placeholder-shown ~ label {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Remove validation styling from textarea by default */
+#about,
+#about:valid,
+#about:invalid,
+#about.is-valid,
+#about.is-invalid,
+.was-validated #about:valid,
+.was-validated #about:invalid {
+    background-image: none !important;
+    padding-right: 0.75rem !important;
+}
+
+/* Show tick mark only when text is entered */
+#about:not(:placeholder-shown):valid {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 0.75rem center !important;
+    background-size: 16px 16px !important;
+    padding-right: 30px !important;
+}
+
+/* Visit Us Section Styles */
+.visit-us-section {
+    background-color: #f8f9fa !important;
+    padding: 5rem 0;
+}
+
+.visit-us-section .card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.visit-us-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.visit-us-section h2 {
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.visit-us-section h4 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.visit-us-section p {
+    color: #6c757d;
+    margin-bottom: 0;
+}
+
+.visit-us-section .card-body {
+    padding: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .visit-us-section {
+        padding: 3rem 0;
+    }
+    
+    .visit-us-section .card {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,23 @@
+# Site Settings
+title: Bodh.aI
+description: Your partner in digital transformation. We specialize in GenAI solutions, cloud security, and technology consulting.
+baseurl: "" # Leave empty if your site is at root level
+url: "" # Fill this with your GitHub Pages URL when ready
+
+# Build settings
+permalink: pretty
+markdown: kramdown
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+
+# Default layout settings
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default 
