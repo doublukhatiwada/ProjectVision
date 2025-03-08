@@ -103,14 +103,21 @@
                 opacity: 0.5 !important;
             }
 
-            /* Remove validation styling for phone by default */
-            #phone {
+            /* Remove all validation styling for phone */
+            #phone,
+            #phone:valid,
+            #phone.is-valid,
+            #phone:invalid,
+            #phone.is-invalid,
+            .was-validated #phone:valid,
+            .was-validated #phone:invalid {
                 background-image: none !important;
                 border-color: #ced4da !important;
+                padding-right: 0.75rem !important;
             }
 
-            /* Show validation only when valid (10 digits) */
-            #phone.is-valid {
+            /* Only show tick mark when exactly 10 digits */
+            #phone.is-valid-phone {
                 border-color: #198754 !important;
                 background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
                 background-repeat: no-repeat !important;
@@ -724,8 +731,11 @@
     </script>
 
     <script>
-    // Add phone input validation
+    // Update phone input validation
     document.getElementById('phone').addEventListener('input', function(e) {
+        // Remove all validation classes first
+        this.classList.remove('is-valid', 'is-invalid', 'is-valid-phone');
+        
         // Remove non-digits
         this.value = this.value.replace(/\D/g, '');
         
@@ -734,11 +744,16 @@
             this.value = this.value.slice(0, 10);
         }
         
-        // Add validation class only when exactly 10 digits
+        // Add custom validation class only when exactly 10 digits
         if (this.value.length === 10) {
-            this.classList.add('is-valid');
-        } else {
-            this.classList.remove('is-valid');
+            this.classList.add('is-valid-phone');
+        }
+    });
+
+    // Remove validation on focus if empty
+    document.getElementById('phone').addEventListener('focus', function() {
+        if (!this.value) {
+            this.classList.remove('is-valid', 'is-invalid', 'is-valid-phone');
         }
     });
     </script>
