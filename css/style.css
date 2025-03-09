@@ -1268,12 +1268,8 @@ html {
 
 /*** Footer Start ***/
 .footer {
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);  /* Gradient for shiny effect */
-    box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.05);   /* Inner glow */
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+    padding: 80px 0 40px;
 }
 
 .footer::before {
@@ -1287,35 +1283,86 @@ html {
     pointer-events: none;
 }
 
-.footer .footer-item a {
-    line-height: 35px;
-    color: var(--bs-white);
-    transition: 0.5s;
+.footer-item {
+    position: relative;
+    padding: 0 20px;
 }
 
-.footer .footer-item p {
-    line-height: 35px;
-    color: var(--bs-white);
+.footer-item h4 {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: #FE3B15 !important;
+    font-weight: 600;
 }
 
-.footer .footer-item h4 {
-    color: var(--bs-white) !important;
+.footer-item a {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
 }
 
-.footer .footer-item a:hover {
-    letter-spacing: 2px;
+.footer-item a:hover {
     color: #FE3B15;
+    transform: translateX(5px);
 }
 
-.footer .company-logo {
-    line-height: 35px;
-    color: var(--bs-white);
-    transition: none;  /* Remove transition effect */
+/* Update office sections */
+.footer-item h6 {
+    color: #FE3B15;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
 }
 
-.footer .company-logo:hover {
-    letter-spacing: normal;  /* Remove letter spacing effect */
-    color: var(--bs-white);  /* Keep color white on hover */
+/* Update social icons */
+.footer-item .social-links {
+    margin-top: 30px;
+}
+
+.footer-item .btn-square {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background: rgba(254, 59, 21, 0.1);
+    border: 1px solid rgba(254, 59, 21, 0.3);
+}
+
+.footer-item .btn-square:hover {
+    background: #FE3B15;
+    border-color: #FE3B15;
+    transform: translateY(-3px);
+}
+
+/* Update vertical line */
+.vertical-line {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(254, 59, 21, 0.3), transparent);
+    margin: 0 30px;
+}
+
+/* Update copyright section */
+.copyright {
+    background: #1a1a1a;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright span, 
+.copyright a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+    color: #FE3B15;
 }
 /*** Footer End ***/
 
@@ -3176,4 +3223,252 @@ a:hover {
     .visit-us-section .card {
         margin-bottom: 1rem;
     }
+}
+
+/* Add at the top of the file */
+.company-name {
+    font-family: 'Netron', sans-serif;
+    display: inline-flex;
+    align-items: baseline;
+    letter-spacing: 5px;
+    font-size: 2em;
+    color: #FE3B15;
+}
+
+.company-name .tnv-text {
+    color: #FE3B15;
+    font-weight: bold;
+}
+
+.company-name .tnv-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(255, 127, 28, 0.2), rgba(254, 59, 21, 0.2));
+    filter: blur(4px);
+    z-index: -1;
+}
+
+.company-name .lab-text {
+    font-size: 0.5em;
+    margin-left: 2px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: normal;
+    font-weight: 600;
+    opacity: 0.9;
+    color: var(--bs-dark);
+}
+
+/* Update for sticky navbar */
+.sticky-top.navbar-light .navbar-brand h1.company-name {
+    color: var(--bs-white) !important;
+}
+
+.sticky-top.navbar-light .navbar-brand h1.company-name .lab-text {
+    color: #FE3B15;
+}
+
+/* Update footer styles */
+.footer-item .company-name .lab-text {
+    color: var(--bs-white);
+    opacity: 0.9;
+}
+
+/* Update navbar brand styles */
+.navbar-light .navbar-brand h1.company-name {
+    color: #FE3B15 !important;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.sticky-top.navbar-light .navbar-brand h1.company-name {
+    color: #FE3B15 !important;
+}
+
+/* Update footer logo styles */
+.footer-item .company-name {
+    color: #FE3B15 !important;
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 6px;
+}
+
+.footer-item .company-name .lab-text {
+    margin-left: 3px;
+    color: var(--bs-white);
+}
+
+/* Add TNV color in footer */
+.footer-item .company-name .tnv-text {
+    color: #FE3B15;
+}
+
+/* Mobile adjustments */
+@media (max-width: 992px) {
+    .company-name {
+        font-size: 1.8em;
+    }
+    
+    .footer-item .company-name {
+        font-size: 2.5em;
+    }
+}
+
+/* Remove or update conflicting styles */
+- .sticky-top.navbar-light .navbar-brand h1.company-name {
+-     color: #FE3B15 !important;
+- }
+
+/* Update sticky navbar styles with more specific selectors */
+.navbar.sticky-top.navbar-light .navbar-brand h1.company-name {
+    color: var(--bs-white) !important;
+}
+
+/* Ensure TNV text is also white in sticky state */
++ .navbar.sticky-top.navbar-light .navbar-brand h1.company-name .tnv-text {
++     color: var(--bs-white) !important;
++ }
+
+/* Keep Lab text orange in sticky state */
+.navbar.sticky-top.navbar-light .navbar-brand h1.company-name .lab-text {
+    color: #FE3B15;
+}
+
+/* Footer contact info below logo */
+.footer-item .contact-info {
+    font-size: 0.9rem;
+}
+
+.footer-item .contact-info a {
+    color: var(--bs-white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-item .contact-info a:hover {
+    opacity: 1;
+    color: var(--bs-white);
+}
+
+/* Footer logo and contact section */
+.footer-item .company-name {
+    color: #FE3B15 !important;
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 6px;
+    margin-bottom: 30px;  /* Add space below logo */
+}
+
+.footer-item .contact-info {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Space between contact items */
+}
+
+.footer-item .contact-info a {
+    color: var(--bs-white);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.footer-item .contact-info a i {
+    width: 20px;  /* Fixed width for icons */
+    margin-right: 10px;
+}
+
+.footer-item .contact-info a:hover {
+    opacity: 1;
+    color: var(--bs-white);
+    transform: translateX(5px);
+}
+
+.footer-item .contact-info {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.footer-item .contact-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FE3B15;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.footer-item .contact-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #FE3B15, transparent);
+}
+
+.footer-item .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-item .contact-info a {
+    color: var(--bs-white);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.footer-item .contact-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FE3B15;
+    margin-bottom: 10px;  /* Reduced margin */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.footer-item .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;  /* Reduced gap between contact items */
+}
+
+.footer-item .contact-info {
+    font-size: 0.9rem;
+    margin-bottom: 15px;  /* Reduced overall bottom margin */
+}
+
+/* Consolidated styles with reduced spacing */
+.footer-item .contact-info {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;  /* Reduced from 15px */
+    margin-bottom: 15px;  /* Reduced from 20px */
+}
+
+.footer-item .contact-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #FE3B15;
+    margin-bottom: 8px;  /* Reduced from 15px */
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;  /* Reduced from 8px */
+}
+
+.footer-item .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;  /* Reduced from 6px */
 }
