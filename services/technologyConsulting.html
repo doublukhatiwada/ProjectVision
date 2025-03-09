@@ -3,15 +3,23 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Bodh.aI | Technology Consulting</title>
+        <title>TNV Lab | Technology Consulting</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../icon/TNV.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="apple-touch-icon" href="../icon/TNV.png">
+        <meta name="msapplication-TileColor" content="#FE3B15">
+        <meta name="theme-color" content="#FE3B15">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -30,7 +38,50 @@
         <link href="../css/style.css" rel="stylesheet">
 
         <style>
-            /* Override navbar styles for genAI page */
+            /* Override navbar styles */
+            .navbar-light {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+            }
+
+            /* Initial TNV color */
+            .navbar-light .company-name {
+                color: var(--bs-white) !important;
+                font-family: 'Netron', sans-serif;
+                display: inline-flex;
+                align-items: baseline;
+                letter-spacing: 5px;
+                font-size: 2em;
+            }
+
+            .navbar-light .company-name .lab-text {
+                color: var(--bs-white) !important;
+                font-size: 0.5em;
+                margin-left: 2px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                letter-spacing: normal;
+                font-weight: 600;
+                opacity: 0.9;
+            }
+
+            /* TNV color changes on scroll */
+            .navbar.sticky-top .navbar-brand .company-name {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar.sticky-top .navbar-brand .company-name .lab-text {
+                color: #FE3B15 !important;
+            }
+
+            .sticky-top.navbar-light {
+                position: fixed;
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+            }
+
             .navbar-light .navbar-nav .nav-link {
                 color: var(--bs-white) !important;
             }
@@ -39,18 +90,30 @@
                 color: var(--bs-white) !important;
             }
             
-            .navbar-light .navbar-brand h1 {
-                color: var(--bs-white) !important;
-            }
-            
             .navbar-toggler .fa-bars {
                 color: var(--bs-white) !important;
             }
-            
+
             @media (max-width: 992px) {
-                .navbar-light .navbar-nav .nav-link,
-                .sticky-top.navbar-light .navbar-nav .nav-link {
-                    color: var(--bs-white) !important;
+                .navbar-collapse {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                
+                .navbar-toggler {
+                    border-color: rgba(255, 255, 255, 0.5) !important;
+                }
+                
+                .dropdown-menu {
+                    background: transparent !important;
+                    border: none;
+                    padding-left: 20px;
+                }
+                
+                .dropdown-item {
+                    color: white !important;
                 }
             }
 
@@ -123,7 +186,7 @@
                     }
                 </style>
                 <a href="../" class="navbar-brand p-0">
-                    <H1 class="text-white">Bodh.aI</H1>
+                    <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-white"></span>
@@ -409,8 +472,22 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
                         <div class="footer-item d-flex flex-column">
                             <a href="../" class="mb-3 company-logo">
-                                <h1 class="text-white">Bodh.aI</h1>
+                                <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                             </a>
+                            <div class="contact-info mt-4">
+                                <h6 class="contact-heading mb-3">Get in Touch</h6>
+                                <div class="contact-links">
+                                    <a href="mailto:info@tnvlab.com" class="mb-2">
+                                        <i class="fas fa-envelope me-2"></i>info@tnvlab.com
+                                    </a>
+                                    <a href="tel:+447496123456" class="mb-2">
+                                        <i class="fas fa-phone me-2"></i>+44 7496 123456
+                                    </a>
+                                    <a href="tel:+9779841123456">
+                                        <i class="fas fa-phone me-2"></i>+977 9841 123456
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <div class="vertical-line mx-4"></div>
                     </div>
@@ -435,10 +512,14 @@
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-dark">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">UK Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i> 13th High Street, London, UK</a>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">Nepal Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i> Gyaneshowr, Kathmandu, Nepal</a>
+                            </div>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-secondary me-2"></i>
                                 <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -458,13 +539,13 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Bodh.aI</a>, All right reserved.</span>
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNV<span class="lab-text">Lab</span></a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
                         <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="../">Bodh.aI Team</a>
+                        Designed By <a class="border-bottom" href="../">TNV<span class="lab-text">Lab</span> Team</a>
                     </div>
                 </div>
             </div>
