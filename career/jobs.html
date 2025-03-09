@@ -21,6 +21,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -87,43 +88,13 @@
                         color: var(--bs-white) !important;
                     }
 
-                    @media (max-width: 992px) {
-                        .navbar-collapse {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            padding: 20px;
-                            border-radius: 10px;
-                            margin-top: 15px;
-                        }
-                        
-                        .navbar.navbar-expand-lg {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                        }
-                        
-                        .navbar-toggler {
-                            border-color: rgba(255, 255, 255, 0.5) !important;
-                        }
-                        
-                        .dropdown-menu {
-                            background: transparent !important;
-                            border: none;
-                            padding-left: 20px;
-                        }
-                        
-                        .dropdown-item {
-                            color: white !important;
-                        }
-                        
-                        .dropdown-item:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
-                        }
-
-                        .nav-item .nav-link {
-                            color: white !important;
-                        }
-                        
-                        .nav-item .nav-link:hover {
-                            color: var(--bs-primary) !important;
-                        }
+                    /* TNV color changes on scroll */
+                    .navbar.sticky-top .navbar-brand .company-name {
+                        color: var(--bs-white) !important;
+                    }
+                    
+                    .navbar.sticky-top .navbar-brand .company-name .lab-text {
+                        color: #FE3B15 !important;
                     }
                 </style>
                 <a href="../" class="navbar-brand p-0">
@@ -461,21 +432,18 @@
 
     
     <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-md-0">
-                    <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Bodh.aI</a>, All right reserved.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end text-white">
-                    <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
-                    <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
-                    <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="../">Bodh.aI team</a>
+           <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNVLab</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                        Designed by <i class="fas fa-heart text-primary"></i> TNVLab Team
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Copyright End -->
 
 
