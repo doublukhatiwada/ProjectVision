@@ -9,11 +9,9 @@
         <meta content="" name="description">
 
          <!-- Favicon -->
-         <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-touch-icon.png">
-         <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
-         <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
-         <link rel="manifest" href="../site.webmanifest">
-         <link rel="mask-icon" href="../icon/safari-pinned-tab.svg" color="#FE3B15">
+         <link rel="icon" type="image/png" href="../icon/TNV.png">
+         <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+         <link rel="apple-touch-icon" href="../icon/TNV.png">
          <meta name="msapplication-TileColor" content="#FE3B15">
          <meta name="theme-color" content="#FE3B15">
 
@@ -77,6 +75,26 @@
                         left: 0;
                         z-index: 999;
                         background: white !important;
+                    }
+
+                    /* Initial TNV color */
+                    .navbar-light .company-name {
+                        color: #FE3B15 !important;
+                        font-family: 'Netron', sans-serif;
+                        display: inline-flex;
+                        align-items: baseline;
+                        letter-spacing: 5px;
+                        font-size: 2em;
+                    }
+
+                    .navbar-light .company-name .lab-text {
+                        color: var(--bs-dark) !important;
+                        font-size: 0.5em;
+                        margin-left: 2px;
+                        font-family: 'Plus Jakarta Sans', sans-serif;
+                        letter-spacing: normal;
+                        font-weight: 600;
+                        opacity: 0.9;
                     }
 
                     .sticky-top.navbar-light {
