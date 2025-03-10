@@ -15,6 +15,48 @@
     // Initiate the wowjs
     new WOW().init();
 
+    // FAQ Image Switching
+    $(document).ready(function() {
+        // Define images for each FAQ section
+        const faqImages = {
+            'collapseOne': 'img/home-ai.jpg',
+            'collapseTwo': 'img/home-cloud.jpg',
+            'collapseThree': 'img/homeprogamming.jpg',
+            'collapseFour': 'img/homeapi.jpg',
+            'collapseFive': 'img/homedata.jpg'
+        };
+        
+        const $faqImage = $('#faqImage');
+        const defaultImage = 'img/techstack.jpeg';
+        let lastExpandedId = null;
+        
+        // Handle accordion show events
+        $('.accordion-collapse').on('show.bs.collapse', function() {
+            const newImage = faqImages[this.id];
+            if (newImage) {
+                lastExpandedId = this.id;
+                $faqImage.fadeOut(200, function() {
+                    $(this).attr('src', newImage).fadeIn(200);
+                });
+            }
+        });
+        
+        // Handle accordion hide events
+        $('.accordion-collapse').on('hidden.bs.collapse', function() {
+            // Only change image if this was the last expanded section
+            if (this.id === lastExpandedId) {
+                // Check if any other section is open
+                const openSections = $('.accordion-collapse.show');
+                
+                if (openSections.length === 0) {
+                    $faqImage.fadeOut(200, function() {
+                        $(this).attr('src', defaultImage).fadeIn(200);
+                        lastExpandedId = null;
+                    });
+                }
+            }
+        });
+    });
 
     // Sticky Navbar
     $(window).on('scroll', function() {
@@ -22,13 +64,15 @@
             $('.navbar').addClass('sticky-top');
             $('.navbar').css({
                 'transform': 'translateY(0)',
-                'opacity': '1'
+                'opacity': '1',
+                'transition': 'background 0.3s ease-in-out, transform 0.3s ease-in-out'
             });
         } else {
             $('.navbar').removeClass('sticky-top');
             $('.navbar').css({
                 'transform': 'translateY(0)',
-                'opacity': '1'
+                'opacity': '1',
+                'transition': 'background 0.3s ease-in-out, transform 0.3s ease-in-out'
             });
         }
     });
@@ -47,13 +91,15 @@
             // Scrolling down & past the threshold
             $('.navbar').css({
                 'transform': 'translateY(-100%)',
-                'opacity': '0'
+                'opacity': '0',
+                'transition': 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out'
             });
         } else {
             // Scrolling up or at top
             $('.navbar').css({
                 'transform': 'translateY(0)',
-                'opacity': '1'
+                'opacity': '1',
+                'transition': 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out'
             });
         }
 
@@ -61,7 +107,8 @@
         isScrolling = setTimeout(function() {
             $('.navbar').css({
                 'transform': 'translateY(0)',
-                'opacity': '1'
+                'opacity': '1',
+                'transition': 'transform 0.3s ease-in-out, opacity 0.3s ease-in-out'
             });
         }, 100); // Adjust timeout as needed
 
@@ -579,6 +626,61 @@
     $(function () {
         $('[data-bs-toggle="tooltip"]').tooltip();
         $('[data-bs-toggle="popover"]').popover();
+    });
+
+    // GDPR Cookie Consent
+    $(document).ready(function() {
+        console.log('GDPR initialization started');
+        let gdprBanner = $('#gdpr-banner');
+        
+        // Check if this is first visit to the website
+        const isFirstVisit = !sessionStorage.getItem('visited');
+        sessionStorage.setItem('visited', 'true');
+        
+        // If banner doesn't exist, create it
+        if (gdprBanner.length === 0) {
+            console.log('Creating GDPR banner');
+            $('body').append(`
+                <div id="gdpr-banner" class="gdpr-banner">
+                    <div class="gdpr-content">
+                        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. 
+                            <a href="privacy-policy.html">Learn more</a>
+                        </p>
+                        <div class="gdpr-buttons">
+                            <button id="gdpr-accept" class="btn btn-primary">Accept</button>
+                            <button id="gdpr-decline" class="btn btn-light">Decline</button>
+                        </div>
+                    </div>
+                </div>
+            `);
+            gdprBanner = $('#gdpr-banner');
+        }
+        
+        // Check if user has already made a choice
+        const existingChoice = localStorage.getItem('gdprChoice');
+        console.log('Existing GDPR choice:', existingChoice);
+        
+        if (!existingChoice && isFirstVisit) {
+            console.log('No previous choice found, showing banner');
+            setTimeout(() => {
+                gdprBanner.addClass('show');
+                console.log('Banner show class added');
+            }, 500);
+        }
+        
+        // Handle Accept
+        $('#gdpr-accept').on('click', function() {
+            console.log('Accept clicked');
+            localStorage.setItem('gdprChoice', 'accepted');
+            gdprBanner.removeClass('show');
+        });
+        
+        // Handle Decline
+        $('#gdpr-decline').on('click', function() {
+            console.log('Decline clicked');
+            localStorage.setItem('gdprChoice', 'declined');
+            gdprBanner.removeClass('show');
+        });
     });
 
 })(jQuery);

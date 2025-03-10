@@ -20,13 +20,15 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1030;
+    z-index: 1050 !important;
     background-color: white !important;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out !important;
 }
 
 .navbar {
     padding: 1rem 0;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 /* Sticky nav styles - make it permanently fixed */
@@ -38,6 +40,7 @@
     padding: 1rem 0;
     transform: none !important;
     -webkit-transform: none !important;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out !important;
 }
 
 /* Remove all wow and animation classes from HTML */
@@ -144,7 +147,7 @@ body.genai-page {
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 1050 !important;
     opacity: 1 !important;
     visibility: visible !important;
     transition: all 0.3s ease-in-out;
@@ -250,6 +253,65 @@ body.genai-page {
     }
 }
 /*** Navbar Styles End ***/
+
+/*** FAQ Section Styles ***/
+.accordion-button {
+    position: relative;
+    z-index: 0 !important;
+}
+
+.accordion-collapse {
+    position: relative;
+    z-index: 0;
+}
+
+.container-fluid.FAQ {
+    position: relative;
+    z-index: 0;
+}
+
+/* Ensure accordion content stays behind navbar */
+.accordion-item {
+    position: relative;
+    z-index: 0;
+}
+
+/* Override any bootstrap default z-index values */
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+    z-index: 0;
+}
+
+/* Override Bootstrap's default accordion button z-index */
+.accordion-button:not(.collapsed) {
+    z-index: 0 !important;
+}
+
+/* FAQ Image Container Styles */
+.FAQ-img {
+    width: 100%;
+    height: 360px; /* Set fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FAQ-img img {
+    width: 540px;  /* Set fixed width */
+    height: 360px; /* Set fixed height */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    object-position: center;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Responsive adjustments for FAQ images */
+@media (max-width: 768px) {
+    .FAQ-img img {
+        width: 100%;
+        height: auto;
+    }
+}
+/*** FAQ Section Styles End ***/
 
 /*** Back to Top Button ***/
 html {
@@ -3398,5 +3460,97 @@ a:hover {
     
     .footer-item .company-name {
         font-size: 2.5em;
+    }
+}
+
+/* Footer Styles */
+.footer-item .company-logo {
+    text-decoration: none;
+    margin-bottom: 2.5rem !important;
+}
+
+.footer-item .contact-info {
+    margin-top: 2.5rem !important;
+}
+
+.contact-heading {
+    font-weight: 600;
+    margin-bottom: 1.5rem !important;
+}
+
+.contact-links a {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+}
+
+/* GDPR Banner Styles */
+.gdpr-banner {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 1rem;
+    z-index: 99999;
+    transition: bottom 0.3s ease-in-out;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+.gdpr-banner.show {
+    bottom: 0 !important;
+}
+
+.gdpr-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.gdpr-content p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.gdpr-content a {
+    color: #FE3B15;
+    text-decoration: none;
+}
+
+.gdpr-content a:hover {
+    text-decoration: underline;
+}
+
+.gdpr-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.gdpr-buttons .btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .gdpr-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .gdpr-buttons {
+        width: 100%;
+        justify-content: center;
     }
 }
