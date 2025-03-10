@@ -630,55 +630,46 @@
 
     // GDPR Cookie Consent
     $(document).ready(function() {
-        console.log('GDPR initialization started');
         let gdprBanner = $('#gdpr-banner');
         
-        // Check if this is first visit to the website
-        const isFirstVisit = !sessionStorage.getItem('visited');
-        sessionStorage.setItem('visited', 'true');
+        // Remove any existing banner first
+        $('.gdpr-banner').remove();
         
-        // If banner doesn't exist, create it
-        if (gdprBanner.length === 0) {
-            console.log('Creating GDPR banner');
-            $('body').append(`
-                <div id="gdpr-banner" class="gdpr-banner">
-                    <div class="gdpr-content">
-                        <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. 
-                            <a href="privacy-policy.html">Learn more</a>
-                        </p>
-                        <div class="gdpr-buttons">
-                            <button id="gdpr-accept" class="btn btn-primary">Accept</button>
-                            <button id="gdpr-decline" class="btn btn-light">Decline</button>
-                        </div>
+        // Always create a fresh banner
+        $('body').append(`
+            <div id="gdpr-banner" class="gdpr-banner">
+                <div class="gdpr-content">
+                    <div class="gdpr-text">
+                        This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it.
+                    </div>
+                    <div class="gdpr-buttons">
+                        <button id="gdpr-reject" class="btn">Reject All</button>
+                        <button id="gdpr-accept" class="btn">Accept All</button>
                     </div>
                 </div>
-            `);
-            gdprBanner = $('#gdpr-banner');
-        }
+            </div>
+        `);
+        gdprBanner = $('#gdpr-banner');
         
-        // Check if user has already made a choice
-        const existingChoice = localStorage.getItem('gdprChoice');
-        console.log('Existing GDPR choice:', existingChoice);
+        // Check if user has already accepted cookies
+        const hasAccepted = localStorage.getItem('cookieConsent');
         
-        if (!existingChoice && isFirstVisit) {
-            console.log('No previous choice found, showing banner');
+        // Show banner if user hasn't accepted cookies
+        if (!hasAccepted) {
             setTimeout(() => {
                 gdprBanner.addClass('show');
-                console.log('Banner show class added');
-            }, 500);
+            }, 1000);
         }
         
         // Handle Accept
         $('#gdpr-accept').on('click', function() {
-            console.log('Accept clicked');
-            localStorage.setItem('gdprChoice', 'accepted');
+            localStorage.setItem('cookieConsent', 'accepted');
             gdprBanner.removeClass('show');
         });
-        
-        // Handle Decline
-        $('#gdpr-decline').on('click', function() {
-            console.log('Decline clicked');
-            localStorage.setItem('gdprChoice', 'declined');
+
+        // Handle Reject
+        $('#gdpr-reject').on('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
             gdprBanner.removeClass('show');
         });
     });

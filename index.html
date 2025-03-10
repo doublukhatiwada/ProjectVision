@@ -511,15 +511,27 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-        <!-- GDPR Cookie Consent Banner -->
-        <div id="gdpr-banner" class="gdpr-banner">
-            <div class="gdpr-content">
-                <p>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. 
-                   <a href="privacy-policy.html">Learn more</a>
-                </p>
-                <div class="gdpr-buttons">
-                    <button id="gdpr-accept" class="btn btn-primary">Accept</button>
-                    <button id="gdpr-decline" class="btn btn-light">Decline</button>
+        <!-- Cookie Consent Banner -->
+        <div class="cookie-banner" id="cookieBanner">
+            <div class="cookie-content">
+                <div class="cookie-text">
+                    <p>We use cookies to enhance your browsing experience. Essential cookies are necessary for the website to function properly. 
+                    Additional cookies are used to help us improve our website and provide personalized content.</p>
+                    <div class="cookie-settings">
+                        <label class="cookie-checkbox">
+                            <input type="checkbox" id="essentialCookies" checked disabled>
+                            <span>Essential Cookies (Required)</span>
+                        </label>
+                        <label class="cookie-checkbox">
+                            <input type="checkbox" id="analyticsCookies">
+                            <span>Analytics Cookies</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="cookie-buttons">
+                    <button onclick="acceptSelectedCookies()" class="btn btn-primary">Accept Selected</button>
+                    <button onclick="acceptAllCookies()" class="btn btn-success">Accept All</button>
+                    <button onclick="rejectCookies()" class="btn btn-primary">Reject All</button>
                 </div>
             </div>
         </div>
@@ -538,6 +550,38 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Cookie Consent Script -->
+    <script>
+        // Check if user has already accepted cookies
+        window.onload = function() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookieBanner').style.display = 'block';
+            }
+        }
+
+        // Handle accepting all cookies
+        function acceptAllCookies() {
+            localStorage.setItem('cookieConsent', 'all');
+            localStorage.setItem('analyticsCookies', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Handle accepting selected cookies
+        function acceptSelectedCookies() {
+            const analyticsEnabled = document.getElementById('analyticsCookies').checked;
+            localStorage.setItem('cookieConsent', 'selected');
+            localStorage.setItem('analyticsCookies', analyticsEnabled);
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Handle rejecting all cookies
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem('analyticsCookies', 'false');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
     </body>
 
 </html>
