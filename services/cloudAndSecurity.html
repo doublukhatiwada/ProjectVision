@@ -79,7 +79,7 @@
                 top: 0;
                 left: 0;
                 z-index: 999;
-                background: white !important;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
             }
 
             /* Initial TNV color */
@@ -154,7 +154,7 @@
         </style>
     </head>
 
-    <body>
+    <body class="cloud-page">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -166,100 +166,102 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid header position-relative overflow-hidden p-0">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d);">
-                <style>
-                    /* Override default navbar styles for dark theme */
-                    .navbar-light {
-                        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    }
-
-                    .navbar-light .nav-link {
-                        color: var(--bs-white) !important;
-                    }
-
-                    .navbar-light .company-name {
-                        color: var(--bs-white) !important;
-                    }
-
-                    .navbar-light .company-name .lab-text {
-                        color: var(--bs-white) !important;
-                    }
-
-                    .navbar-light .navbar-toggler .fa-bars {
-                        color: var(--bs-white) !important;
-                    }
-
-                    @media (max-width: 992px) {
-                        .navbar-collapse {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            padding: 20px;
-                            border-radius: 10px;
-                            margin-top: 15px;
-                        }
-                        
-                        .navbar.navbar-expand-lg {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                        }
-                        
-                        .navbar-toggler {
-                            border-color: rgba(255, 255, 255, 0.5) !important;
-                        }
-                        
-                        .dropdown-menu {
-                            background: transparent !important;
-                            border: none;
-                            padding-left: 20px;
-                        }
-                        
-                        .dropdown-item {
-                            color: white !important;
-                        }
-                        
-                        .dropdown-item:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <style>
+                        /* Override default navbar styles for dark theme */
+                        .navbar-light {
+                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                         }
 
-                        /* Add these new rules */
-                        .nav-item .nav-link {
-                            color: white !important;
+                        .navbar-light .nav-link {
+                            color: var(--bs-white) !important;
                         }
-                        
-                        .nav-item .nav-link:hover {
-                            color: var(--bs-primary) !important;
+
+                        .navbar-light .company-name {
+                            color: var(--bs-white) !important;
                         }
-                    }
-                </style>
-                <a href="../" class="navbar-brand p-0">
-                    <h1 class="company-name text-white">TNV<span class="lab-text">Lab</span></h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-white"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../" class="nav-item nav-link text-white">Home</a>
-                        <a href="../company/about" class="nav-item nav-link text-white">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="genAI" class="dropdown-item">GenAI solutions</a>
-                                <a href="cloudAndSecurity" class="dropdown-item active">Cloud and Security</a>
-                                <a href="productDevelopment" class="dropdown-item">Product Development</a>
-                                <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
-                    </div>
-                    <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+
+                        .navbar-light .company-name .lab-text {
+                            color: var(--bs-white) !important;
+                        }
+
+                        .navbar-light .navbar-toggler .fa-bars {
+                            color: var(--bs-white) !important;
+                        }
+
+                        @media (max-width: 992px) {
+                            .navbar-collapse {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                                padding: 20px;
+                                border-radius: 10px;
+                                margin-top: 15px;
+                            }
+                            
+                            .navbar.navbar-expand-lg {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                            }
+                            
+                            .navbar-toggler {
+                                border-color: rgba(255, 255, 255, 0.5) !important;
+                            }
+                            
+                            .dropdown-menu {
+                                background: transparent !important;
+                                border: none;
+                                padding-left: 20px;
+                            }
+                            
+                            .dropdown-item {
+                                color: white !important;
+                            }
+                            
+                            .dropdown-item:hover {
+                                background: rgba(255, 255, 255, 0.1) !important;
+                            }
+
+                            /* Add these new rules */
+                            .nav-item .nav-link {
+                                color: white !important;
+                            }
+                            
+                            .nav-item .nav-link:hover {
+                                color: var(--bs-primary) !important;
+                            }
+                        }
+                    </style>
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name text-white">TNV<span class="lab-text">Lab</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-white">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-white">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="genAI" class="dropdown-item">GenAI solutions</a>
+                                    <a href="cloudAndSecurity" class="dropdown-item active">Cloud and Security</a>
+                                    <a href="productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
             
-              <!-- Hero Header Start -->
-              <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
                 <div class="rotate-img">
                     <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
                     <div class="rotate-sty-2"></div>
@@ -274,216 +276,217 @@
                 </div>
                 <!-- Add subtle shine effect -->
                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
-              </div>
+            </div>
             
-              <!-- Hero Header End -->
+            <!-- Hero Header End -->
 
-              <!-- About Start -->
-              <div class="container-fluid overflow-hidden py-2 about-section" style="margin-top: 3rem;">
-                  <div class="container py-2">
-                      <div class="row g-4">
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                              <div class="chatbot-container">
-                                  <img src="../img/migration.png" 
-                                      class="chatbot-image" 
-                                      alt="Cloud Migration"
-                                  >
-                              </div>
-                          </div>
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                              <h4 class="mb-1" style="color: #FE3B15">Cloud Migration</h4>
-                              <h1 class="display-5 mb-4">Seamless <span class="text-primary">Cloud Migration</span> with Zero Downtime</h1>
-                              <p class="mb-4">We specialize in helping businesses transition their infrastructure and applications to the cloud securely and efficiently. Our expert team ensures minimal disruption to your operations while maximizing the benefits of cloud technology.</p>
-                              
-                              <h5 class="mb-3">Our Migration Approach:</h5>
-                              <ul class="list-unstyled feature-list">
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-search text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Assessment & Planning</h6>
-                                              <span>Thorough analysis of your current infrastructure and migration strategy development.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-shield-alt text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Security First</h6>
-                                              <span>Enterprise-grade security measures and compliance adherence throughout migration.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-sync text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Zero Downtime Migration</h6>
-                                              <span>Seamless transition with minimal impact on business operations.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.4s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-chart-line text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Performance Optimization</h6>
-                                              <span>Continuous monitoring and optimization for peak cloud performance.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.5s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-dollar-sign text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Cost Management</h6>
-                                              <span>Optimized resource allocation and cost-effective cloud solutions.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- About End -->
+            <!-- About Start -->
+            <div class="container-fluid overflow-hidden py-2 about-section" style="margin-top: 3rem;">
+                <div class="container py-2">
+                    <div class="row g-4">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/migration.png" 
+                                    class="chatbot-image" 
+                                    alt="Cloud Migration"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15">Cloud Migration</h4>
+                            <h1 class="display-5 mb-4">Seamless <span class="text-primary">Cloud Migration</span> with Zero Downtime</h1>
+                            <p class="mb-4">We specialize in helping businesses transition their infrastructure and applications to the cloud securely and efficiently. Our expert team ensures minimal disruption to your operations while maximizing the benefits of cloud technology.</p>
+                            
+                            <h5 class="mb-3">Our Migration Approach:</h5>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-search text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Assessment & Planning</h6>
+                                            <span>Thorough analysis of your current infrastructure and migration strategy development.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-shield-alt text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Security First</h6>
+                                            <span>Enterprise-grade security measures and compliance adherence throughout migration.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-sync text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Zero Downtime Migration</h6>
+                                            <span>Seamless transition with minimal impact on business operations.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-chart-line text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Performance Optimization</h6>
+                                            <span>Continuous monitoring and optimization for peak cloud performance.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-dollar-sign text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Cost Management</h6>
+                                            <span>Optimized resource allocation and cost-effective cloud solutions.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- About End -->
 
-              <!-- Security Start -->
-              <div class="container-fluid overflow-hidden py-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
-                  <!-- Add tech pattern overlay -->
-                  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, rgba(254, 59, 21, 0.02) 0px, rgba(254, 59, 21, 0.02) 10px, transparent 10px, transparent 20px); opacity: 0.5;"></div>
-                  
-                  <div class="container py-5">
-                      <div class="row g-4">
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                              <h4 class="mb-1" style="color: #FE3B15">Cloud Security</h4>
-                              <h1 class="display-5 mb-4 text-white">Cloud <span class="text-primary">Security</span> Solutions</h1>
-                              <p class="mb-4 text-white opacity-75">Our security services offer comprehensive protection for your systems and data. We provide Vulnerability Assessments and Penetration Testing to identify and address weaknesses by simulating real-world cyber-attacks. Our Endpoint Security Solutions safeguard your devices and networks from malicious software and unauthorized access.</p>
-                              
-                              <h5 class="mb-3 text-white">Security Features:</h5>
-                              <ul class="list-unstyled feature-list">
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-bug text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Vulnerability Assessment</h6>
-                                              <span class="text-white opacity-75">Comprehensive system analysis and weakness identification.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-laptop-code text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Penetration Testing</h6>
-                                              <span class="text-white opacity-75">Simulated cyber-attacks to test system resilience.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-shield-alt text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Endpoint Security</h6>
-                                              <span class="text-white opacity-75">Protection against malware and unauthorized access.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                              <div class="chatbot-container">
-                                  <img src="../img/cloud-security.jpg" 
-                                      class="chatbot-image" 
-                                      alt="Cloud Security"
-                                      style="border-radius: 20px; box-shadow: 0 0 45px rgba(254, 59, 21, 0.15);"
-                                  >
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  
-                  <!-- Add glow effect -->
-                  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(254, 59, 21, 0.1), transparent 70%); pointer-events: none;"></div>
-              </div>
-              <!-- Security End -->
+            <!-- Security Start -->
+            <div class="container-fluid overflow-hidden py-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+                <!-- Add tech pattern overlay -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: repeating-linear-gradient(45deg, rgba(254, 59, 21, 0.02) 0px, rgba(254, 59, 21, 0.02) 10px, transparent 10px, transparent 20px); opacity: 0.5;"></div>
+                
+                <div class="container py-5">
+                    <div class="row g-4">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15">Cloud Security</h4>
+                            <h1 class="display-5 mb-4 text-white">Cloud <span class="text-primary">Security</span> Solutions</h1>
+                            <p class="mb-4 text-white opacity-75">Our security services offer comprehensive protection for your systems and data. We provide Vulnerability Assessments and Penetration Testing to identify and address weaknesses by simulating real-world cyber-attacks. Our Endpoint Security Solutions safeguard your devices and networks from malicious software and unauthorized access.</p>
+                            
+                            <h5 class="mb-3 text-white">Security Features:</h5>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-bug text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Vulnerability Assessment</h6>
+                                            <span class="text-white opacity-75">Comprehensive system analysis and weakness identification.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-laptop-code text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Penetration Testing</h6>
+                                            <span class="text-white opacity-75">Simulated cyber-attacks to test system resilience.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-shield-alt text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Endpoint Security</h6>
+                                            <span class="text-white opacity-75">Protection against malware and unauthorized access.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/cloud-security.jpg" 
+                                    class="chatbot-image" 
+                                    alt="Cloud Security"
+                                    style="border-radius: 20px; box-shadow: 0 0 45px rgba(254, 59, 21, 0.15);"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add glow effect -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 50% 50%, rgba(254, 59, 21, 0.1), transparent 70%); pointer-events: none;"></div>
+            </div>
+            <!-- Security End -->
 
-              <!-- Compliance Start -->
-              <div class="container-fluid overflow-hidden py-1 about-section" style="margin-top: 1rem;">
-                  <div class="container py-2">
-                      <div class="row g-4">
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                              <div class="chatbot-container">
-                                  <img src="../img/compliance.jpg" 
-                                      class="chatbot-image" 
-                                      alt="Regulatory Compliance"
-                                  >
-                              </div>
-                          </div>
-                          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                              <h4 class="mb-1" style="color: #FE3B15">Regulatory Compliance</h4>
-                              <h1 class="display-5 mb-3">Ensuring <span class="text-primary">GDPR</span> Compliance</h1>
-                              <p class="mb-4">We help organizations navigate the complexities of data protection regulations and achieve GDPR compliance. Our comprehensive approach ensures your data handling practices meet the stringent requirements of the General Data Protection Regulation.</p>
-                              
-                              <h5 class="mb-2">GDPR Compliance Features:</h5>
-                              <ul class="list-unstyled feature-list">
-                                  <li class="mb-2 wow fadeInUp" data-wow-delay="0.1s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-user-shield text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Data Protection Assessment</h6>
-                                              <span>Comprehensive evaluation of data handling practices and privacy measures.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-2 wow fadeInUp" data-wow-delay="0.2s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-file-contract text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Documentation Support</h6>
-                                              <span>Assistance with required documentation and privacy policies.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                                  <li class="mb-2 wow fadeInUp" data-wow-delay="0.3s">
-                                      <div class="d-flex align-items-center">
-                                          <div class="btn-square bg-orange rounded-circle me-3">
-                                              <i class="fas fa-tasks text-white"></i>
-                                          </div>
-                                          <div>
-                                              <h6 class="mb-1" style="color: #FE3B15">Compliance Implementation</h6>
-                                              <span>Technical measures and controls for GDPR requirements.</span>
-                                          </div>
-                                      </div>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- Compliance End -->
+            <!-- Compliance Start -->
+            <div class="container-fluid overflow-hidden py-1 about-section" style="margin-top: 1rem;">
+                <div class="container py-2">
+                    <div class="row g-4">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/compliance.jpg" 
+                                    class="chatbot-image" 
+                                    alt="Regulatory Compliance"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15">Regulatory Compliance</h4>
+                            <h1 class="display-5 mb-3">Ensuring <span class="text-primary">GDPR</span> Compliance</h1>
+                            <p class="mb-4">We help organizations navigate the complexities of data protection regulations and achieve GDPR compliance. Our comprehensive approach ensures your data handling practices meet the stringent requirements of the General Data Protection Regulation.</p>
+                            
+                            <h5 class="mb-2">GDPR Compliance Features:</h5>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-2 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-user-shield text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Data Protection Assessment</h6>
+                                            <span>Comprehensive evaluation of data handling practices and privacy measures.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-file-contract text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Documentation Support</h6>
+                                            <span>Assistance with required documentation and privacy policies.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-2 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange rounded-circle me-3">
+                                            <i class="fas fa-tasks text-white"></i>
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1" style="color: #FE3B15">Compliance Implementation</h6>
+                                            <span>Technical measures and controls for GDPR requirements.</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Compliance End -->
 
+        </div>
         <!-- Footer Start -->
         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
             <div class="container py-5">

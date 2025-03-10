@@ -15,14 +15,97 @@
 /*** Spinner End ***/
 
 /*** Navbar Styles Start ***/
+.navbar-light {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: white !important;
+}
+
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky nav styles - make it permanently fixed */
+.navbar.sticky-top {
+    position: fixed !important;
+    top: 0 !important;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+    backdrop-filter: blur(5px);
+    padding: 1rem 0;
+    transform: none !important;
+    -webkit-transform: none !important;
+}
+
+/* Remove all wow and animation classes from HTML */
+-.wow {
+    animation: none !important;
+}
+
+/* Remove container-fluid transitions */
+-.container-fluid {
+    transition: none !important;
+}
+
+/* Remove any remaining transitions */
+-* {
+    transition: none !important;
+}
+
+/* Add padding to body to prevent content from hiding behind navbar */
+body {
+    padding-top: 90px;
+}
+
+/* For pages with hero section, remove the padding */
+body.home-page,
+body.contact-page,
+body.jobs-page,
+body.about-page,
+body.product-page,
+body.cloud-page,
+body.tech-page,
+body.genai-page {
+    padding-top: 0;
+}
+
+/* Make hero section go under navbar */
+.header {
+    position: relative;
+    z-index: 1;
+}
+
+/* Keep navbar above all content */
+.navbar-light, 
+.navbar.sticky-top {
+    z-index: 1030;
+}
+
+/* Add permanent shadow */
+.navbar {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Keep brand transitions */
+.navbar-light .company-name {
+    color: #FE3B15 !important;
+}
+
+.navbar-light .company-name .lab-text {
+    color: var(--bs-dark) !important;
+}
+
+/* Keep nav links white */
 .navbar-light .navbar-nav .nav-link {
+    color: var(--bs-dark) !important;
     margin-right: 25px;
     padding: 25px 0;
-    color: var(--bs-dark) !important;
     font-size: 16px;
     font-weight: 400;
     outline: none;
-    transition: .5s;
 }
 
 /* Keep active menu highlighted in both states */
@@ -51,8 +134,42 @@
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
-    padding: 15px 0;
+    padding: 25px 0;
     color: var(--bs-white) !important;
+}
+
+/* Add smooth transitions for navbar */
+.navbar-light {
+    position: fixed !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+    padding: 1rem 0;
+    transition: padding 0.3s ease-in-out;
+}
+
+.navbar.sticky-top {
+    padding: 1rem 0;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Add transitions for TNV brand */
+.navbar-light .company-name {
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-light .company-name .lab-text {
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-light .navbar-brand h1 {
@@ -71,19 +188,14 @@
     color: var(--bs-white) !important;
 }
 
-/* Sticky navbar styles */
-.navbar.sticky-top {
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-    box-shadow: 0 0 45px rgba(0, 0, 0, 0.08);
-}
-
 /* Update hover state for sticky nav */
 .navbar.sticky-top .nav-link:hover {
     color: var(--bs-primary) !important;
 }
 
 .navbar.sticky-top .dropdown-menu {
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.3), rgba(45, 45, 45, 0.3)) !important;
+    backdrop-filter: blur(5px);
 }
 
 .navbar.sticky-top .dropdown-item {
@@ -98,14 +210,17 @@
 /* Mobile navbar styles */
 @media (max-width: 992px) {
     .navbar-collapse {
-        background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+        background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+        backdrop-filter: blur(5px);
         padding: 20px;
         border-radius: 10px;
         margin-top: 15px;
     }
     
     .navbar.navbar-expand-lg {
-        background: #ffffff;
+        background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+        backdrop-filter: blur(5px);
+        padding: 15px 0;
     }
     
     .navbar-toggler {
@@ -399,7 +514,8 @@ html {
     }
 
     .sticky-top.navbar-light .dropdown-menu {
-        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        background: linear-gradient(145deg, rgba(26, 26, 26, 0.3), rgba(45, 45, 45, 0.3)) !important;
+        backdrop-filter: blur(5px);
     }
 
     .sticky-top.navbar-light .dropdown-item {
@@ -765,10 +881,10 @@ html {
 }
 
 @media (max-width: 768px) {
-    .hero-header .rotate-img img {
-        position: relative;
-        animation: none;
-        z-index: -1;
+.hero-header .rotate-img img {
+    position: relative;
+    animation: none;
+    z-index: -1;
     }
 }
 
@@ -3069,6 +3185,10 @@ a:hover {
     .navbar.navbar-expand-lg {
         background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
         padding: 15px 0;
+        position: fixed !important;
+        top: 0 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
     }
 }
 

@@ -50,10 +50,52 @@
             .page-header {
                 background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important; /* Keep the header dark */
             }
+
+            /* Fix z-index for search section */
+            .job-search-section {
+                position: relative;
+                z-index: 0;  /* Lower z-index to stay behind navbar */
+            }
+
+            /* Ensure navbar stays on top */
+            .container-fluid.fixed-top {
+                z-index: 1050;  /* Much higher z-index */
+            }
+
+            /* Override any other z-index values */
+            .sticky-top.navbar-light {
+                z-index: 1050 !important;
+            }
+
+            .navbar-light {
+                z-index: 1050 !important;
+            }
+
+            /* Search container and button styles */
+            .container-fluid.py-5 {
+                position: relative;
+                z-index: 0;
+            }
+
+            /* Target the search button specifically */
+            .search-col button.btn.btn-primary.px-4 {
+                position: relative;
+                z-index: 0 !important;
+            }
+
+            /* Keep dropdown menu above search results but below navbar */
+            .dropdown-menu {
+                z-index: 1000 !important;
+            }
+
+            /* Ensure search results stay behind navbar */
+            #searchResults {
+                z-index: 998;
+            }
         </style>
     </head>
 
-    <body>
+    <body class="jobs-page">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -65,83 +107,85 @@
 
 
         <!-- Navbar Start -->
-        <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0" style="background: white;">
-                <style>
-                    .navbar-light {
-                        position: absolute;
-                        width: 100%;
-                        top: 0;
-                        left: 0;
-                        z-index: 999;
-                        background: white !important;
-                    }
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <style>
+                        .navbar-light {
+                            position: absolute;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            z-index: 999;
+                            background: white !important;
+                        }
 
-                    /* Initial TNV color */
-                    .navbar-light .company-name {
-                        color: #FE3B15 !important;
-                        font-family: 'Netron', sans-serif;
-                        display: inline-flex;
-                        align-items: baseline;
-                        letter-spacing: 5px;
-                        font-size: 2em;
-                    }
+                        /* Initial TNV color */
+                        .navbar-light .company-name {
+                            color: #FE3B15 !important;
+                            font-family: 'Netron', sans-serif;
+                            display: inline-flex;
+                            align-items: baseline;
+                            letter-spacing: 5px;
+                            font-size: 2em;
+                        }
 
-                    .navbar-light .company-name .lab-text {
-                        color: var(--bs-dark) !important;
-                        font-size: 0.5em;
-                        margin-left: 2px;
-                        font-family: 'Plus Jakarta Sans', sans-serif;
-                        letter-spacing: normal;
-                        font-weight: 600;
-                        opacity: 0.9;
-                    }
+                        .navbar-light .company-name .lab-text {
+                            color: var(--bs-dark) !important;
+                            font-size: 0.5em;
+                            margin-left: 2px;
+                            font-family: 'Plus Jakarta Sans', sans-serif;
+                            letter-spacing: normal;
+                            font-weight: 600;
+                            opacity: 0.9;
+                        }
 
-                    .sticky-top.navbar-light {
-                        position: fixed;
-                        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    }
+                        .sticky-top.navbar-light {
+                            position: fixed;
+                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                        }
 
-                    .sticky-top.navbar-light .navbar-nav .nav-link {
-                        color: var(--bs-white) !important;
-                    }
+                        .sticky-top.navbar-light .navbar-nav .nav-link {
+                            color: var(--bs-white) !important;
+                        }
 
-                    /* TNV color changes on scroll */
-                    .navbar.sticky-top .navbar-brand .company-name {
-                        color: var(--bs-white) !important;
-                    }
-                    
-                    .navbar.sticky-top .navbar-brand .company-name .lab-text {
-                        color: #FE3B15 !important;
-                    }
-                </style>
-                <a href="../" class="navbar-brand p-0">
-                    <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../" class="nav-item nav-link text-dark">Home</a>
-                        <a href="../company/about" class="nav-item nav-link text-dark">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="../services/genAI" class="dropdown-item">GenAI solutions</a>
-                                <a href="../services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
-                                <a href="../services/productDevelopment" class="dropdown-item">Product Development</a>
-                                <a href="../services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="jobs" class="nav-item nav-link active text-dark">Join Us</a>
-                    </div>
-                    <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+                        /* TNV color changes on scroll */
+                        .navbar.sticky-top .navbar-brand .company-name {
+                            color: var(--bs-white) !important;
+                        }
+                        
+                        .navbar.sticky-top .navbar-brand .company-name .lab-text {
+                            color: #FE3B15 !important;
+                        }
+                    </style>
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-dark">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-dark">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="../services/genAI" class="dropdown-item">GenAI solutions</a>
+                                    <a href="../services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="../services/productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="../services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="jobs" class="nav-item nav-link active text-dark">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
         <!-- Navbar End -->
 
@@ -236,9 +280,11 @@
                             <div class="col-md-6 position-relative">
                                 <div class="input-group">
                                     <input type="text" class="form-control py-3" id="positionSearch" placeholder="Search positions...">
-                                    <button class="btn btn-primary px-4" type="button" id="searchBtn">
-                                        <i class="fas fa-search"></i>
-                                    </button>
+                                    <div class="col-auto search-col">
+                                        <button class="btn btn-primary px-4" type="button" id="searchBtn">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div id="searchResults" class="search-results d-none">
                                     <div class="card shadow">

@@ -45,7 +45,7 @@
                 top: 0;
                 left: 0;
                 z-index: 999;
-                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
             }
 
             /* Initial TNV color */
@@ -124,10 +124,151 @@
             .btn-square.bg-orange {
                 background-color: #FE3B15 !important;
             }
+
+            /* Timeline item styles */
+            .timeline-item {
+                background: #ffffff !important;
+                border-radius: 10px;
+                color: #000000 !important;
+            }
+
+            /* Make all text in timeline black */
+            .timeline-item h5,
+            .timeline-item p,
+            .timeline-item li {
+                color: #000000 !important;
+            }
+
+            /* Keep primary color for icons */
+            .timeline-item .fas.fa-check.text-primary {
+                color: #FE3B15 !important;
+            }
+
+            /* Keep primary color for timeline icons */
+            .timeline-icon i.text-primary {
+                color: #FE3B15 !important;
+            }
+
+            /* Timeline section styles */
+            .timeline-step .timeline-item {
+                background: #f8f9fa !important;  /* Light gray background for cards */
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+                border-radius: 10px;
+                margin: 10px 0;
+                position: relative;
+                z-index: 0;
+            }
+
+            /* Make all text inside timeline black */
+            .timeline-step .timeline-item h5,
+            .timeline-step .timeline-item p,
+            .timeline-step .timeline-item li,
+            .timeline-step .timeline-item ul {
+                color: #000000 !important;
+            }
+
+            /* Keep primary color for icons */
+            .timeline-step .timeline-item .fas.fa-check.text-primary,
+            .timeline-step .timeline-icon i.text-primary {
+                color: #FE3B15 !important;
+            }
+
+            /* Add subtle shadow for better visibility */
+            .timeline-step .timeline-item {
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            }
+
+            /* Timeline section styles */
+            .container-fluid.timeline {
+                background-color: #ffffff !important;
+                position: relative;
+                z-index: 0;  /* Even lower z-index to ensure content stays behind navbar */
+                padding: 5rem 0;
+                margin-top: -2px;
+                border-top: 1px solid #e9ecef;
+                border-bottom: 1px solid #e9ecef;
+            }
+
+            /* Timeline container styles */
+            .timeline .container {
+                max-width: 1140px;
+                margin: 0 auto;
+            }
+
+            /* Timeline text styles */
+            .timeline h1,
+            .timeline h4,
+            .timeline h5,
+            .timeline p,
+            .timeline .display-5,
+            .timeline li,
+            .timeline span:not(.text-primary) {
+                color: #000000 !important;
+            }
+
+            /* Timeline items styling */
+            .timeline-step .timeline-item {
+                background: #f8f9fa !important;  /* Light gray background for cards */
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+                border-radius: 10px;
+                margin: 10px 0;
+                position: relative;
+                z-index: 0;
+            }
+
+            /* Keep navbar above timeline */
+            .navbar-light, 
+            .navbar.sticky-top,
+            .container-fluid.fixed-top {
+                position: fixed !important;
+                z-index: 1050 !important;
+            }
+
+            /* Timeline icons */
+            .timeline-icon i.text-primary,
+            .fas.fa-check.text-primary {
+                color: #FE3B15 !important;
+            }
+
+            /* DevOps practices section */
+            .devops-practices {
+                background: #f8f9fa !important;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+                position: relative;
+                z-index: 0;
+                color: #000000 !important;
+            }
+
+            /* DevOps practices text styles */
+            .devops-practices h4:not([style*="color"]),
+            .devops-practices h5,
+            .devops-practices p,
+            .practice-item p,
+            .practice-item h5 {
+                color: #000000 !important;
+            }
+
+            /* Keep icons orange */
+            .devops-practices .text-primary,
+            .practice-item .text-primary {
+                color: #FE3B15 !important;
+            }
+
+            /* Practice items */
+            .practice-item {
+                color: #000000 !important;
+                margin-bottom: 20px;
+            }
+
+            /* Ensure all text is black */
+            .practice-item *:not(.text-primary):not([style*="color"]) {
+                color: #000000 !important;
+            }
         </style>
     </head>
 
-    <body>
+    <body class="product-page">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -139,76 +280,78 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid header position-relative overflow-hidden p-0">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <style>
-                    @media (max-width: 992px) {
-                        .navbar-collapse {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            padding: 20px;
-                            border-radius: 10px;
-                            margin-top: 15px;
-                        }
-                        
-                        .navbar.navbar-expand-lg {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                        }
-                        
-                        .navbar-toggler {
-                            border-color: rgba(255, 255, 255, 0.5) !important;
-                        }
-                        
-                        .dropdown-menu {
-                            background: transparent !important;
-                            border: none;
-                            padding-left: 20px;
-                        }
-                        
-                        .dropdown-item {
-                            color: white !important;
-                        }
-                        
-                        .dropdown-item:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
-                        }
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <style>
+                        @media (max-width: 992px) {
+                            .navbar-collapse {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                                padding: 20px;
+                                border-radius: 10px;
+                                margin-top: 15px;
+                            }
+                            
+                            .navbar.navbar-expand-lg {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                            }
+                            
+                            .navbar-toggler {
+                                border-color: rgba(255, 255, 255, 0.5) !important;
+                            }
+                            
+                            .dropdown-menu {
+                                background: transparent !important;
+                                border: none;
+                                padding-left: 20px;
+                            }
+                            
+                            .dropdown-item {
+                                color: white !important;
+                            }
+                            
+                            .dropdown-item:hover {
+                                background: rgba(255, 255, 255, 0.1) !important;
+                            }
 
-                        /* Add these new rules */
-                        .nav-item .nav-link {
-                            color: white !important;
+                            /* Add these new rules */
+                            .nav-item .nav-link {
+                                color: white !important;
+                            }
+                            
+                            .nav-item .nav-link:hover {
+                                color: var(--bs-primary) !important;
+                            }
                         }
-                        
-                        .nav-item .nav-link:hover {
-                            color: var(--bs-primary) !important;
-                        }
-                    }
-                </style>
-                <a href="../" class="navbar-brand p-0">
-                    <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-white"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../" class="nav-item nav-link text-white">Home</a>
-                        <a href="../company/about" class="nav-item nav-link text-white">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="genAI" class="dropdown-item">GenAI solutions</a>
-                                <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
-                                <a href="productDevelopment" class="dropdown-item active">Product Development</a>
-                                <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
-                    </div>
-                    <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+                    </style>
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-white">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-white">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="genAI" class="dropdown-item">GenAI solutions</a>
+                                    <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="productDevelopment" class="dropdown-item active">Product Development</a>
+                                    <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
             
               <!-- Hero Header Start -->
               <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
@@ -257,7 +400,7 @@
         <div class="container-fluid service py-4">
             <div class="container py-3">
                 <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
-                    <h4 class="mb-1" style="color: #FE3B15">Our DevOps Process</h4>
+                    <h4 class="mb-1" style="color: #FE3B15 !important">Our DevOps Process</h4>
                     <h1 class="display-5 mb-4">Streamlined Development <span class="text-primary">Pipeline</span></h1>
                     <p class="mb-0">Our comprehensive DevOps approach ensures continuous delivery and integration throughout the development lifecycle, enabling rapid deployment and consistent quality.</p>
                 </div>
@@ -358,11 +501,11 @@
         <!-- Service End -->
 
         <!-- Timeline Start -->
-        <div class="container-fluid timeline py-5" style="background: linear-gradient(rgba(254, 59, 21, 0.03), rgba(254, 59, 21, 0.02));">
-            <div class="container py-5">
+        <div class="container-fluid timeline py-5">
+            <div class="container">
                 <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                     <h4 class="mb-1" style="color: #FE3B15">Development Timeline</h4>
-                    <h1 class="display-5 mb-3"> Step by Step <span class="text-primary">Development</span> Process</h1>
+                    <h1 class="display-5 mb-3"> Step by Step <span style="color: #FE3B15 !important;">Development</span> Process</h1>
                     <p class="mb-4">Our streamined development process combines agile methodologies with DevOps practices to deliver high-quality products efficiently.</p>
                 </div>
 
@@ -376,22 +519,22 @@
                     <div class="timeline-steps-container">
                         <!-- Week 1 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-search fa-3x text-primary"></i>
                                 </div>
                                 <h5 class="mb-3">1. Discovery & Planning</h5>
                                 <ul class="list-unstyled text-start">
-                                    <li><i class="fas fa-check text-primary"></i>Define product vision</li>
-                                    <li><i class="fas fa-check text-primary"></i>Set up architecture</li>
-                                    <li><i class="fas fa-check text-primary"></i>Plan DevOps tools</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i>Define product vision</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i>Set up architecture</li>
+                                    <li><i class="fas fa-check text-primary me-2"></i>Plan DevOps tools</li>
                                 </ul>
                             </div>
                         </div>
 
                         <!-- Week 2 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-drafting-compass fa-3x text-primary"></i>
                                 </div>
@@ -406,7 +549,7 @@
 
                         <!-- Week 3 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-code fa-3x text-primary"></i>
                                 </div>
@@ -421,7 +564,7 @@
 
                         <!-- Week 4 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-layer-group fa-3x text-primary"></i>
                                 </div>
@@ -436,7 +579,7 @@
 
                         <!-- Week 5 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-vial fa-3x text-primary"></i>
                                 </div>
@@ -451,7 +594,7 @@
 
                         <!-- Week 6 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-tools fa-3x text-primary"></i>
                                 </div>
@@ -466,7 +609,7 @@
 
                         <!-- Week 7 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.5s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-rocket fa-3x text-primary"></i>
                                 </div>
@@ -481,7 +624,7 @@
 
                         <!-- Week 8 -->
                         <div class="timeline-step wow fadeInUp" data-wow-delay="0.7s">
-                            <div class="timeline-item text-center p-4" style="background: #f8f9fa; border-radius: 10px;">
+                            <div class="timeline-item text-center p-4">
                                 <div class="timeline-icon mb-3">
                                     <i class="fas fa-chart-line fa-3x text-primary"></i>
                                 </div>

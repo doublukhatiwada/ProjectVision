@@ -43,7 +43,7 @@
                 top: 0;
                 left: 0;
                 z-index: 999;
-                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
             }
             
             /* Initial TNV color */
@@ -175,79 +175,40 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid header position-relative overflow-hidden p-0">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <style>
-                    @media (max-width: 992px) {
-                        .navbar-collapse {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            padding: 20px;
-                            border-radius: 10px;
-                            margin-top: 15px;
-                        }
-                        
-                        .navbar.navbar-expand-lg {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                        }
-                        
-                        .navbar-toggler {
-                            border-color: rgba(255, 255, 255, 0.5) !important;
-                        }
-                        
-                        .dropdown-menu {
-                            background: transparent !important;
-                            border: none;
-                            padding-left: 20px;
-                        }
-                        
-                        .dropdown-item {
-                            color: white !important;
-                        }
-                        
-                        .dropdown-item:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
-                        }
-
-                        /* Add these new rules */
-                        .nav-item .nav-link {
-                            color: white !important;
-                        }
-                        
-                        .nav-item .nav-link:hover {
-                            color: var(--bs-primary) !important;
-                        }
-                    }
-                </style>
-                <a href="../" class="navbar-brand p-0">
-                    <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-white"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../" class="nav-item nav-link text-white">Home</a>
-                        <a href="../company/about" class="nav-item nav-link text-white">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="genAI" class="dropdown-item active">GenAI solutions</a>
-                                <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
-                                <a href="productDevelopment" class="dropdown-item">Product Development</a>
-                                <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
-                    </div>
-                    <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-white">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-white">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="genAI" class="dropdown-item active">GenAI solutions</a>
+                                    <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
             
-              <!-- Hero Header Start -->
-              <div class="hero-header overflow-hidden px-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d);">
                 <div class="rotate-img">
                     <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
                     <div class="rotate-sty-2"></div>
@@ -262,12 +223,14 @@
                 </div>
                 <!-- Add subtle shine effect -->
                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
-              </div>
+            </div>
             
-              <!-- Hero Header End -->
+            <!-- Hero Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
 
-               <!-- About Start -->
-        <div class="container-fluid overflow-hidden py-5 about-section" style="margin-top: 6rem;">
+        <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5 about-section">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
