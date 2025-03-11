@@ -30,11 +30,11 @@
         const $aiText = $('<p class="mt-4 text-center w-100" id="aiText" style="display: none; font-family: \'Plus Jakarta Sans\', sans-serif;"></p>');
         
         const sectionTexts = {
-            'collapseOne': 'We use different types of AI technology to build innovative and effective solutions. We choose the best AI tools for each project to meet your needs. We focus on creating smart solutions that help your business succeed',
-            'collapseTwo': 'We work with many cloud computing tools to build solutions that can grow with your business. We pick the right cloud tools for your project to meet your needs. We aim to create secure and fast cloud solutions that help your business grow',
-            'collapseThree': 'We use many different programming languages to build flexible and efficient solutions. We choose the best language for each project to match your business goals. We create strong and fast solutions that give real results',
-            'collapseFour': 'We combine different APIs and services to build smooth and scalable solutions. We pick the right APIs for your project to match what you need. We focus on making reliable solutions that improve your business',
-            'collapseFive': 'We use various data storage systems to create secure and flexible solutions. We choose the right storage platform for your project to handle your data needs. We build reliable storage solutions that help your business grow long term'
+            'collapseOne': 'We employ a diverse range of artificial intelligence technologies to create solutions that are both innovative and effective. By leveraging the most suitable AI tools for each project, we tailor our approach to meet your unique needs. Our mission is to deliver intelligent, customized solutions that drive your success',
+            'collapseTwo': 'We utilize a wide range of cloud computing technologies to provide scalable and efficient solutions. By choosing the right cloud tools for each project, we customize our approach to meet your specific needs. Our goal is to deliver secure, high-performance cloud solutions that drive your business forward',
+            'collapseThree': 'We utilize a broad spectrum of programming languages to deliver versatile and optimized solutions. By carefully selecting the most appropriate language for each project, we ensure that our approach is aligned with your specific business objectives. Our commitment is to provide robust, high-performance solutions that drive tangible results',
+            'collapseFour': 'We integrate a wide range of APIs and services to deliver seamless and scalable solutions. By selecting the most suitable APIs and services for each project, we ensure our approach aligns with your unique requirements. Our focus is on delivering reliable, efficient solutions that enhance your business capabilities',
+            'collapseFive': 'We leverage a diverse range of data storage platforms to ensure secure, flexible, and high-performance solutions. By carefully choosing the right platform for each project, we align our approach with your data management needs. Our focus is on delivering reliable, scalable storage solutions that support your business long-term success'
         };
         
         // Create a container div for the text and add it after the image
