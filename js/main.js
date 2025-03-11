@@ -27,6 +27,41 @@
         };
         
         const $faqImage = $('#faqImage');
+        const $aiText = $('<p class="mt-4 text-center w-100" id="aiText" style="display: none; font-family: \'Plus Jakarta Sans\', sans-serif;"></p>');
+        
+        const sectionTexts = {
+            'collapseOne': 'We use different types of AI technology to build innovative and effective solutions. We choose the best AI tools for each project to meet your needs. We focus on creating smart solutions that help your business succeed',
+            'collapseTwo': 'We work with many cloud computing tools to build solutions that can grow with your business. We pick the right cloud tools for your project to meet your needs. We aim to create secure and fast cloud solutions that help your business grow',
+            'collapseThree': 'We use many different programming languages to build flexible and efficient solutions. We choose the best language for each project to match your business goals. We create strong and fast solutions that give real results',
+            'collapseFour': 'We combine different APIs and services to build smooth and scalable solutions. We pick the right APIs for your project to match what you need. We focus on making reliable solutions that improve your business',
+            'collapseFive': 'We use various data storage systems to create secure and flexible solutions. We choose the right storage platform for your project to handle your data needs. We build reliable storage solutions that help your business grow long term'
+        };
+        
+        // Create a container div for the text and add it after the image
+        const $textContainer = $('<div class="w-100"></div>').append($aiText);
+        $('.FAQ-img').append($textContainer);
+        
+        // Add CSS to ensure proper layout
+        $('.FAQ-img').css({
+            'display': 'flex',
+            'flex-direction': 'column',
+            'align-items': 'center'
+        });
+        
+        // Function to animate text typing
+        function typeText(element, text, speed = 20) {
+            let i = 0;
+            element.html(''); // Clear any existing text
+            function type() {
+                if (i < text.length) {
+                    element.html(element.html() + text.charAt(i));
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+        
         const defaultImage = 'img/techstack.jpeg';
         let lastExpandedId = null;
         
@@ -37,21 +72,29 @@
                 lastExpandedId = this.id;
                 $faqImage.fadeOut(200, function() {
                     $(this).attr('src', newImage).fadeIn(200);
+                    // Show text for the current section
+                    if (sectionTexts[lastExpandedId]) {
+                        $aiText.fadeIn(200, function() {
+                            typeText($aiText, sectionTexts[lastExpandedId]);
+                        });
+                    }
                 });
             }
         });
         
         // Handle accordion hide events
         $('.accordion-collapse').on('hidden.bs.collapse', function() {
-            // Only change image if this was the last expanded section
             if (this.id === lastExpandedId) {
-                // Check if any other section is open
                 const openSections = $('.accordion-collapse.show');
                 
                 if (openSections.length === 0) {
                     $faqImage.fadeOut(200, function() {
                         $(this).attr('src', defaultImage).fadeIn(200);
                         lastExpandedId = null;
+                    });
+                    // Hide text for any section when collapsed
+                    $aiText.fadeOut(200, function() {
+                        $aiText.html(''); // Clear text when hidden
                     });
                 }
             }
