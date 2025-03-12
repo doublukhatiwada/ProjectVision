@@ -48,20 +48,6 @@
             'align-items': 'center'
         });
         
-        // Function to animate text typing
-        function typeText(element, text, speed = 20) {
-            let i = 0;
-            element.html(''); // Clear any existing text
-            function type() {
-                if (i < text.length) {
-                    element.html(element.html() + text.charAt(i));
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-        
         const defaultImage = 'img/techstack.jpeg';
         let lastExpandedId = null;
         
@@ -74,9 +60,7 @@
                     $(this).attr('src', newImage).fadeIn(200);
                     // Show text for the current section
                     if (sectionTexts[lastExpandedId]) {
-                        $aiText.fadeIn(200, function() {
-                            typeText($aiText, sectionTexts[lastExpandedId]);
-                        });
+                        $aiText.html(sectionTexts[lastExpandedId]).hide().fadeIn(800);
                     }
                 });
             }
@@ -93,8 +77,8 @@
                         lastExpandedId = null;
                     });
                     // Hide text for any section when collapsed
-                    $aiText.fadeOut(200, function() {
-                        $aiText.html(''); // Clear text when hidden
+                    $aiText.fadeOut(600, function() {
+                        $(this).html('');
                     });
                 }
             }
