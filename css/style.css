@@ -3675,3 +3675,19 @@ a:hover {
 .footer-item .company-section {
     margin-bottom: 1.5rem;
 }
+
+/* Add footer vertical line styles */
+.footer .vertical-line {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 1.5rem;
+    align-self: stretch;
+}
+
+.footer-divider {
+    margin: 0.5rem 0;
+}
+
+.contact-info {
+    margin-top: 0.5rem;
+}
