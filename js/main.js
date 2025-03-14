@@ -56,11 +56,15 @@
             const newImage = faqImages[this.id];
             if (newImage) {
                 lastExpandedId = this.id;
-                $faqImage.fadeOut(200, function() {
-                    $(this).attr('src', newImage).fadeIn(200);
+                $faqImage.fadeOut(800, function() {
+                    $(this).attr('src', newImage)
+                        .css('opacity', '0')
+                        .animate({opacity: 1}, 1500, 'swing');
                     // Show text for the current section
                     if (sectionTexts[lastExpandedId]) {
-                        $aiText.html(sectionTexts[lastExpandedId]).hide().fadeIn(800);
+                        $aiText.html(sectionTexts[lastExpandedId])
+                            .hide()
+                            .fadeIn(1800, 'swing');
                     }
                 });
             }
@@ -72,12 +76,14 @@
                 const openSections = $('.accordion-collapse.show');
                 
                 if (openSections.length === 0) {
-                    $faqImage.fadeOut(200, function() {
-                        $(this).attr('src', defaultImage).fadeIn(200);
+                    $faqImage.fadeOut(800, function() {
+                        $(this).attr('src', defaultImage)
+                            .css('opacity', '0')
+                            .animate({opacity: 1}, 1500, 'swing');
                         lastExpandedId = null;
                     });
                     // Hide text for any section when collapsed
-                    $aiText.fadeOut(600, function() {
+                    $aiText.fadeOut(1200, function() {
                         $(this).html('');
                     });
                 }
