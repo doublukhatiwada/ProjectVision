@@ -56,17 +56,37 @@
             const newImage = faqImages[this.id];
             if (newImage) {
                 lastExpandedId = this.id;
-                $faqImage.fadeOut(800, function() {
-                    $(this).attr('src', newImage)
-                        .css('opacity', '0')
-                        .animate({opacity: 1}, 1500, 'swing');
-                    // Show text for the current section
-                    if (sectionTexts[lastExpandedId]) {
-                        $aiText.html(sectionTexts[lastExpandedId])
-                            .hide()
-                            .fadeIn(1800, 'swing');
+                // Synchronize image and text transitions
+                let imageLoaded = false;
+                let textReady = false;
+                
+                // Function to handle fade-in when both are ready
+                const fadeInBoth = () => {
+                    if (imageLoaded && textReady) {
+                        $faqImage.fadeIn(400, 'swing');
+                        $aiText.fadeIn(400, 'swing');
                     }
+                };
+
+                $faqImage.stop().fadeOut(300, function() {
+                    $(this).attr('src', newImage)
+                        .hide()
+                        .on('load', function() {
+                            imageLoaded = true;
+                            fadeInBoth();
+                        });
                 });
+
+                // Show text for the current section
+                if (sectionTexts[lastExpandedId]) {
+                    $aiText.stop()
+                        .fadeOut(300, function() {
+                            $(this).html(sectionTexts[lastExpandedId])
+                                .hide();
+                            textReady = true;
+                            fadeInBoth();
+                        });
+                }
             }
         });
         
@@ -76,14 +96,16 @@
                 const openSections = $('.accordion-collapse.show');
                 
                 if (openSections.length === 0) {
-                    $faqImage.fadeOut(800, function() {
+                    // Synchronize hiding of image and text
+                    $faqImage.fadeOut(300, function() {
                         $(this).attr('src', defaultImage)
-                            .css('opacity', '0')
-                            .animate({opacity: 1}, 1500, 'swing');
+                            .hide()
+                            .fadeIn(400, 'swing');
                         lastExpandedId = null;
                     });
+
                     // Hide text for any section when collapsed
-                    $aiText.fadeOut(1200, function() {
+                    $aiText.fadeOut(300, function() {
                         $(this).html('');
                     });
                 }
