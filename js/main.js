@@ -686,11 +686,57 @@
     // GDPR Cookie Consent
     $(document).ready(function() {
         let gdprBanner = $('#gdpr-banner');
+        let scrollPosition = 0;
         
         // Remove any existing banner first
         $('.gdpr-banner').remove();
+        $('.gdpr-overlay').remove();
+        
+        // Wrap all content except GDPR elements in a div
+        if (!$('.page-content').length) {
+            $('body > *:not(script)').wrapAll('<div class="page-content"></div>');
+        }
+        
+        // Function to lock website
+        function lockWebsite() {
+            scrollPosition = window.pageYOffset;
+            $('html').addClass('gdpr-active');
+            $('body').addClass('gdpr-active');
+            $('body').css({
+                'top': `-${scrollPosition}px`,
+                'position': 'fixed',
+                'width': '100%'
+            });
+            
+            // Prevent touchmove on mobile
+            document.addEventListener('touchmove', function(e) {
+                if (!$(e.target).closest('.gdpr-banner').length) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
+
+        // Function to unlock website
+        function unlockWebsite() {
+            $('html').removeClass('gdpr-active');
+            $('body').removeClass('gdpr-active');
+            $('body').css({
+                'top': '',
+                'position': '',
+                'width': ''
+            });
+            window.scrollTo(0, scrollPosition);
+            
+            // Remove touchmove prevention
+            document.removeEventListener('touchmove', function(e) {
+                if (!$(e.target).closest('.gdpr-banner').length) {
+                    e.preventDefault();
+                }
+            }, { passive: false });
+        }
         
         // Always create a fresh banner
+        $('body').append('<div class="gdpr-overlay"></div>');
         $('body').append(`
             <div id="gdpr-banner" class="gdpr-banner">
                 <div class="gdpr-content">
@@ -705,6 +751,7 @@
             </div>
         `);
         gdprBanner = $('#gdpr-banner');
+        let gdprOverlay = $('.gdpr-overlay');
         
         // Check if user has already accepted cookies
         const hasAccepted = localStorage.getItem('cookieConsent');
@@ -713,6 +760,8 @@
         if (!hasAccepted) {
             setTimeout(() => {
                 gdprBanner.addClass('show');
+                gdprOverlay.addClass('show');
+                lockWebsite();
             }, 1000);
         }
         
@@ -720,12 +769,16 @@
         $('#gdpr-accept').on('click', function() {
             localStorage.setItem('cookieConsent', 'accepted');
             gdprBanner.removeClass('show');
+            gdprOverlay.removeClass('show');
+            unlockWebsite();
         });
 
         // Handle Reject
         $('#gdpr-reject').on('click', function() {
             localStorage.setItem('cookieConsent', 'rejected');
             gdprBanner.removeClass('show');
+            gdprOverlay.removeClass('show');
+            unlockWebsite();
         });
     });
 
