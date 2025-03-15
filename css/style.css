@@ -3763,6 +3763,21 @@ a:hover {
     margin-top: 0.25rem !important;
 }
 
+/* Add footer vertical line styles */
+.footer .vertical-line {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 1.5rem;
+    align-self: stretch;
+}
+
+/* Hide vertical line in footer for mobile devices */
+@media (max-width: 768px) {
+    .footer .vertical-line {
+        display: none;
+    }
+}
+
 /* Prevent body scrolling when GDPR banner is shown */
 body.gdpr-active {
     position: fixed;
@@ -3845,4 +3860,296 @@ body.gdpr-active .gdpr-overlay {
 body.gdpr-active .gdpr-banner button {
     pointer-events: auto !important;
     cursor: pointer !important;
+}
+
+/* Add footer vertical line styles */
+.footer .vertical-line {
+    width: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 1.5rem;
+    align-self: stretch;
+}
+
+/* Hide vertical line in footer for mobile devices */
+@media (max-width: 768px) {
+    .footer .vertical-line {
+        display: none;
+    }
+    /* Make slogan single line on mobile */
+    .footer .slogan {
+        display: flex;
+        gap: 5px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer .slogan div {
+        text-align: left !important;
+        display: inline !important;
+    }
+}
+
+/* Prevent body scrolling when GDPR banner is shown */
+body.gdpr-active {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden !important;
+    padding-right: 15px; /* Prevent layout shift */
+}
+
++body.gdpr-active .navbar-light {
+    padding-right: 15px; /* Match body padding to prevent shift */
+}
+
+/* Lock all content except GDPR */
+body.gdpr-active .container,
+body.gdpr-active .container-fluid {
+    pointer-events: none;
+}
+
+/* Allow interaction with GDPR elements */
+body.gdpr-active .gdpr-banner,
+body.gdpr-active .gdpr-banner * {
+    pointer-events: auto !important;
+}
+
+/* Ensure GDPR banner buttons remain clickable */
+.gdpr-banner .gdpr-buttons {
+    position: relative;
+    z-index: 100000;
+}
+
++.gdpr-banner button:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Prevent any interactions while banner is shown */
+body.gdpr-active {
+    pointer-events: none;
+}
+
+/* Allow interactions only with GDPR banner */
++.gdpr-banner {
+    pointer-events: auto;
+}
+
+/* Force body to be unscrollable when locked */
+body[style*="position: fixed"] {
+    -webkit-overflow-scrolling: none;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+    touch-action: none;
+}
+
+/* Disable page interaction when GDPR banner is shown */
+html.gdpr-active {
+    overflow: hidden !important;
+    height: 100vh !important;
+    touch-action: none !important;
+    -ms-touch-action: none !important;
+}
+
++body.gdpr-active {
+    position: fixed !important;
+    width: 100% !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    touch-action: none !important;
+    -ms-touch-action: none !important;
+}
+
+/* Only allow interaction with GDPR elements */
+body.gdpr-active .gdpr-banner,
+body.gdpr-active .gdpr-overlay {
+    pointer-events: auto !important;
+}
+
+/* Ensure buttons are clickable */
+body.gdpr-active .gdpr-banner button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    /* Existing mobile styles */
+    .footer .vertical-line {
+        display: none;
+    }
+    
+    .footer .slogan {
+        display: flex;
+        gap: 5px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .footer .slogan div {
+        text-align: left !important;
+        display: inline !important;
+    }
+
+    /* Adjust container padding */
+    .container-fluid {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Adjust section padding */
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Adjust row spacing */
+    .row.g-5 {
+        --bs-gutter-y: 1rem !important;
+    }
+
+    /* Adjust footer spacing */
+    .footer {
+        padding: 2rem 0 !important;
+    }
+
+    /* Adjust content margins */
+    .mb-4 {
+        margin-bottom: 1rem !important;
+    }
+
+    .mb-5 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Adjust hero section */
+    .hero-header {
+        padding: 2rem 0 !important;
+    }
+
+    /* Adjust navbar padding */
+    .navbar {
+        padding: 0.5rem 1rem !important;
+    }
+
+    /* Make content sections more compact */
+    .section-padding {
+        padding: 2rem 0 !important;
+    }
+
+    /* Make containers full width on mobile */
+    .container,
+    .container-fluid {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Add padding to inner content instead */
+    .container > *:not(.row),
+    .container-fluid > *:not(.row) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Remove row margins */
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Make columns full width */
+    [class*="col-"] {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Make footer sections edge to edge */
+    .footer {
+        margin: 0 !important;
+        width: 100vw !important;
+    }
+
+    /* Ensure hero header is full width */
+    .hero-header {
+        width: 100vw !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Adjust navbar and hero positioning */
+    .navbar-light {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+
+    /* Adjust first section to start after navbar */
+    .hero-header,
+    .page-header {
+        padding-top: 76px !important; /* Height of navbar */
+        margin-top: 0 !important;
+    }
+
+    /* Remove any existing margins/padding that might affect positioning */
+    .container-fluid.header {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+
+    /* Ensure proper stacking */
+    .header {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Specific adjustments for about page */
+    .about-page .hero-header {
+        margin-top: 65px !important; /* Reduced from 150px to 65px */
+        padding-top: 0 !important;
+        min-height: calc(100vh - 150px) !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Adjust about page content for mobile */
+    @media (max-width: 768px) {
+        .about-page .hero-header .container {
+            flex: 1 !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .about-page .hero-header .row {
+            flex: 1 !important;
+            margin: 0 !important;
+        }
+
+        .about-page .hero-header .col-lg-6 {
+            padding: 15px !important;
+        }
+
+        /* Ensure images don't overflow */
+        .about-page .hero-header img {
+            max-width: 100% !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+    }
+
+    .about-page .navbar-light {
+        position: fixed !important;
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        height: 60px;
+    }
+
+    /* Remove extra spacing in about page header */
+    .about-page .container-fluid.header {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 }
