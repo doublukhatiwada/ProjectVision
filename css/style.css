@@ -1904,12 +1904,16 @@ html {
 
 @media (max-width: 768px) {
     .about-section .chatbot-container {
-        min-height: 450px;
+        min-height: auto !important;
+        padding: 15px !important;
     }
     
     .about-section .chatbot-image {
-        width: 100%;
-        border-radius: 1.5rem;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: cover !important;
+        border-radius: 15px !important;
     }
 }
 
@@ -4109,7 +4113,7 @@ body.gdpr-active .gdpr-banner button {
 
     /* Specific adjustments for about page */
     .about-page .hero-header {
-        margin-top: 65px !important; /* Reduced from 150px to 65px */
+        margin-top: 0 !important; /* Removed margin completely */
         padding-top: 0 !important;
         min-height: calc(100vh - 150px) !important;
         display: flex !important;
@@ -4151,5 +4155,83 @@ body.gdpr-active .gdpr-banner button {
     .about-page .container-fluid.header {
         padding: 0 !important;
         margin: 0 !important;
+    }
+
+    /* Cloud and Security page specific styles */
+    @media (max-width: 768px) {
+        .hero-header .cloud-security-img {
+            width: 85% !important;
+            height: auto !important;
+            padding: 15px !important;
+            object-fit: contain !important;
+            display: block !important;
+            margin: 0 auto !important;
+            max-height: 300px !important; /* Limit maximum height */
+        }
+
+        /* Adjust hero header container for cloud security page */
+        .hero-header .row .col-lg-12 {
+            padding: 0 !important;
+        }
+
+        /* Adjust container spacing */
+        .hero-header .wow.fadeInUp {
+            margin: 0 !important;
+            padding: 0 !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    /* Existing cloud security styles... */
+
+    /* Adjust chatbot container for cloud security page */
+    .about-section .chatbot-container {
+        min-height: auto !important;
+        padding: 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    .about-section .chatbot-image {
+        width: 85% !important;
+        height: auto !important;
+        max-height: 300px !important;
+        object-fit: contain !important;
+        border-radius: 15px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust chatbot container for cloud security page */
+    .about-section .chatbot-container {
+        padding: 15px 0 !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+
+    .about-section .chatbot-image {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        border-radius: 15px !important;
+        margin: 0 !important;
+        display: block !important;
+        box-shadow: 0 0 45px rgba(254, 59, 21, 0.15) !important;
+    }
+
+    /* Adjust column spacing */
+    .about-section .col-lg-6 {
+        padding: 0 !important;
+        margin-bottom: 2rem !important;
     }
 }
