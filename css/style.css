@@ -4235,3 +4235,192 @@ body.gdpr-active .gdpr-banner button {
         margin-bottom: 2rem !important;
     }
 }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    /* Prevent horizontal scrolling */
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Make containers fit screen width */
+    .container-fluid,
+    .container {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Adjust hero header padding */
+    .hero-header {
+        padding: 2rem 15px !important;
+    }
+
+    /* Make images responsive */
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Adjust row margins */
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    /* Adjust column padding */
+    [class*="col-"] {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+/* Adjust spacing between navbar and first div only on mobile */
+@media (max-width: 992px) {
+    .hero-header {
+        padding-top: 140px !important;  /* Increased from 120px to 140px */
+        margin-top: 0 !important;
+    }
+
+    .container-fluid.header {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+/* Mobile navbar styles for about page - matching index.html exactly */
+@media (max-width: 992px) {
+    .about-page .navbar-light,
+    .about-page .navbar.navbar-expand-lg {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        padding: 15px 0;
+        position: fixed !important;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1050 !important;
+    }
+
+    .about-page .navbar-collapse {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        padding: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        margin-top: 15px;
+    }
+
+    .about-page .navbar-light .navbar-nav .nav-link,
+    .about-page .sticky-top.navbar-light .navbar-nav .nav-link {
+        padding: 10px 0;
+        margin-left: 0;
+        color: var(--bs-white) !important;
+    }
+
+    .about-page .navbar-light .navbar-brand h1 {
+        color: var(--bs-white) !important;
+    }
+
+    .about-page .navbar-toggler {
+        padding: 10px 20px;
+        border: 1px solid #FE3B15;
+        color: #FE3B15;
+    }
+
+    .about-page .navbar-toggler .fa-bars {
+        color: #FE3B15 !important;
+    }
+
+    .about-page .navbar-light .dropdown-menu {
+        background: #ffffff !important;
+        border: none;
+        padding-left: 20px;
+    }
+
+    .about-page .navbar-light .dropdown-menu .dropdown-item {
+        color: var(--bs-dark) !important;
+    }
+
+    .about-page .navbar-light .dropdown-menu .dropdown-item:hover {
+        background: rgba(254, 59, 21, 0.1) !important;
+        color: var(--bs-primary) !important;
+    }
+
+    /* Container padding adjustments */
+    .about-page .container-fluid {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .about-page .navbar {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Hero header spacing */
+    .about-page .hero-header {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Keep dark nav when scrolling */
+    .about-page .navbar-light.scrolled,
+    .about-page .navbar-light {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+    }
+
+    /* Active link color */
+    .about-page .navbar-light .navbar-nav .nav-link.active {
+        color: #FE3B15 !important;
+    }
+}
+
+/* Mobile navbar styles for contact page */
+@media (max-width: 992px) {
+    .contact-page .navbar-light,
+    .contact-page .navbar.navbar-expand-lg {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+        padding: 15px 0;
+        position: fixed !important;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1050 !important;
+    }
+
+    /* Container padding adjustments */
+    .contact-page .container-fluid {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+
+    .contact-page .navbar {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Hero header spacing - reduced by half */
+    .contact-page .hero-header {
+        padding-top: 50px !important;  /* Reduced gap */
+        margin-top: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* Adjust spacing between navbar and first div only on mobile for genAI page */
+@media (max-width: 992px) {
+    .genai-page .hero-header {
+        padding-top: 155px !important;  /* Increased from 140px to 155px */
+        margin-top: 0 !important;
+    }
+
+    .genai-page .container-fluid.header {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
