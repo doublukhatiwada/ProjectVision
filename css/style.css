@@ -4418,10 +4418,10 @@ body.gdpr-active .gdpr-banner button {
 @media (max-width: 768px) {
     /* About page hero header adjustments */
     .about-page .hero-header {
-        margin-top: -40px !important;
+        margin-top: -340px !important;
         padding-top: 120px !important;
         padding-bottom: -80px !important;
-        margin-bottom: -80px !important;
+        margin-bottom: -320px !important;
         z-index: 1 !important;
     }
 
@@ -4467,8 +4467,8 @@ body.gdpr-active .gdpr-banner button {
 @media (max-width: 768px) {
     /* Technology Consulting page specific styles */
     .tech-page .hero-header {
-        padding: 80px 20px 40px !important;
-        margin-top: 20px !important;
+        padding: 40px 20px 40px !important;
+        margin-top: 60px !important;
     }
 
     .tech-page .hero-header .display-4 {
@@ -4701,5 +4701,105 @@ body.gdpr-active .gdpr-banner button {
         padding: 0 !important;
         margin: 0 !important;
         width: 100% !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Super aggressive stationary navbar styles */
+    .navbar-light .company-name,
+    .navbar-light .navbar-brand .company-name,
+    .navbar.navbar-light .company-name,
+    .navbar.navbar-light .navbar-brand .company-name,
+    .container-fluid .navbar-light .company-name,
+    .container-fluid .navbar-light .navbar-brand .company-name {
+        color: #FE3B15 !important;  /* TNV in orange */
+    }
+    
+    .navbar-light .company-name .lab-text,
+    .navbar-light .navbar-brand .company-name .lab-text,
+    .navbar.navbar-light .company-name .lab-text,
+    .navbar.navbar-light .navbar-brand .company-name .lab-text,
+    .container-fluid .navbar-light .company-name .lab-text,
+    .container-fluid .navbar-light .navbar-brand .company-name .lab-text,
+    .navbar-light:not(.sticky-top) .company-name .lab-text,
+    html body .navbar-light .company-name .lab-text {
+        color: #ffffff !important;  /* Lab in white */
+        opacity: 1 !important;
+    }
+
+    /* Scrolling navbar styles */
+    .navbar.sticky-top .navbar-brand .company-name {
+        color: #ffffff !important;  /* TNV in white */
+    }
+    
+    .navbar.sticky-top .navbar-brand .company-name .lab-text {
+        color: #FE3B15 !important;  /* Lab in orange */
+        opacity: 1 !important;
+    }
+
+    /* Ensure consistent navbar background */
+    .navbar-light {
+        background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Remove wow fadeInUp class effects on mobile */
+    .col-lg-6.wow.fadeInUp {
+        opacity: 1 !important;
+        animation: none !important;
+        visibility: visible !important;
+    }
+
+    /* Hide FAQ image when accordion is collapsed on mobile */
+    .tech-stack .accordion-collapse.collapse:not(.show) ~ .col-lg-6 {
+        display: none !important;
+    }
+
+    /* Show FAQ image when accordion is expanded */
+    .tech-stack .accordion-collapse.collapse.show ~ .col-lg-6 {
+        display: block !important;
+    }
+
+    /* Adjust spacing for FAQ section */
+    .tech-stack .accordion {
+        margin-bottom: 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide about image in mobile view */
+    .about-img {
+        display: none !important;
+    }
+
+    /* FAQ image handling for mobile */
+    .FAQ-img {
+        display: none;
+    }
+
+    .FAQ-img.show {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide about section image in mobile view */
+    .about-section .RotateMoveLeft img {
+        display: none !important;
+    }
+
+    /* Hide about section column in mobile */
+    .about-section .col-lg-6:first-child {
+        display: none !important;
+    }
+
+    /* FAQ image handling for mobile */
+    .FAQ-img {
+        display: none;
+    }
+
+    .FAQ-img.show {
+        display: block;
     }
 }

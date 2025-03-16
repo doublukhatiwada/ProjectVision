@@ -113,6 +113,47 @@
         });
     });
 
+    // FAQ Image handling for mobile and desktop
+    $(document).ready(function() {
+        const isMobile = window.innerWidth <= 768;
+        const faqImage = $('.FAQ-img');
+        
+        if (isMobile) {
+            // Initially hide the image on mobile
+            faqImage.hide();
+            
+            // Handle accordion state changes on mobile
+            $('.accordion-collapse').on('show.bs.collapse', function() {
+                faqImage.addClass('show').fadeIn();
+            });
+            
+            // Check if any accordion is open on mobile
+            $('.accordion-collapse').on('hidden.bs.collapse', function() {
+                if ($('.accordion-collapse.show').length === 0) {
+                    faqImage.removeClass('show').fadeOut();
+                }
+            });
+        } else {
+            // Always show image on desktop
+            faqImage.show();
+        }
+
+        // Handle window resize
+        $(window).on('resize', function() {
+            const isNowMobile = window.innerWidth <= 768;
+            
+            if (isNowMobile) {
+                // Switched to mobile view
+                if ($('.accordion-collapse.show').length === 0) {
+                    faqImage.hide();
+                }
+            } else {
+                // Switched to desktop view
+                faqImage.show();
+            }
+        });
+    });
+
     // Sticky Navbar
     $(window).on('scroll', function() {
         if ($(window).scrollTop() > 50) { // Adjust this value to control when the transition starts
