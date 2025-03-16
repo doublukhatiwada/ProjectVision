@@ -94,6 +94,189 @@
                 margin: 0 1.5rem;
                 align-self: stretch;
             }
+
+            @media (max-width: 768px) {
+                /* Prevent horizontal scroll */
+                html, body {
+                    max-width: 100%;
+                    overflow-x: hidden;
+                }
+                
+                /* Container adjustments */
+                .container-fluid,
+                .container {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+                
+                /* Row adjustments */
+                .row {
+                    margin-left: -15px !important;
+                    margin-right: -15px !important;
+                    width: 100% !important;
+                }
+                
+                /* Column adjustments */
+                [class*="col-"] {
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
+                
+                /* Image adjustments */
+                .img-fluid {
+                    max-width: 100% !important;
+                    height: auto !important;
+                }
+                
+                /* Hero header adjustments */
+                .hero-header {
+                    padding: 2rem 15px !important;
+                    width: 100% !important;
+                    margin-top: 15px !important;
+                }
+                
+                /* Service items adjustment */
+                .service-item {
+                    margin: 0 !important;
+                    width: 100% !important;
+                }
+                
+                /* Tech stack section adjustment */
+                .tech-stack .accordion {
+                    width: 100% !important;
+                }
+                
+                /* Footer adjustments */
+                .footer .container {
+                    padding: 0 15px !important;
+                }
+                
+                .footer-item {
+                    width: 100% !important;
+                }
+                
+                /* Navbar adjustments */
+                .navbar {
+                    width: 100% !important;
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                }
+                
+                /* Fix any absolute positioned elements */
+                .fixed-top,
+                .sticky-top {
+                    width: 100% !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                }
+                
+                /* Adjust any rotated images or elements */
+                .rotate-img,
+                .RotateMoveLeft,
+                .RotateMoveRight {
+                    max-width: 100% !important;
+                    overflow: hidden !important;
+                }
+                
+                /* Cookie banner adjustment */
+                .cookie-banner {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    bottom: 0 !important;
+                    margin: 0 !important;
+                }
+                
+                .cookie-content {
+                    flex-direction: column !important;
+                    padding: 15px !important;
+                }
+                
+                /* Adjust any fixed width elements */
+                .dropdown-menu,
+                .accordion-button,
+                .accordion-body {
+                    max-width: 100% !important;
+                    width: 100% !important;
+                }
+
+                /* Update existing navbar button styles */
+                .navbar .btn-primary {
+                    padding: 8px 16px !important;
+                    font-size: 0.75rem !important;
+                    margin-top: 10px !important;
+                    white-space: nowrap !important;
+                }
+
+                /* Hide build icon in contact button */
+                .navbar .build-icon {
+                    display: none !important;
+                }
+
+                /* Hide service images on mobile */
+                .service-item img,
+                .service-item .service-img {
+                    display: none !important;
+                }
+
+                /* Adjust service item padding without image */
+                .service-item {
+                    padding: 15px !important;
+                }
+
+                /* Make navbar more compact */
+                .navbar-collapse {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                    padding: 10px !important;
+                    border-radius: 10px;
+                    margin-top: 10px;
+                }
+
+                .hero-header {
+                    margin-top: 60px !important;
+                    padding: 1rem !important;
+                }
+
+                .footer {
+                    padding: 2rem 0 !important;
+                }
+
+                .footer .container {
+                    padding: 0 15px !important;
+                }
+
+                .footer-item {
+                    padding-left: 0 !important;
+                    align-items: flex-start !important;
+                }
+
+                .footer .row > div {
+                    padding-left: 15px !important;
+                }
+
+                .footer .vertical-line {
+                    display: none !important;
+                }
+
+                .contact-info, .contact-links {
+                    text-align: left !important;
+                }
+
+                /* Hide service icons on mobile */
+                .service-icon {
+                    display: none !important;
+                }
+
+                /* Adjust service content padding without icon */
+                .service-content {
+                    padding-top: 15px !important;
+                }
+            }
         </style>
     </head>
 
@@ -114,53 +297,52 @@
                 <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
                     <a href="" class="navbar-brand p-0">
                         <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                                <a href="" class="nav-item nav-link active">Home</a>
-                                <a href="company/about" class="nav-item nav-link">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                        <a href="services/genAI" class="dropdown-item">GenAI solutions</a>
-                                        <a href="services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
-                                        <a href="services/productDevelopment" class="dropdown-item">Product Development</a>
-                                        <a href="services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                                    </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="" class="nav-item nav-link active">Home</a>
+                            <a href="company/about" class="nav-item nav-link">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="services/genAI" class="dropdown-item">GenAI solutions</a>
+                                    <a href="services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="services/productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
                                 </div>
-                                <a href="career/jobs" class="nav-item nav-link">Join Us</a>
                             </div>
-                            <a href="company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                                <img src="icon/build.png" alt="build" class="build-icon me-2">
-                                Build With Us
-                            </a>
+                            <a href="career/jobs" class="nav-item nav-link">Join Us</a>
                         </div>
+                        <a href="company/contact" class="btn btn-primary rounded-pill py-1 px-2">
+                            <img src="icon/build.png" alt="build" class="build-icon me-1">
+                            <small>Contact Us</small>
+                        </a>
                     </div>
                 </nav>
-                </div>
+            </div>
+        </div>
 
-
-            <!-- Hero Header Start -->
-            <div class="hero-header overflow-hidden px-5">
-                <div class="rotate-img">
-                    <img src="img/sty-1.png" class="img-fluid w-100" alt="">
-                    <div class="rotate-sty-2"></div>
+        <!-- Hero Header Start -->
+        <div class="hero-header overflow-hidden px-5" style="margin-top: 80px;">
+            <div class="rotate-img">
+                <img src="img/sty-1.png" class="img-fluid w-100" alt="">
+                <div class="rotate-sty-2"></div>
+            </div>
+            <div class="row gy-5 align-items-center">
+                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                    <h1 class="display-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">Embark on Future of <span class="text-primary">Digital Transformation</span></h1>
+                    <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">With our extensive experience, we will make your digital transition smoother by seamlessly integrating advanced technologies and providing strategic guidance at every step.</p>
+                    <a href="services/productDevelopment" class="btn btn-primary rounded-pill py-3 px-5">Get Started</a>
                 </div>
-                <div class="row gy-5 align-items-center">
-                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <h1 class="display-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">Embark on Future of <span class="text-primary">Digital Transformation</span></h1>
-                        <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">With our extensive experience, we will make your digital transition smoother by seamlessly integrating advanced technologies and providing strategic guidance at every step.</p>
-                        <a href="services/productDevelopment" class="btn btn-primary rounded-pill py-3 px-5 fadeInUp" data-wow-delay="0.7s">Get Started</a>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <img src="img/software-product-evolution.png" class="img-fluid w-100 h-100" alt="">
-                    </div>
+                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                    <img src="img/software-product-evolution.png" class="img-fluid w-100 h-100" alt="">
                 </div>
             </div>
-            <!-- Hero Header End -->
+        </div>
+        <!-- Hero Header End -->
         </div>
         <!-- Navbar & Hero End -->
 
