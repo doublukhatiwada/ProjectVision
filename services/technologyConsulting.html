@@ -102,6 +102,10 @@
                     margin-top: 15px;
                 }
                 
+                .navbar.navbar-expand-lg {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                }
+                
                 .navbar-toggler {
                     border-color: rgba(255, 255, 255, 0.5) !important;
                 }
@@ -114,6 +118,19 @@
                 
                 .dropdown-item {
                     color: white !important;
+                }
+                
+                .dropdown-item:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                }
+
+                /* Add these new rules */
+                .nav-item .nav-link {
+                    color: white !important;
+                }
+                
+                .nav-item .nav-link:hover {
+                    color: var(--bs-primary) !important;
                 }
             }
 
@@ -129,6 +146,31 @@
             }
 
             @media (max-width: 768px) {
+                /* Hide only digital transformation and change management image containers */
+                .col-lg-6.wow.fadeInUp .chatbot-container img[src="../img/digital-transformation.jpg"],
+                .col-lg-6.wow.fadeInUp .chatbot-container img[src="../img/change.jpg"] {
+                    display: none !important;
+                }
+
+                /* Hide their parent columns */
+                .col-lg-6.wow.fadeInUp:has(img[src="../img/digital-transformation.jpg"]),
+                .col-lg-6.wow.fadeInUp:has(img[src="../img/change.jpg"]) {
+                    display: none !important;
+                    height: 0 !important;
+                    width: 0 !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+                /* Adjust content spacing after hiding images */
+                .digital-transformation .col-lg-6,
+                .change-management .col-lg-6 {
+                    width: 100% !important;
+                    flex: 0 0 100% !important;
+                    max-width: 100% !important;
+                    padding: 0 15px !important;
+                }
+
                 /* Navbar and header separation */
                 .navbar-light {
                     position: fixed !important;

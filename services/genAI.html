@@ -162,6 +162,26 @@
             }
 
             @media (max-width: 768px) {
+                /* Container setup */
+                .row:has(.chatbot-container) {
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+
+                /* Put text section first */
+                .col-lg-6.wow.fadeInUp[data-wow-delay="0.3s"] {
+                    order: 1 !important;
+                    width: 100% !important;
+                    margin-bottom: 20px !important;
+                }
+
+                /* Put image section second */
+                .col-lg-6.wow.fadeInUp[data-wow-delay="0.1s"]:has(.chatbot-container) {
+                    order: 2 !important;
+                    width: 100% !important;
+                    margin-top: 20px !important;
+                }
+
                 /* Show chatbot image and its container in mobile view */
                 .chatbot-container {
                     display: block !important;
