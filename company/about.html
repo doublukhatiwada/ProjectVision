@@ -68,7 +68,7 @@
                 .service {
                     position: relative !important;
                     z-index: 2 !important;
-                    margin-top: 250px !important;
+                    margin-top: 350px !important;
                     padding-top: 0 !important;
                     margin-bottom: 0 !important;
                     padding-bottom: 0 !important;
@@ -90,6 +90,66 @@
                 /* Remove any spacer elements */
                 div[style="height: 2rem;"] {
                     display: none !important;
+                }
+
+                /* Keep existing styles but ensure sections stay behind navbar */
+                .service {
+                    z-index: 5 !important;
+                }
+
+                .container-fluid.service.py-5 {
+                    z-index: 6 !important;
+                }
+
+                /* Super high z-index for navbar */
+                .navbar-light.sticky-top,
+                .navbar.sticky-top,
+                .navbar-light,
+                .fixed-top {
+                    position: fixed !important;
+                    z-index: 9999 !important;  /* Extremely high z-index */
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                    width: 100% !important;
+                    top: 0 !important;
+                }
+
+                /* Ensure dropdown stays below navbar but above content */
+                .navbar-collapse {
+                    z-index: 9998 !important;
+                }
+
+                /* Force sections to stay behind with very low z-index */
+                .service {
+                    z-index: -1 !important;
+                    position: relative !important;
+                }
+
+                .container-fluid.service.py-5 {
+                    z-index: -1 !important;
+                    position: relative !important;
+                    margin-top: 60px !important;  /* Increased overlap */
+                }
+
+                /* Extreme z-index for navbar and all its states */
+                .navbar-light.sticky-top,
+                .navbar.sticky-top,
+                .navbar-light,
+                .fixed-top,
+                header nav,
+                .container-fluid.fixed-top {
+                    position: fixed !important;
+                    z-index: 99999 !important;
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                    width: 100% !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                }
+
+                /* Dropdown menu positioning */
+                .navbar-collapse {
+                    z-index: 99998 !important;
+                    position: relative !important;
                 }
             }
         </style>
@@ -262,7 +322,7 @@
         <!-- Service Start -->
         <div class="container-fluid service py-5" style="background-color: #f8f9fa;">
             <div class="container py-3">
-                <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;" >
                     <h4 class="mb-1" style="color: #FE3B15">Who We Are</h4>
                     <h1 class="display-5 mb-4">Forward-thinking <span class="text-primary">Tech Startup</span></h1>
                     <p class="mb-4">We're a forward-thinking startup on a mission to redefine digital experiences and elevate brands in the digital age. Specializing in next-gen design and groundbreaking technology, we transform brands with innovative, high-impact solutions that not only look stunning but also create deeper, more meaningful connections with users.</p>
