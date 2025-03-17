@@ -30,118 +30,6 @@
         <!-- Template Stylesheet -->
         <link href="../css/style.css" rel="stylesheet">
 
-        <style>
-            .btn-square.bg-orange {
-                background-color: #FE3B15 !important;
-            }
-
-            /* Adjust spacing for mobile devices */
-            @media (max-width: 992px) {
-                .hero-header {
-                    margin-top: 60px !important;
-                }
-                
-                .navbar-light {
-                    position: fixed !important;
-                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    height: 60px;
-                }
-            }
-
-            @media (max-width: 768px) {
-                /* Super aggressive hero header containment */
-                .hero-header {
-                    margin-top: 60px !important;
-                    padding-top: 60px !important;
-                    padding-bottom: 100px !important;
-                    position: relative !important;
-                    z-index: 1 !important;
-                    margin-bottom: 500px !important;
-                    min-height: 100vh !important;
-                    display: block !important;
-                    overflow: visible !important;
-                    transform: translateZ(0) !important;
-                    isolation: isolate !important;
-                }
-
-                /* Force service section below hero but tight with Why Choose Us */
-                .service {
-                    position: relative !important;
-                    z-index: 2 !important;
-                    margin-top: 600px !important;
-                    padding-top: 0 !important;
-                    margin-bottom: 0 !important;
-                    padding-bottom: 0 !important;
-                    background-color: #fff !important;
-                    clear: both !important;
-                    display: block !important;
-                    
-                }
-
-                /* Keep Why Choose Us tight with service */
-                .container-fluid.service.py-5 {
-                    padding-top: 0 !important;
-                    padding-bottom: 0 !important;
-                }
-
-                .container.py-3 {
-                    padding-top: 0 !important;
-                }
-
-                /* Remove any spacer elements */
-                div[style="height: 2rem;"] {
-                    display: none !important;
-                }
-
-                /* Keep existing styles but ensure sections stay behind navbar */
-                .service {
-                    z-index: -1 !important;
-                    position: relative !important;
-                }
-
-                .container-fluid.service.py-5 {
-                    z-index: -1 !important;
-                    position: relative !important;
-                    margin-top: 50px !important;
-                }
-
-                /* Super high z-index for navbar */
-                .navbar,
-                .navbar-light,
-                .navbar-light.sticky-top,
-                .navbar.sticky-top,
-                .fixed-top,
-                header nav,
-                .container-fluid.fixed-top,
-                .sticky-top {
-                    position: fixed !important;
-                    z-index: 999999 !important;
-                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    width: 100% !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    right: 0 !important;
-                }
-
-                /* Fix dropdown positioning */
-                .navbar-collapse {
-                    position: absolute !important;
-                    top: 100% !important;  /* Position right below navbar */
-                    left: 0 !important;
-                    right: 0 !important;
-                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    z-index: 999998 !important;
-                    padding: 10px 0 !important;
-                }
-
-                /* Ensure proper dropdown animation */
-                .navbar-collapse.collapsing,
-                .navbar-collapse.show {
-                    transition: all 0.3s ease !important;
-                }
-            }
-        </style>
-
         <!-- Favicon -->
         <link rel="icon" type="image/png" href="../icon/TNV.png">
         <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
@@ -213,43 +101,144 @@
                             color: #FE3B15 !important;
                         }
 
-                        @media (max-width: 992px) {
-                            .navbar-collapse {
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                                padding: 20px;
-                                border-radius: 10px;
-                                margin-top: 15px;
-                            }
-                            
-                            .navbar.navbar-expand-lg {
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            }
-                            
-                            .navbar-toggler {
-                                border-color: rgba(255, 255, 255, 0.5) !important;
-                            }
-                            
-                            .dropdown-menu {
-                                background: transparent !important;
-                                border: none;
-                                padding-left: 20px;
-                            }
-                            
-                            .dropdown-item {
-                                color: white !important;
-                            }
-                            
-                            .dropdown-item:hover {
-                                background: rgba(255, 255, 255, 0.1) !important;
+                        @media (max-width: 768px) {
+                            /* Create new stacking context for body */
+                            body {
+                                isolation: isolate !important;
+                                position: relative !important;
                             }
 
-                            /* Add these new rules */
-                            .nav-item .nav-link {
-                                color: white !important;
+                            /* Navbar with blend mode isolation */
+                            .navbar,
+                            .navbar-light,
+                            .fixed-top,
+                            .navbar.sticky-top,
+                            .navbar-light.sticky-top {
+                                position: fixed !important;
+                                z-index: 99999999 !important;
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                                width: 100% !important;
+                                top: 0 !important;
+                                height: 60px !important;
+                                isolation: isolate !important;
+                                mix-blend-mode: normal !important;
+                                pointer-events: auto !important;
                             }
-                            
-                            .nav-item .nav-link:hover {
-                                color: var(--bs-primary) !important;
+
+                            /* Dropdown menu */
+                            .navbar-collapse {
+                                position: fixed !important;
+                                top: 60px !important;
+                                left: 0 !important;
+                                right: 0 !important;
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                                z-index: 99999998 !important;
+                                mix-blend-mode: normal !important;
+                                pointer-events: auto !important;
+                            }
+
+                            /* Main content wrapper */
+                            .about-page {
+                                position: relative !important;
+                                isolation: isolate !important;
+                                mix-blend-mode: normal !important;
+                            }
+
+                            /* Hero Header */
+                            .hero-header {
+                                margin-top: 60px !important;
+                                padding: 30px 0 !important;
+                                position: relative !important;
+                                z-index: 1 !important;
+                                height: calc(100vh - 60px) !important;
+                                min-height: auto !important;
+                                display: flex !important;
+                                align-items: center !important;
+                                overflow: hidden !important;
+                                width: 100% !important;
+                            }
+
+                            /* Hero Header Content */
+                            .hero-header .row {
+                                width: 100% !important;
+                                margin: 0 !important;
+                                padding: 0 15px !important;
+                            }
+
+                            .hero-header img {
+                                max-width: 70% !important;
+                                height: auto !important;
+                                margin: 20px auto !important;
+                            }
+
+                            /* Service Section */
+                            .service {
+                                position: relative !important;
+                                z-index: 0 !important;
+                                margin-top: 0 !important;
+                                padding: 40px 0 !important;
+                                background: #fff !important;
+                                min-height: 100vh !important;
+                                display: flex !important;
+                                align-items: center !important;
+                                width: 100% !important;
+                            }
+
+                            /* Why Choose Us Section */
+                            .container-fluid.service.py-5 {
+                                position: relative !important;
+                                z-index: 0 !important;
+                                margin-top: 0 !important;
+                                padding: 40px 0 !important;
+                                min-height: 100vh !important;
+                                display: flex !important;
+                                align-items: center !important;
+                                width: 100% !important;
+                            }
+
+                            /* Container adjustments */
+                            .container-fluid.header {
+                                height: auto !important;
+                                overflow: hidden !important;
+                                padding: 0 !important;
+                                width: 100% !important;
+                            }
+
+                            /* Content containers */
+                            .container,
+                            .container-fluid {
+                                padding: 0 15px !important;
+                                width: 100% !important;
+                                max-width: 100% !important;
+                                overflow: hidden !important;
+                            }
+
+                            /* Remove any unwanted spacing */
+                            div[style*="height"] {
+                                display: none !important;
+                            }
+
+                            /* Ensure all rows don't cause horizontal scroll */
+                            .row {
+                                margin-left: 0 !important;
+                                margin-right: 0 !important;
+                                width: 100% !important;
+                            }
+
+                            /* Add Vision section padding */
+                            .container-fluid.py-5[style*="background: linear-gradient(145deg, #1a1a1a, #2d2d2d)"] {
+                                padding-top: 80px !important;
+                                padding-bottom: 80px !important;
+                                position: relative !important;
+                                z-index: 0 !important;
+                            }
+
+                            /* Quote Banner padding */
+                            .container-fluid.py-5.bg-white {
+                                padding-top: 80px !important;
+                                padding-bottom: 80px !important;
+                                position: relative !important;
+                                z-index: 0 !important;
                             }
                         }
                     </style>
@@ -328,7 +317,7 @@
                 <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
                     <h4 class="mb-1" style="color: #FE3B15">Why Choose Us?</h4>
                     <h1 class="display-5 mb-4">Your Next <span class="text-primary">Tech Partner</span></h1>
-                    <p class="mb-0">At Bodh.AI, we're not just another tech startup—we're a team of innovators, creators, and problem-solvers committed to transforming brands through cutting-edge design and technology.</p>
+                    <p class="mb-0">At TNVLab, we're not just another tech startup—we're a team of innovators, creators, and problem-solvers committed to transforming brands through cutting-edge design and technology.</p>
                 </div>
                 <div class="row g-4">
                     <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
@@ -472,7 +461,7 @@
         <!-- Quote Banner End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s" style="z-index: -99999999 !important;">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
