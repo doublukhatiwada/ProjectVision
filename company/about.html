@@ -92,12 +92,12 @@
                 
                 /* Hero header adjustments */
                 .hero-header {
-                    margin-top: 0px !important;
-                    padding-top:  0px!important;
-                    padding-bottom: 60px !important;
+                    margin-top: 60px !important;
+                    padding-top: 60px !important;
+                    padding-bottom: 0px !important;
                     position: relative !important;
                     z-index: 1 !important;
-                  
+                    margin-bottom: 0 !important;
                 }
 
                 /* Adjust the display-4 text positioning */
@@ -120,8 +120,7 @@
 
                 /* Ensure proper spacing for the image */
                 .hero-header .wow.fadeInUp img {
-                    margin-top: 20px !important;
-                    max-width: 100% !important;
+                    margin-bottom: 10px !important;
                 }
 
                 /* Reduce spacing between elements */
@@ -130,7 +129,7 @@
                 }
 
                 .hero-header p {
-                    margin-bottom: 15px !important;
+                    margin-bottom: 10px !important;
                 }
 
                 /* Ensure navbar stays on top */
@@ -206,9 +205,46 @@
                 .service {
                     position: relative !important;
                     z-index: 2 !important;
-                    margin-top: 250px !important;
-                    padding-top: 40px !important;
-                    background-color: #fff !important;
+                    margin-bottom: 0 !important;
+                    padding-bottom: 10px !important;
+                }
+
+                /* Why Choose Us section spacing */
+                .why-choose-us,
+                .container-xxl.py-5 {
+                    padding-top: -30px !important;
+                    margin-top: 0 !important;
+                }
+
+                /* Adjust service items bottom spacing */
+                .service-item {
+                    margin-bottom: 0px !important;
+                }
+
+                /* Adjust row spacing */
+                .row.g-4 {
+                    margin-bottom: 0 !important;
+                }
+
+                /* Remove gap between sections */
+                .service {
+                    padding-bottom: 0 !important;
+                    margin-bottom: 0 !important;
+                }
+
+                /* Remove height spacer */
+                div[style="height: 2rem;"] {
+                    display: none !important;
+                }
+
+                /* Adjust Why Choose Us section */
+                .container-fluid.service.py-5 {
+                    padding-top: 0 !important;
+                    padding-bottom: 20px !important;
+                }
+
+                .container.py-3 {
+                    padding-top: 0 !important;
                 }
             }
         </style>

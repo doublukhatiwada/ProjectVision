@@ -276,6 +276,21 @@
                 .service-content {
                     padding-top: 15px !important;
                 }
+
+                /* Remove button transitions */
+                .btn-primary,
+                .btn {
+                    transition: none !important;
+                    animation: none !important;
+                    transform: none !important;
+                }
+
+                /* Ensure immediate color changes */
+                .btn-primary:hover,
+                .btn:hover {
+                    transition: none !important;
+                    transform: none !important;
+                }
             }
         </style>
     </head>
