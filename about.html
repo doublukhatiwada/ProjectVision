@@ -102,38 +102,46 @@
                         }
 
                         @media (max-width: 768px) {
-                            /* Prevent horizontal scroll */
-                            html, body {
-                                max-width: 100% !important;
-                                overflow-x: hidden !important;
+                            /* Create new stacking context for body */
+                            body {
+                                isolation: isolate !important;
+                                position: relative !important;
                             }
 
-                            /* Navbar always on top */
+                            /* Navbar with blend mode isolation */
                             .navbar,
                             .navbar-light,
                             .fixed-top,
                             .navbar.sticky-top,
                             .navbar-light.sticky-top {
                                 position: fixed !important;
-                                z-index: 9999 !important;
+                                z-index: 99999999 !important;
                                 background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                                 width: 100% !important;
                                 top: 0 !important;
                                 height: 60px !important;
-                                left: 0 !important;
-                                right: 0 !important;
+                                isolation: isolate !important;
+                                mix-blend-mode: normal !important;
+                                pointer-events: auto !important;
                             }
 
                             /* Dropdown menu */
                             .navbar-collapse {
-                                position: absolute !important;
-                                top: 100% !important;
+                                position: fixed !important;
+                                top: 60px !important;
                                 left: 0 !important;
                                 right: 0 !important;
                                 background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                                z-index: 9998 !important;
-                                width: 100% !important;
-                                padding: 10px 0 !important;
+                                z-index: 99999998 !important;
+                                mix-blend-mode: normal !important;
+                                pointer-events: auto !important;
+                            }
+
+                            /* Main content wrapper */
+                            .about-page {
+                                position: relative !important;
+                                isolation: isolate !important;
+                                mix-blend-mode: normal !important;
                             }
 
                             /* Hero Header */
@@ -231,129 +239,6 @@
                                 padding-bottom: 80px !important;
                                 position: relative !important;
                                 z-index: 0 !important;
-                            }
-
-                            /* Footer adjustments to match index.html */
-                            .footer {
-                                padding: 50px 0 30px !important;
-                                position: relative !important;
-                                z-index: 0 !important;
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                            }
-
-                            .footer-item {
-                                margin-bottom: 30px !important;
-                                padding: 0 20px !important;
-                                text-align: left !important;
-                            }
-
-                            .footer .company-name {
-                                font-size: 2em !important;
-                                color: #ffffff !important;
-                                font-family: 'Netron', sans-serif !important;
-                                letter-spacing: 5px !important;
-                            }
-
-                            .footer .lab-text {
-                                color: #FE3B15 !important;
-                                font-size: 0.5em !important;
-                                margin-left: 2px !important;
-                                font-family: 'Plus Jakarta Sans', sans-serif !important;
-                                letter-spacing: normal !important;
-                            }
-
-                            .footer .slogan {
-                                font-family: 'Share Tech Mono', monospace !important;
-                                font-size: 0.9em !important;
-                                margin-top: -5px !important;
-                                color: #FE3B15 !important;
-                                letter-spacing: 1px !important;
-                                margin-bottom: 20px !important;
-                            }
-
-                            .footer h4 {
-                                color: #ffffff !important;
-                                margin-bottom: 20px !important;
-                                font-size: 1.2em !important;
-                            }
-
-                            .footer a {
-                                color: rgba(255, 255, 255, 0.7) !important;
-                                margin-bottom: 10px !important;
-                                display: block !important;
-                                transition: all 0.3s ease !important;
-                                text-decoration: none !important;
-                            }
-
-                            .footer a:hover {
-                                color: #FE3B15 !important;
-                                padding-left: 5px !important;
-                            }
-
-                            .footer .contact-info {
-                                margin-top: 20px !important;
-                            }
-
-                            .footer .contact-links a {
-                                margin-bottom: 15px !important;
-                            }
-
-                            .footer .contact-links i {
-                                margin-right: 10px !important;
-                                color: #FE3B15 !important;
-                            }
-
-                            .footer .btn-square {
-                                width: 38px !important;
-                                height: 38px !important;
-                                padding: 0 !important;
-                                display: flex !important;
-                                align-items: center !important;
-                                justify-content: center !important;
-                                font-weight: normal !important;
-                                border-radius: 50% !important;
-                            }
-
-                            .footer .btn-primary {
-                                background: #FE3B15 !important;
-                                border-color: #FE3B15 !important;
-                            }
-
-                            .footer .btn-primary:hover {
-                                background: #ffffff !important;
-                                border-color: #ffffff !important;
-                            }
-
-                            .footer .btn-primary:hover i {
-                                color: #FE3B15 !important;
-                            }
-
-                            /* Copyright section */
-                            .copyright {
-                                padding: 20px 0 !important;
-                                background: #000000 !important;
-                                position: relative !important;
-                                z-index: 0 !important;
-                            }
-
-                            .copyright a {
-                                color: rgba(255, 255, 255, 0.7) !important;
-                                text-decoration: none !important;
-                            }
-
-                            .copyright a:hover {
-                                color: #FE3B15 !important;
-                            }
-
-                            .copyright .text-center,
-                            .copyright .text-md-end {
-                                text-align: left !important;
-                                color: rgba(255, 255, 255, 0.7) !important;
-                            }
-
-                            /* Vertical line between footer sections */
-                            .vertical-line {
-                                display: none !important;  /* Hide vertical line in mobile view */
                             }
                         }
                     </style>
@@ -576,7 +461,7 @@
         <!-- Quote Banner End -->
 
         <!-- Footer Start -->
-        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s" style="z-index: -99999999 !important;">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
