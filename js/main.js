@@ -124,7 +124,7 @@
             
             // Handle accordion state changes on mobile
             $('.accordion-collapse').on('show.bs.collapse', function() {
-                faqImage.addClass('show').fadeIn();
+                // faqImage.addClass('show').fadeIn();
             });
             
             // Check if any accordion is open on mobile

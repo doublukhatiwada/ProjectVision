@@ -53,10 +53,10 @@
                 .hero-header {
                     margin-top: 60px !important;
                     padding-top: 60px !important;
-                    padding-bottom: 50px !important;
+                    padding-bottom: 100px !important;
                     position: relative !important;
                     z-index: 1 !important;
-                    margin-bottom: 250px !important;
+                    margin-bottom: 500px !important;
                     min-height: 100vh !important;
                     display: block !important;
                     overflow: visible !important;
@@ -68,13 +68,14 @@
                 .service {
                     position: relative !important;
                     z-index: 2 !important;
-                    margin-top: 350px !important;
+                    margin-top: 600px !important;
                     padding-top: 0 !important;
                     margin-bottom: 0 !important;
                     padding-bottom: 0 !important;
                     background-color: #fff !important;
                     clear: both !important;
                     display: block !important;
+                    
                 }
 
                 /* Keep Why Choose Us tight with service */
@@ -94,51 +95,27 @@
 
                 /* Keep existing styles but ensure sections stay behind navbar */
                 .service {
-                    z-index: 5 !important;
+                    z-index: -1 !important;
+                    position: relative !important;
                 }
 
                 .container-fluid.service.py-5 {
-                    z-index: 6 !important;
+                    z-index: -1 !important;
+                    position: relative !important;
+                    margin-top: 50px !important;
                 }
 
                 /* Super high z-index for navbar */
+                .navbar,
+                .navbar-light,
                 .navbar-light.sticky-top,
                 .navbar.sticky-top,
-                .navbar-light,
-                .fixed-top {
-                    position: fixed !important;
-                    z-index: 9999 !important;  /* Extremely high z-index */
-                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                    width: 100% !important;
-                    top: 0 !important;
-                }
-
-                /* Ensure dropdown stays below navbar but above content */
-                .navbar-collapse {
-                    z-index: 9998 !important;
-                }
-
-                /* Force sections to stay behind with very low z-index */
-                .service {
-                    z-index: -1 !important;
-                    position: relative !important;
-                }
-
-                .container-fluid.service.py-5 {
-                    z-index: -1 !important;
-                    position: relative !important;
-                    margin-top: 60px !important;  /* Increased overlap */
-                }
-
-                /* Extreme z-index for navbar and all its states */
-                .navbar-light.sticky-top,
-                .navbar.sticky-top,
-                .navbar-light,
                 .fixed-top,
                 header nav,
-                .container-fluid.fixed-top {
+                .container-fluid.fixed-top,
+                .sticky-top {
                     position: fixed !important;
-                    z-index: 99999 !important;
+                    z-index: 999999 !important;
                     background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                     width: 100% !important;
                     top: 0 !important;
@@ -146,10 +123,21 @@
                     right: 0 !important;
                 }
 
-                /* Dropdown menu positioning */
+                /* Fix dropdown positioning */
                 .navbar-collapse {
-                    z-index: 99998 !important;
-                    position: relative !important;
+                    position: absolute !important;
+                    top: 100% !important;  /* Position right below navbar */
+                    left: 0 !important;
+                    right: 0 !important;
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                    z-index: 999998 !important;
+                    padding: 10px 0 !important;
+                }
+
+                /* Ensure proper dropdown animation */
+                .navbar-collapse.collapsing,
+                .navbar-collapse.show {
+                    transition: all 0.3s ease !important;
                 }
             }
         </style>
