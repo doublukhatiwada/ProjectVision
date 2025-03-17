@@ -4803,3 +4803,28 @@ body.gdpr-active .gdpr-banner button {
         display: block;
     }
 }
+/* Add this to the end of your style.css file */
+
+@media (max-width: 768px) {
+    .copyright {
+        padding: 15px 10px 15px 10px !important;  /* Increased top/bottom padding */
+        background: rgba(0, 0, 0, 0.8) !important;
+        position: relative !important;
+        z-index: -99999999 !important;
+        mix-blend-mode: normal !important;
+        pointer-events: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .copyright .text-center,
+    .copyright .text-md-end,
+    .copyright span,
+    .copyright a {
+        text-align: left !important;
+        display: inline !important;
+        padding: 0 2px !important;
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+}
