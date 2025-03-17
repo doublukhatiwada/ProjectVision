@@ -93,11 +93,11 @@
                 /* Hero header adjustments */
                 .hero-header {
                     margin-top: 60px !important;
-                    padding-top: 100px !important;
-                    padding-bottom: 60px !important;
+                    padding-top: 60px !important;
+                    padding-bottom: 30px !important;
                     position: relative !important;
                     z-index: 1 !important;
-                    margin-bottom: 40px !important;
+                    margin-bottom: 80px !important;
                 }
 
                 /* Adjust the display-4 text positioning */
@@ -120,8 +120,7 @@
 
                 /* Ensure proper spacing for the image */
                 .hero-header .wow.fadeInUp img {
-                    margin-top: 20px !important;
-                    max-width: 100% !important;
+                    margin-bottom: 10px !important;
                 }
 
                 /* Reduce spacing between elements */
@@ -130,7 +129,7 @@
                 }
 
                 .hero-header p {
-                    margin-bottom: 15px !important;
+                    margin-bottom: 10px !important;
                 }
 
                 /* Ensure navbar stays on top */
@@ -202,13 +201,29 @@
                     display: none !important;
                 }
 
-                /* Position service section after hero header */
+                /* Service section positioning */
                 .service {
                     position: relative !important;
                     z-index: 2 !important;
-                    margin-top: 250px !important;
-                    padding-top: 40px !important;
+                    margin-top: 80px !important;
+                    padding-bottom: 0 !important;
+                    margin-bottom: 0 !important;
                     background-color: #fff !important;
+                }
+
+                /* Remove gap with Why Choose Us */
+                .container-fluid.service.py-5 {
+                    padding-top: 0 !important;
+                    padding-bottom: 0 !important;
+                }
+
+                .container.py-3 {
+                    padding-top: 0 !important;
+                }
+
+                /* Remove any spacer elements */
+                div[style="height: 2rem;"] {
+                    display: none !important;
                 }
             }
         </style>
@@ -370,6 +385,8 @@
                 <!-- Add subtle pattern effect -->
                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: -100px; background: linear-gradient(45deg, transparent, rgba(254, 59, 21, 0.02)); pointer-events: none;"></div>
               </div>
+              </div>
+              
             
               <!-- Hero Header End -->
 
