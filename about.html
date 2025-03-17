@@ -94,10 +94,13 @@
                 .hero-header {
                     margin-top: 60px !important;
                     padding-top: 60px !important;
-                    padding-bottom: 1200px !important;
+                    padding-bottom: 30px !important;
                     position: relative !important;
                     z-index: 1 !important;
-                    margin-bottom: 80px !important;
+                    margin-bottom: 120px !important;
+                    min-height: 100vh !important;
+                    display: block !important;
+                    overflow: visible !important;
                 }
 
                 /* Adjust the display-4 text positioning */
@@ -205,10 +208,13 @@
                 .service {
                     position: relative !important;
                     z-index: 2 !important;
-                    margin-top: 80px !important;
-                    padding-bottom: 0 !important;
-                    margin-bottom: 0 !important;
+                    margin-top: 120px !important;
+                    padding-top: 20px !important;
                     background-color: #fff !important;
+                    clear: both !important;
+                    display: block !important;
+                    width: 100% !important;
+                    float: none !important;
                 }
 
                 /* Remove gap with Why Choose Us */
@@ -224,6 +230,15 @@
                 /* Remove any spacer elements */
                 div[style="height: 2rem;"] {
                     display: none !important;
+                }
+
+                /* Ensure content stays within sections */
+                .hero-header .container,
+                .hero-header .row,
+                .hero-header [class*="col-"] {
+                    position: relative !important;
+                    z-index: 2 !important;
+                    overflow: visible !important;
                 }
             }
         </style>
