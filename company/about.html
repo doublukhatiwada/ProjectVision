@@ -102,107 +102,32 @@
                         }
 
                         @media (max-width: 768px) {
-                            /* Hero header adjustments */
-                            .hero-header {
-                                margin-top: 40px !important;
-                                padding: 0 0 20px 0 !important;
-                                position: relative !important;
-                                z-index: 1 !important;
-                                clear: both !important;
+                            /* Navbar z-index */
+                            .navbar,
+                            .navbar-light,
+                            .fixed-top {
+                                position: fixed !important;
+                                z-index: 99999 !important;
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                             }
 
-                            /* Hero header content adjustments */
-                            .hero-header .row {
-                                padding-top: 15px !important;
-                            }
-
-                            /* Image container adjustments */
-                            .hero-header .wow.fadeInUp {
-                                margin-top: 20px !important;
-                                margin-bottom: 20px !important;
-                            }
-
-                            .hero-header img.img-fluid {
-                                max-width: 90% !important;
-                                height: auto !important;
-                                display: block !important;
-                                margin: 0 auto !important;
-                            }
-
-                            /* Service section spacing */
+                            /* Service section z-index */
                             .container-fluid.service {
-                                padding: 40px 0 !important;
-                                margin-top: 200px !important;
-                                clear: both !important;
                                 position: relative !important;
-                                z-index: 0 !important;
-                                background-color: #f8f9fa !important;
-                                border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+                                z-index: -1 !important;  /* Negative z-index to go behind navbar */
                             }
 
-                            /* Ensure proper separation */
-                            .hero-header + .container-fluid.service {
-                                margin-top: 60px !important;
-                            }
-
-                            /* Rest of the styles remain unchanged */
-                            .container-fluid,
-                            .container {
-                                padding: 0 !important;
-                                margin: 0 !important;
-                                overflow: hidden !important;
+                            /* Why Choose Us section z-index */
+                            .container-fluid.service.py-5 {
                                 position: relative !important;
-                                clear: both !important;
+                                z-index: -1 !important;  /* Negative z-index to go behind navbar */
                             }
 
-                            /* Vision section spacing */
-                            .container-fluid.py-5 {
-                                padding: 40px 0 !important;
-                                margin: 20px 0 !important;
-                                clear: both !important;
+                            /* Ensure content within sections remains clickable */
+                            .container-fluid.service .container,
+                            .container-fluid.service.py-5 .container {
                                 position: relative !important;
-                            }
-
-                            /* Quote banner spacing */
-                            .container-fluid.py-5.bg-white {
-                                padding: 40px 0 !important;
-                                margin: 20px 0 !important;
-                                clear: both !important;
-                                position: relative !important;
-                            }
-
-                            /* Footer spacing */
-                            .container-fluid.footer {
-                                padding: 40px 0 !important;
-                                margin: 20px 0 0 0 !important;
-                                clear: both !important;
-                                position: relative !important;
-                            }
-
-                            /* Inner content padding */
-                            .container.py-3,
-                            .container.py-4,
-                            .container.py-5 {
-                                padding: 15px !important;
-                            }
-
-                            /* Card and item spacing */
-                            .service-item,
-                            .vision-card {
-                                margin-bottom: 20px !important;
-                                clear: both !important;
-                            }
-
-                            /* Text container spacing */
-                            .text-center.mx-auto {
-                                margin-bottom: 30px !important;
-                                padding: 0 15px !important;
-                            }
-
-                            /* Remove any overlapping transforms */
-                            [class*="wow fadeIn"] {
-                                transform: none !important;
-                                opacity: 1 !important;
+                                z-index: 1 !important;  /* Positive z-index for content */
                             }
                         }
                     </style>
