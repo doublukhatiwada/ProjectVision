@@ -113,10 +113,14 @@
                                 background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                             }
 
+                            .hero-header {
+                                z-index: 5 !important;
+                            }
+
                             /* Service section z-index */
                             .container-fluid.service {
                                 position: relative !important;
-                                z-index: -5 !important;
+                                z-index: -1 !important;
                                 margin-top: 300px !important;  /* Added to account for navbar height */
                             }
 
@@ -131,7 +135,7 @@
                             .container-fluid.service .container,
                             .container-fluid.service.py-5 .container {
                                 position: relative !important;
-                                z-index: 3 !important;
+                                z-index: 1 !important;
                             }
                         }
                     </style>
