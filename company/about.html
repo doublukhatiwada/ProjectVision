@@ -102,8 +102,6 @@
                         }
 
                         @media (max-width: 768px) {
-                           
-
                             /* Navbar z-index */
                             .navbar,
                             .navbar-light,
@@ -113,29 +111,24 @@
                                 background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
                             }
 
-                            .hero-header {
-                                z-index: 1000 !important;
-                            }
-
-                            /* Service section z-index */
-                            .container-fluid.service {
+                            /* Hero header z-index - higher than service div */
+                            .hero-header.overflow-hidden.px-4 {
                                 position: relative !important;
-                                z-index: -1000 !important;
-                                margin-top: 300px !important;  /* Added to account for navbar height */
+                                z-index: 10 !important;  /* Higher z-index */
+                                margin-bottom: 20px !important;  /* Add space after hero header */
                             }
 
-                            /* Why Choose Us section z-index */
+                            /* Service section z-index - lower than hero header */
                             .container-fluid.service.py-5 {
                                 position: relative !important;
-                                margin-bottom: -300px !important;
-                                z-index: -1 !important;
+                                z-index: 5 !important;  /* Lower z-index than hero header */
+                                margin-top: 20px !important;  /* Add space before service section */
+                                clear: both !important;  /* Prevent floating elements */
                             }
 
-                            /* Ensure content within sections remains clickable */
-                            .container-fluid.service .container,
-                            .container-fluid.service.py-5 .container {
-                                position: relative !important;
-                                z-index: 1 !important;
+                            /* Ensure proper spacing between sections */
+                            .hero-header.overflow-hidden.px-4 + .container-fluid.service.py-5 {
+                                margin-top: 30px !important;  /* Additional spacing between these specific sections */
                             }
                         }
                     </style>
