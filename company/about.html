@@ -102,198 +102,87 @@
                         }
 
                         @media (max-width: 768px) {
-                            /* Create new stacking context for body */
-                            body {
-                                isolation: isolate !important;
+                            /* General container adjustments */
+                            .container-fluid,
+                            .container {
+                                padding: 0 !important;
+                                margin: 0 !important;
+                                overflow: hidden !important;
                                 position: relative !important;
+                                clear: both !important;
                             }
 
-                            /* Navbar with blend mode isolation */
-                            .navbar,
-                            .navbar-light,
-                            .fixed-top,
-                            .navbar.sticky-top,
-                            .navbar-light.sticky-top {
-                                position: fixed !important;
-                                z-index: 99999999 !important;
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                                width: 100% !important;
-                                top: 0 !important;
-                                height: 60px !important;
-                                isolation: isolate !important;
-                                mix-blend-mode: normal !important;
-                                pointer-events: auto !important;
-                            }
-
-                            /* Dropdown menu */
-                            .navbar-collapse {
-                                position: fixed !important;
-                                top: 60px !important;
-                                left: 0 !important;
-                                right: 0 !important;
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                                z-index: 99999998 !important;
-                                mix-blend-mode: normal !important;
-                                pointer-events: auto !important;
-                            }
-
-                            /* Main content wrapper */
-                            .about-page {
-                                position: relative !important;
-                                isolation: isolate !important;
-                                mix-blend-mode: normal !important;
-                            }
-
-                            /* Hero Header */
+                            /* Hero header adjustments */
                             .hero-header {
-                                margin-bottom: 300px !important;
+                                margin-top: 60px !important;
+                                padding: 0 !important;
                                 position: relative !important;
                                 z-index: 1 !important;
-                                /* height: calc(150vh - 60px) !important; */
-                                min-height: auto !important;
-                                display: flex !important;
-                                align-items: center !important;
-                                padding-top: 00px !important;
-                                
-                                width: 100% !important;
+                                clear: both !important;
                             }
 
-                            /* Hero Header Content */
-                            .hero-header .row {
-                                width: 100% !important;
-                                margin: 0 !important;
-                                padding: 0 15px !important;
-                            }
-
-                            .hero-header img {
-                                max-width: 70% !important;
-                                height: auto !important;
-                                margin: 20px auto !important;
-                            }
-
-                            /* Service Section */
-                            .service {
-                                position: relative !important;
-                                z-index: 0 !important;
-                                margin-top: 40px !important;
+                            /* Service section spacing */
+                            .container-fluid.service {
                                 padding: 40px 0 !important;
-                                background: #fff !important;
-                                min-height: 100vh !important;
-                                display: flex !important;
-                                align-items: center !important;
-                                width: 100% !important;
+                                margin: 20px 0 !important;
+                                clear: both !important;
+                                position: relative !important;
+                                background-color: #f8f9fa !important;
                             }
 
-                            /* Why Choose Us Section */
-                            .container-fluid.service.py-5 {
-                                position: relative !important;
-                                z-index: 0 !important;
-                                margin-top: 0 !important;
+                            /* Vision section spacing */
+                            .container-fluid.py-5 {
                                 padding: 40px 0 !important;
-                                min-height: 100vh !important;
-                                display: flex !important;
-                                align-items: center !important;
-                                width: 100% !important;
-                            }
-
-                            /* Container adjustments */
-                            .container-fluid.header {
-                                height: auto !important;
-                                overflow: hidden !important;
-                                padding: 0 !important;
-                                width: 100% !important;
-                            }
-
-                            /* Content containers */
-                            .container,
-                            .container-fluid {
-                                padding: 0 15px !important;
-                                width: 100% !important;
-                                max-width: 100% !important;
-                                overflow: hidden !important;
-                            }
-
-                            /* Remove any unwanted spacing */
-                            div[style*="height"] {
-                                display: none !important;
-                            }
-
-                            /* Ensure all rows don't cause horizontal scroll */
-                            .row {
-                                margin-left: 0 !important;
-                                margin-right: 0 !important;
-                                width: 100% !important;
-                            }
-
-                            /* Add Vision section padding */
-                            .container-fluid.py-5[style*="background: linear-gradient(145deg, #1a1a1a, #2d2d2d)"] {
-                                padding-top: 80px !important;
-                                padding-bottom: 80px !important;
+                                margin: 20px 0 !important;
+                                clear: both !important;
                                 position: relative !important;
-                                z-index: 0 !important;
                             }
 
-                            /* Quote Banner padding */
+                            /* Quote banner spacing */
                             .container-fluid.py-5.bg-white {
-                                padding-top: 80px !important;
-                                padding-bottom: 80px !important;
+                                padding: 40px 0 !important;
+                                margin: 20px 0 !important;
+                                clear: both !important;
                                 position: relative !important;
-                                z-index: 0 !important;
                             }
 
-                            /* Enhanced footer styling with more padding */
-                            .footer {
-                                padding: 80px 0 60px !important;  /* Increased top and bottom padding */
-                                margin: 0 !important;
-                                width: 100% !important;
-                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
-                            }
-
-                            .footer .container,
-                            .footer .container-fluid {
-                                padding: 0 25px !important;  /* Added horizontal container padding */
-                                margin: 0 !important;
-                                width: 100% !important;
-                                max-width: 100% !important;
-                            }
-
-                            /* Rest of the styles remain unchanged */
-                            .footer .row,
-                            .footer [class*="col-"] {
-                                padding: 0 !important;
-                                margin: 0 !important;
-                                width: 100% !important;
-                                max-width: 100% !important;
-                            }
-
-                            .footer-item {
-                                margin-bottom: 40px !important;
-                                padding: 0 !important;  /* Removed padding here since container has padding */
-                                text-align: left !important;
-                                width: 100% !important;
-                            }
-
-                            /* Updated Copyright section with adjusted padding */
-                            .copyright {
-                                padding: 15px 10px 15px 10px !important;  /* Increased top/bottom padding */
-                                background: rgba(0, 0, 0, 0.8) !important;
+                            /* Footer spacing */
+                            .container-fluid.footer {
+                                padding: 40px 0 !important;
+                                margin: 20px 0 0 0 !important;
+                                clear: both !important;
                                 position: relative !important;
-                                z-index: -99999999 !important;
-                                mix-blend-mode: normal !important;
-                                pointer-events: none !important;
-                                width: 100% !important;
-                                margin: 0 !important;
-                                border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
                             }
 
-                            .copyright .text-center,
-                            .copyright .text-md-end,
-                            .copyright span,
-                            .copyright a {
-                                text-align: left !important;
-                                display: inline !important;
-                                padding: 0 2px !important;
-                                color: rgba(255, 255, 255, 0.7) !important;
+                            /* Inner content padding */
+                            .container.py-3,
+                            .container.py-4,
+                            .container.py-5 {
+                                padding: 15px !important;
+                            }
+
+                            /* Card and item spacing */
+                            .service-item,
+                            .vision-card {
+                                margin-bottom: 20px !important;
+                                clear: both !important;
+                            }
+
+                            /* Text container spacing */
+                            .text-center.mx-auto {
+                                margin-bottom: 30px !important;
+                                padding: 0 15px !important;
+                            }
+
+                            /* Remove any overlapping transforms */
+                            [class*="wow fadeIn"] {
+                                transform: none !important;
+                                opacity: 1 !important;
+                            }
+
+                            /* Ensure proper stacking context */
+                            * {
+                                z-index: auto !important;
                             }
                         }
                     </style>
