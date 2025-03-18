@@ -102,6 +102,8 @@
                         }
 
                         @media (max-width: 768px) {
+                           
+
                             /* Navbar z-index */
                             .navbar,
                             .navbar-light,
@@ -114,20 +116,22 @@
                             /* Service section z-index */
                             .container-fluid.service {
                                 position: relative !important;
-                                z-index: -1 !important;  /* Negative z-index to go behind navbar */
+                                z-index: -1 !important;
+                                margin-top: 300px !important;  /* Added to account for navbar height */
                             }
 
                             /* Why Choose Us section z-index */
                             .container-fluid.service.py-5 {
                                 position: relative !important;
-                                z-index: -1 !important;  /* Negative z-index to go behind navbar */
+                                margin-bottom: 100px !important;
+                                z-index: -1 !important;
                             }
 
                             /* Ensure content within sections remains clickable */
                             .container-fluid.service .container,
                             .container-fluid.service.py-5 .container {
                                 position: relative !important;
-                                z-index: 1 !important;  /* Positive z-index for content */
+                                z-index: 1 !important;
                             }
                         }
                     </style>
