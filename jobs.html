@@ -94,107 +94,47 @@
             }
 
             @media (max-width: 768px) {
-                /* Reset hero header positioning */
-                .hero-header {
-                    position: static !important;
-                    z-index: auto !important;
+                /* Reduced hero header padding */
+                .hero-header,
+                .container-fluid.header {
+                    padding-top: 30px !important;  /* Reduced from 60px */
+                    padding-bottom: 30px !important;
+                    margin-top: 0px !important;  /* Keep this to account for fixed navbar */
+                    width: 100% !important;
+                    overflow: hidden !important;
                 }
 
-                /* Super aggressive button styling */
-                .hero-header .btn-primary,
-                .hero-header a.btn-primary,
-                a.btn.btn-primary {
-                    position: relative !important;
-                    z-index: 999999 !important;
-                    pointer-events: all !important;
-                    cursor: pointer !important;
-                    user-select: all !important;
-                    touch-action: auto !important;
-                    display: inline-block !important;
-                    transform: translateZ(0) !important;
-                    -webkit-transform: translateZ(0) !important;
-                }
-
-                /* Reset any overlapping elements */
-                .container-fluid:not(.fixed-top),
+                /* Rest of the mobile styles */
                 .container,
-                .row,
-                .col-12 {
-                    position: static !important;
-                    z-index: auto !important;
+                .container-fluid {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    padding-left: 15px !important;
+                    padding-right: 15px !important;
+                    margin: 0 !important;
+                    overflow-x: hidden !important;
                 }
 
-                /* Keep navbar highest */
-                .navbar-light,
-                .container-fluid.fixed-top {
-                    z-index: 1000000 !important;
+                /* Previous styles remain unchanged */
+                .back-to-top {
+                    display: none !important;
+                }
+
+                .copyright {
+                    padding: 15px !important;
+                    width: 100% !important;
                 }
             }
-
-            /* Back to top button styling for mobile */
-            @media (max-width: 768px) {
-                .back-to-top {
-                    position: fixed !important;
-                    display: none !important;
-                    right: 15px !important;  /* Adjusted right position */
-                    bottom: 15px !important;  /* Adjusted bottom position */
-                    z-index: 99 !important;  /* Adjusted z-index */
-                    border: none !important;
-                    outline: none !important;
-                    background: #FE3B15 !important;
-                    width: 40px !important;
-                    height: 40px !important;
-                    border-radius: 50% !important;
-                    transition: all 0.4s ease !important;
-                    display: flex !important;
-                    align-items: center !important;
-                    justify-content: center !important;
-                    box-shadow: 0 2px 8px rgba(254, 59, 21, 0.4) !important;
-                    transform: translateZ(0) !important;  /* Force hardware acceleration */
-                    -webkit-transform: translateZ(0) !important;
-                    backface-visibility: hidden !important;
-                    -webkit-backface-visibility: hidden !important;
-                }
-
-                .back-to-top.active {
-                    display: flex !important;
-                    animation: fadeIn 0.3s ease-in-out !important;
-                    opacity: 1 !important;
-                    visibility: visible !important;
-                }
-
-                .back-to-top i {
-                    color: #FFFFFF !important;
-                    font-size: 18px !important;
-                    line-height: 0 !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                }
-
-                .back-to-top:hover {
-                    background: #ff4f2e !important;
-                    transform: translateY(-3px) translateZ(0) !important;
-                    -webkit-transform: translateY(-3px) translateZ(0) !important;
-                    box-shadow: 0 4px 12px rgba(254, 59, 21, 0.5) !important;
-                }
 
                 @keyframes fadeIn {
                     from {
                         opacity: 0;
-                        transform: translateY(10px) translateZ(0);
+                        transform: translateY(10px);
                     }
                     to {
                         opacity: 1;
-                        transform: translateY(0) translateZ(0);
+                        transform: translateY(0);
                     }
-                }
-
-                /* Force hardware acceleration and prevent flickering */
-                body {
-                    transform: translateZ(0) !important;
-                    -webkit-transform: translateZ(0) !important;
-                    backface-visibility: hidden !important;
-                    -webkit-backface-visibility: hidden !important;
                 }
             }
         </style>
@@ -591,7 +531,7 @@
                         <i class="fas fa-share fa-2x text-secondary me-2"></i>
                         <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-instagram"></i></a>
-                        <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.linkedin.com/company/tnvlab"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>

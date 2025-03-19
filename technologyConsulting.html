@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>TNV Lab | Technology Consulting</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../icon/TNV.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="apple-touch-icon" href="../icon/TNV.png">
+        <meta name="msapplication-TileColor" content="#FE3B15">
+        <meta name="theme-color" content="#FE3B15">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="../lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+
+        <style>
+            /* Override navbar styles */
+            .navbar-light {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+            }
+
+            /* Initial TNV color */
+            .navbar-light .company-name {
+                color: var(--bs-white) !important;
+                font-family: 'Netron', sans-serif;
+                display: inline-flex;
+                align-items: baseline;
+                letter-spacing: 5px;
+                font-size: 2em;
+            }
+
+            .navbar-light .company-name .lab-text {
+                color: var(--bs-white) !important;
+                font-size: 0.5em;
+                margin-left: 2px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                letter-spacing: normal;
+                font-weight: 600;
+                opacity: 0.9;
+            }
+
+            /* TNV color changes on scroll */
+            .navbar.sticky-top .navbar-brand .company-name {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar.sticky-top .navbar-brand .company-name .lab-text {
+                color: #FE3B15 !important;
+            }
+
+            .sticky-top.navbar-light {
+                position: fixed;
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+            }
+
+            .navbar-light .navbar-nav .nav-link {
+                color: var(--bs-white) !important;
+            }
+            
+            .sticky-top.navbar-light .navbar-nav .nav-link {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar-toggler .fa-bars {
+                color: var(--bs-white) !important;
+            }
+
+            @media (max-width: 992px) {
+                .navbar-collapse {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                
+                .navbar.navbar-expand-lg {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                }
+                
+                .navbar-toggler {
+                    border-color: rgba(255, 255, 255, 0.5) !important;
+                }
+                
+                .dropdown-menu {
+                    background: transparent !important;
+                    border: none;
+                    padding-left: 20px;
+                }
+                
+                .dropdown-item {
+                    color: white !important;
+                }
+                
+                .dropdown-item:hover {
+                    background: rgba(255, 255, 255, 0.1) !important;
+                }
+
+                /* Add these new rules */
+                .nav-item .nav-link {
+                    color: white !important;
+                }
+                
+                .nav-item .nav-link:hover {
+                    color: var(--bs-primary) !important;
+                }
+            }
+
+            .btn-square.bg-orange {
+                background-color: #FE3B15 !important;
+            }
+
+            /* Keep active menu highlighted */
+            .dropdown-menu .dropdown-item.active,
+            .dropdown-menu .dropdown-item.active:hover {
+                background-color: #FE3B15 !important;
+                color: white !important;
+            }
+
+            @media (max-width: 768px) {
+                /* Hide only digital transformation and change management image containers */
+                .col-lg-6.wow.fadeInUp .chatbot-container img[src="../img/digital-transformation.jpg"],
+                .col-lg-6.wow.fadeInUp .chatbot-container img[src="../img/change.jpg"] {
+                    display: none !important;
+                }
+
+                /* Hide their parent columns */
+                .col-lg-6.wow.fadeInUp:has(img[src="../img/digital-transformation.jpg"]),
+                .col-lg-6.wow.fadeInUp:has(img[src="../img/change.jpg"]) {
+                    display: none !important;
+                    height: 0 !important;
+                    width: 0 !important;
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+                /* Adjust content spacing after hiding images */
+                .digital-transformation .col-lg-6,
+                .change-management .col-lg-6 {
+                    width: 100% !important;
+                    flex: 0 0 100% !important;
+                    max-width: 100% !important;
+                    padding: 0 15px !important;
+                }
+
+                /* Navbar and header separation */
+                .navbar-light {
+                    position: fixed !important;
+                    width: 100% !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    z-index: 1050 !important;
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+                    height: 60px;
+                }
+
+                /* Hero header adjustments */
+                .hero-header {
+                    margin-top: 60px !important;
+                    padding-top: 60px !important;
+                    padding-bottom: 20px !important;
+                    position: relative !important;
+                    z-index: 1 !important;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="tech-page">
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <style>
+                        @media (max-width: 992px) {
+                            .navbar-collapse {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                                padding: 20px;
+                                border-radius: 10px;
+                                margin-top: 15px;
+                            }
+                            
+                            .navbar.navbar-expand-lg {
+                                background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                            }
+                            
+                            .navbar-toggler {
+                                border-color: rgba(255, 255, 255, 0.5) !important;
+                            }
+                            
+                            .dropdown-menu {
+                                background: transparent !important;
+                                border: none;
+                                padding-left: 20px;
+                            }
+                            
+                            .dropdown-item {
+                                color: white !important;
+                            }
+                            
+                            .dropdown-item:hover {
+                                background: rgba(255, 255, 255, 0.1) !important;
+                            }
+
+                            /* Add these new rules */
+                            .nav-item .nav-link {
+                                color: white !important;
+                            }
+                            
+                            .nav-item .nav-link:hover {
+                                color: var(--bs-primary) !important;
+                            }
+                        }
+                    </style>
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-white">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-white">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="genAI" class="dropdown-item">GenAI solutions</a>
+                                    <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="technologyConsulting" class="dropdown-item active">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+                <div class="row gy-4 align-items-center">
+                    <div class="col-lg-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="display-4 mb-3 wow fadeInUp text-white" data-wow-delay="0.3s">We provide expert <span class="text-primary">technology consulting</span> to help companies succeed.</h1>
+                        <div class="wow fadeInUp" data-wow-delay="0.5s">
+                            <img src="../img/consulting.jpg" alt="Consulting.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="rotate-img">
+                    <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
+                    <div class="rotate-sty-2"></div>
+                </div>
+                <!-- Add subtle shine effect -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
+            </div>
+            <!-- Hero Header End -->
+
+            <!-- Digital Transformation Start -->
+            <div class="container-fluid service py-4" style="background: #ffffff;">
+                <div class="container py-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/digital-transformation.jpg" 
+                                    class="chatbot-image" 
+                                    alt="Digital Transformation"
+                                    style="height: 350px; object-fit: cover; width: 100%; border-radius: 8px;"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15">Technology Stack Consulting</h4>
+                            <h1 class="display-5 mb-4">Digital <span class="text-primary">Transformation</span></h1>
+                            <p class="mb-4">We guide organizations through their digital transformation journey with expert technology stack consulting. Our comprehensive approach ensures you select and implement the right technologies to drive innovation and growth.</p>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-shield-alt fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Tech Stack Assessment</h6>
+                                            <span>Evaluate and optimize your technology infrastructure</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-chart-line fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Digital Strategy</h6>
+                                            <span>Develop roadmap for digital transformation</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-rocket fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Innovation Enablement</h6>
+                                            <span>Accelerate digital innovation initiatives</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Digital Transformation End -->
+
+            <!-- IT Strategy Start -->
+            <div class="container-fluid service py-4" style="background: #f8f9fa;">
+                <div class="container py-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15;">Cost-Effective Solutions</h4>
+                            <h1 class="display-5 mb-4">IT Strategy <span class="text-primary">Consulting</span></h1>
+                            <p class="mb-4">We help organizations optimize their IT investments...</p>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-coins fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">IT Cost Optimization</h6>
+                                            <span>Strategic resource allocation and cost management</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-tasks fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">IT Governance</h6>
+                                            <span>Establish effective IT management frameworks</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-chart-bar fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Performance Analytics</h6>
+                                            <span>Data-driven IT strategy optimization</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/it-strategy.jpg" 
+                                    class="chatbot-image" 
+                                    alt="IT Strategy"
+                                    style="height: 350px; object-fit: cover; width: 100%; border-radius: 8px;"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- IT Strategy End -->
+
+            <!-- Change Management Start -->
+            <div class="container-fluid service py-4" style="background: #ffffff;">
+                <div class="container py-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/change.jpg" 
+                                    class="chatbot-image" 
+                                    alt="Change Management"
+                                    style="height: 350px; object-fit: cover; width: 100%; border-radius: 8px;"
+                                >
+                            </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15">Digital Evolution</h4>
+                            <h1 class="display-5 mb-4">Change <span class="text-primary">Management</span></h1>
+                            <p class="mb-4">We help organizations navigate the human side of digital transformation. Our change management approach ensures smooth transitions and adoption of new technologies and processes.</p>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-users-cog fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Stakeholder Management</h6>
+                                            <span>Effective communication and engagement strategies</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-graduation-cap fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Training & Support</h6>
+                                            <span>Comprehensive training and adoption programs</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-sync-alt fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Process Transformation</h6>
+                                            <span>Streamline and modernize business processes</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Change Management End -->
+
+            <!-- Compliance Start -->
+            <div class="container-fluid service py-4" style="background: #f8f9fa;">
+                <div class="container py-3">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <h4 class="mb-1" style="color: #FE3B15;">UK Compliance</h4>
+                            <h1 class="display-5 mb-4">Regulatory <span class="text-primary">Compliance</span></h1>
+                            <p class="mb-4">We specialize in helping UK-based organizations...</p>
+                            <ul class="list-unstyled feature-list">
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-user-shield fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">GDPR Compliance</h6>
+                                            <span>Comprehensive data protection strategies</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-clipboard-check fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Compliance Audits</h6>
+                                            <span>Regular assessment and monitoring</span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="mb-3 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn-square bg-orange text-white rounded-circle" style="width: 45px; height: 45px;">
+                                            <i class="fas fa-file-signature fa-lg"></i>
+                                        </div>
+                                        <div class="ms-4">
+                                            <h6 class="mb-1" style="color: #FE3B15">Documentation & Reporting</h6>
+                                            <span>Comprehensive compliance documentation</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="chatbot-container">
+                                <img src="../img/compliance.jpg" 
+                                    class="chatbot-image" 
+                                    alt="Regulatory Compliance"
+                                    style="height: 350px; object-fit: cover; width: 100%; border-radius: 8px;"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Compliance End -->
+        </div>
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
+                        <div class="footer-item d-flex flex-column">
+                            <a href="../" class="mb-3 company-logo">
+                                <h1 class="company-name text-white">TNV<span class="lab-text">Lab</span></h1>
+                                <div class="slogan" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9em; margin-top: -5px; color: #FE3B15; letter-spacing: 1px;">
+                                    <div>Shaping Ideas into</div>
+                                    <div style="text-align: right;">Innovation</div>
+                                </div>
+                            </a>
+                            <div class="footer-divider" style="margin: 0.5rem 0;"></div>
+                            <div class="contact-info" style="margin-top: 0.5rem;">
+                                <h6 class="contact-heading mb-3">Get in Touch</h6>
+                                <div class="contact-links">
+                                    <a href="mailto:info@tnvlab.com" class="mb-2">
+                                        <i class="fas fa-envelope me-2"></i>info@tnvlab.com
+                                    </a>
+                                    <a href="tel:+447349180477" class="mb-2">
+                                        <i class="fas fa-phone me-2"></i>+44 7349 180477
+                                        <div class="text-muted small mt-1">Available 24/7 via WhatsApp</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Company</h4>
+                            <a href="../company/about">About Us</a>
+                            <a href="../company/case-study">Case Study</a>
+                            <h4 class="mb-4 text-white mt-4">Join Us</h4>
+                            <a href="../career/jobs">Career</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Services</h4>
+                            <a href="genAI">GenAI Solutions</a>
+                            <a href="cloudAndSecurity">Cloud and Security</a>
+                            <a href="productDevelopment">Product Development</a>
+                            <a href="technologyConsulting">Technology Consulting</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-dark">Contact Info</h4>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">UK Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Kristi House, Newtown Road<br><span class="ms-4">Ashford,TN24 0WH</span><br><span class="ms-4">Kent, United Kingdom</span></a>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">Nepal Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Sankamul, Baneshwor<br><span class="ms-4">Kathmandu, Nepal</span></a>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.linkedin.com/company/tnv-lab"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->      
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNV<span class="lab-text">Lab</span></a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+    </body>
+
+</html>

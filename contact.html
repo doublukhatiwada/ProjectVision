@@ -3,15 +3,23 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Bodh.aI | Contact Us</title>
+        <title>TNV Lab | Contact Us</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
+        <meta name="keywords" content="AI solutions, digital transformation, cloud security, technology consulting">
+        <meta name="description" content="TNVLab - Your partner in digital transformation. We specialize in GenAI solutions, cloud security, and technology consulting.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../icon/TNV.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="apple-touch-icon" href="../icon/TNV.png">
+        <meta name="msapplication-TileColor" content="#FE3B15">
+        <meta name="theme-color" content="#FE3B15">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -34,38 +42,24 @@
                 background-color: #FE3B15 !important;
             }
 
-            .navbar {
-                background-color: white !important;
-                transition: all 0.3s ease-in-out;
+            .navbar.sticky-top {
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
             }
-
-            .navbar.scrolled {
-                background-color: transparent !important;
-                box-shadow: none;
-            }
-
-            /* Default state - dark text */
+            
             .navbar-nav .nav-link {
-                color: #000 !important;
-                transition: color 0.3s ease-in-out;
+                color: var(--bs-dark) !important;
             }
-
-            .navbar-brand h1 {
-                color: #000 !important;
-                transition: color 0.3s ease-in-out;
+            
+            .navbar.sticky-top .nav-link {
+                color: var(--bs-white) !important;
             }
-
-            /* Scrolled state - white text */
-            .navbar.scrolled .nav-link {
-                color: #fff !important;
+            
+            .navbar.sticky-top .company-name {
+                color: var(--bs-white) !important;
             }
-
-            .navbar.scrolled .navbar-brand h1 {
-                color: #fff !important;
-            }
-
-            .navbar.scrolled .fa-bars {
-                color: #fff !important;
+            
+            .navbar.sticky-top .company-name .lab-text {
+                color: #FE3B15 !important;
             }
 
             /* Form validation styles */
@@ -145,7 +139,7 @@
         </style>
     </head>
 
-    <body>
+    <body class="contact-page">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -157,47 +151,42 @@
 
 
         <!-- Navbar Start -->
-        <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
-            <div class="top-bar text-white-50 row gx-0 align-items-center d-none d-lg-flex">
-                <div class="col-lg-6 px-5 text-start">
-                </div>
-                <div class="col-lg-6 px-5 text-end">
-                </div>
-            </div>
-
-            <nav class="navbar navbar-expand-lg navbar-dark py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s" style="background: white">
-                <a href="../" class="navbar-brand p-0">
-                    <H1 class="text-white">Bodh.aI</H1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-white"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../" class="nav-item nav-link text-dark">Home</a>
-                        <a href="../company/about" class="nav-item nav-link text-dark">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-dark" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="../services/genAI" class="dropdown-item">GenAI solutions</a>
-                                <a href="../services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
-                                <a href="../services/productDevelopment" class="dropdown-item">Product Development</a>
-                                <a href="../services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="../career/jobs" class="nav-item nav-link text-dark">Join Us</a>
-                    </div>
-                    <a href="contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Lab</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link">Home</a>
+                            <a href="../company/about" class="nav-item nav-link">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="../services/genAI" class="dropdown-item">GenAI Solutions</a>
+                                    <a href="../services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="../services/productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="../services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link">Join Us</a>
+                        </div>
+                        <a href="contact" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
         </div>
         <!-- Navbar End -->
 
         <!-- Banner Start -->
-        <div class="container-fluid page-header py-5" style="margin-bottom: 3.5rem;margin-top: 1rem;">
+        <div class="container-fluid page-header py-5" style="margin-bottom: 3.5rem;margin-top:4rem;">
             <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
                 <div class="rotate-img">
                     <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
@@ -254,7 +243,7 @@
                                     <div class="ms-1">
                                         <h5 class="mb-1">Let's Talk</h5>
                                         <p class="text-muted mb-1" style="font-size: 0.9rem;">Ping us on WhatsApp</p>
-                                        <p class="mb-0">+1 (123) 456-7890</p>
+                                        <p class="mb-0">+44 7496 123456</p>
                                         <p class="mb-0">Available 24/7 on whatsapp.</p>
                                     </div>
                                 </div>
@@ -269,7 +258,7 @@
                                     <div class="ms-1">
                                         <h5 class="mb-1">Write Us</h5>
                                         <p class="text-muted mb-1" style="font-size: 0.9rem;">Send us a personalized email</p>
-                                        <p class="mb-0">info@example.com</p>
+                                        <p class="mb-0">info@tnvlab.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +381,9 @@
                         <div class="d-flex align-items-center mb-3">
                             <div>
                                 <h5 class="mb-1" style="color: #FE3B15">United Kingdom</h5>
-                                <p class="mb-0">123 Oxford Street, London, UK W1D 2LG</p>
+                                <p class="mb-0">Kristi House, Newtown Road</p>
+                                <p class="mb-0">Ashford,TN24 0WH</p>
+                                <p class="mb-0">Kent, United Kingdom</p>
                             </div>
                         </div>
                         <img class="img-fluid rounded" src="../img/uk-office.jpg" alt="UK Office" style="width: 100%; height: 250px; object-fit: cover;">
@@ -403,14 +394,18 @@
                         <div class="d-flex align-items-center mb-3">
                             <div>
                                 <h5 class="mb-1" style="color: #FE3B15">Nepal</h5>
-                                <p class="mb-0">123 Durbar Marg, Kathmandu, Nepal</p>
+                                <p class="mb-0">Sankamul, Baneshwor</p>
+                                <p class="mb-0">Kathmandu, 44600</p>
+                                <p class="mb-0">Nepal</p>
                             </div>
                         </div>
                         <img class="img-fluid rounded" src="../img/nepal-office.jpg" alt="Nepal Office" style="width: 100%; height: 250px; object-fit: cover;">
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
+        </body>
 
         <!-- Footer Start -->
         <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -419,10 +414,27 @@
                     <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
                         <div class="footer-item d-flex flex-column">
                             <a href="../" class="mb-3 company-logo">
-                                <h1 class="text-white">Bodh.aI</h1>
+                                <h1 class="company-name text-white">TNV<span class="lab-text">Lab</span></h1>
+                                <div class="slogan" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9em; margin-top: -5px; color: #FE3B15; letter-spacing: 1px;">
+                                    <div>Shaping Ideas into</div>
+                                    <div style="text-align: right;">Innovation</div>
+                                </div>
                             </a>
+                            <div class="footer-divider" style="margin: 0.5rem 0;"></div>
+                            <div class="contact-info" style="margin-top: 0.5rem;">
+                                <h6 class="contact-heading mb-3">Get in Touch</h6>
+                                <div class="contact-links">
+                                    <a href="mailto:info@tnvlab.com" class="mb-2">
+                                        <i class="fas fa-envelope me-2"></i>info@tnvlab.com
+                                    </a>
+                                    <a href="tel:+447349180477" class="mb-2">
+                                        <i class="fas fa-phone me-2"></i>+44 7349 180477
+                                        <div class="text-muted small mt-1">Available 24/7 via WhatsApp</div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="vertical-line mx-4"></div>
+                        <div class="vertical-line"></div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
@@ -444,17 +456,20 @@
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">UK Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Kristi House, Newtown Road<br><span class="ms-4">Ashford,TN24 0WH</span><br><span class="ms-4">United Kingdom</span></a>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">Nepal Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Sankamul, Baneshwor<br><span class="ms-4">Kathmandu,44600</span><br><span class="ms-4">Nepal</span></a>
+                            </div>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.linkedin.com/company/tnvlab"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -469,13 +484,10 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Bodh.aI</a>, All right reserved.</span>
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNVLab</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="../">Bodh.aI Team</a>
+                       
                     </div>
                 </div>
             </div>
@@ -556,7 +568,7 @@
         };
 
         // Obfuscated service and template IDs
-        const _0x4f8d = ['c2VydmljZV9qOWFjbzNj', 'dGVtcGxhdGVfb2V0c3JjNQ=='];
+        const _0x4f8d = ['c2VydmljZV9rcmczbDhi', 'dGVtcGxhdGVfb2V0c3JjNQ=='];
         const _0x22b1 = function(_0x4f8d){return atob(_0x4f8d);};
 
         // Show loading state
@@ -653,9 +665,9 @@
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
+                navbar.classList.add('sticky-top');
             } else {
-                navbar.classList.remove('scrolled');
+                navbar.classList.remove('sticky-top');
             }
         });
     </script>
@@ -774,6 +786,169 @@
     document.getElementById('phone').addEventListener('focus', function() {
         this.classList.remove('is-valid', 'is-invalid', 'phone-valid');
     });
+    </script>
+
+    <script>
+    @media (max-width: 768px) {
+        /* Global reset */
+        *, *::before, *::after {
+            max-width: 100vw !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            box-sizing: border-box !important;
+            overflow-x: clip !important;
+        }
+
+        /* Root and body level control */
+        :root, html, body {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            overflow-x: clip !important;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            touch-action: pan-y !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        /* Every possible container */
+        body > *,
+        .container, 
+        .container-fluid,
+        .container-fluid.header,
+        .container-fluid.fixed-top,
+        .row,
+        [class*="col-"],
+        .hero-header,
+        .contact-form,
+        .map-container,
+        .footer,
+        .navbar,
+        .navbar-collapse,
+        .dropdown-menu,
+        section,
+        div {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            overflow-x: clip !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+
+        /* Content padding only for specific elements */
+        .navbar-collapse,
+        .contact-form,
+        .hero-header > *:not(.row),
+        [class*="col-"] > * {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        /* Force single column layout */
+        .row {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        /* Remove all transforms and translations */
+        [class*="transform-"],
+        [class*="translate-"],
+        [style*="transform"] {
+            transform: none !important;
+            -webkit-transform: none !important;
+        }
+
+        /* Remove all absolute/fixed positioning except navbar */
+        *:not(.navbar):not(.fixed-top) {
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+        }
+
+        /* Handle images and iframes */
+        img, iframe {
+            max-width: 100% !important;
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* Fix for rotated elements */
+        .rotate-img,
+        [class*="rotate-"] {
+            transform: none !important;
+            position: relative !important;
+            width: 100% !important;
+            overflow: hidden !important;
+        }
+
+        /* Remove all animations and transitions */
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        /* Force hardware acceleration */
+        body {
+            -webkit-transform: translateZ(0) !important;
+            -webkit-backface-visibility: hidden !important;
+            -webkit-perspective: 1000 !important;
+        }
+
+        /* Footer adjustments for mobile */
+        .footer {
+            padding: 2rem 0 !important;
+        }
+
+        .footer .container {
+            padding: 0 15px !important;
+        }
+
+        .footer-item {
+            padding-left: 0 !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        .footer .row > div {
+            padding-left: 15px !important;
+            text-align: left !important;
+        }
+
+        .footer .vertical-line {
+            display: none !important;
+        }
+
+        .footer p,
+        .footer h4,
+        .footer .contact-info,
+        .footer .contact-links,
+        .footer .social-links {
+            text-align: left !important;
+            justify-content: flex-start !important;
+        }
+
+        .footer .d-flex {
+            justify-content: flex-start !important;
+        }
+
+        /* Ensure all footer links align left */
+        .footer a,
+        .footer .nav-link {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            padding-left: 0 !important;
+        }
+    }
     </script>
 </body>
 
