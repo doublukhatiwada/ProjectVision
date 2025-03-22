@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Your Company | Home</title>
+        <title>TNV | GenAI Solutions</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -12,6 +12,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -29,8 +30,42 @@
         <!-- Template Stylesheet -->
         <link href="../css/style.css" rel="stylesheet">
 
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../icon/TNV.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="apple-touch-icon" href="../icon/TNV.png">
+
         <style>
             /* Override navbar styles for genAI page */
+            .navbar-light {
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 999;
+                background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(45, 45, 45, 0.8)) !important;
+            }
+            
+            /* Initial TNV color */
+            .navbar-light .company-name {
+                color: var(--bs-white) !important;
+                font-family: 'Netron', sans-serif;
+                display: inline-flex;
+                align-items: baseline;
+                letter-spacing: 5px;
+                font-size: 2em;
+            }
+
+            .navbar-light .company-name .lab-text {
+                color: var(--bs-white) !important;
+                font-size: 0.5em;
+                margin-left: 2px;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+                letter-spacing: normal;
+                font-weight: 600;
+                opacity: 0.9;
+            }
+            
             .navbar-light .navbar-nav .nav-link {
                 color: var(--bs-white) !important;
             }
@@ -39,28 +74,173 @@
                 color: var(--bs-white) !important;
             }
             
-            .navbar-light .navbar-brand h1 {
-                color: var(--bs-white) !important;
-            }
-            
             .navbar-toggler .fa-bars {
                 color: var(--bs-white) !important;
             }
             
+            /* TNV color changes on scroll */
+            .navbar.sticky-top .navbar-brand .company-name {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar.sticky-top .navbar-brand .company-name .lab-text {
+                color: #FE3B15 !important;
+            }
+            
             @media (max-width: 992px) {
-                .navbar-light .navbar-nav .nav-link,
-                .sticky-top.navbar-light .navbar-nav .nav-link {
-                    color: var(--bs-white) !important;
+                .navbar-collapse {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                
+                .navbar.navbar-expand-lg {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                }
+                
+                .navbar-toggler {
+                    border-color: rgba(255, 255, 255, 0.5) !important;
+                }
+                
+                .dropdown-menu {
+                    background: transparent !important;
+                    border: none;
+                    padding-left: 20px;
+                }
+                
+                .dropdown-item {
+                    color: white !important;
                 }
             }
 
             .btn-square.bg-orange {
                 background-color: #FE3B15 !important;
             }
+
+            /* Keep active menu highlighted */
+            .dropdown-menu .dropdown-item.active,
+            .dropdown-menu .dropdown-item.active:hover {
+                background-color: #FE3B15 !important;
+                color: white !important;
+            }
+
+            .sticky-top.navbar-light {
+                position: fixed;
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+            }
+
+            .sticky-top.navbar-light .navbar-nav .nav-link {
+                color: var(--bs-white) !important;
+            }
+
+            @media (max-width: 992px) {
+                .navbar-collapse {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                
+                .navbar.navbar-expand-lg {
+                    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+                }
+                
+                .navbar-toggler {
+                    border-color: rgba(255, 255, 255, 0.5) !important;
+                }
+                
+                .dropdown-menu {
+                    background: transparent !important;
+                    border: none;
+                    padding-left: 20px;
+                }
+                
+                .dropdown-item {
+                    color: white !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                /* Container setup */
+                .row:has(.chatbot-container) {
+                    display: flex !important;
+                    flex-direction: column !important;
+                }
+
+                /* Put text section first */
+                .col-lg-6.wow.fadeInUp[data-wow-delay="0.3s"] {
+                    order: 1 !important;
+                    width: 100% !important;
+                    margin-bottom: 20px !important;
+                }
+
+                /* Put image section second */
+                .col-lg-6.wow.fadeInUp[data-wow-delay="0.1s"]:has(.chatbot-container) {
+                    order: 2 !important;
+                    width: 100% !important;
+                    margin-top: 20px !important;
+                }
+
+                /* Show chatbot image and its container in mobile view */
+                .chatbot-container {
+                    display: block !important;
+                    margin-bottom: 30px;
+                }
+
+                /* Show the column containing the image */
+                .col-lg-6 {
+                    display: block !important;
+                }
+
+                /* Adjust image size for mobile */
+                .chatbot-image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 10px;
+                }
+
+                /* Ensure proper spacing between sections */
+                .about-section {
+                    padding-top: 30px !important;
+                    padding-bottom: 30px !important;
+                }
+
+                /* Remove any hiding styles */
+                .about-section .col-lg-6:first-child {
+                    display: block !important;
+                }
+            }
+
+            /* Add margin-top to create space after navbar */
+          
+
+            @media (max-width: 768px) {
+                /* Adjust top padding for first section */
+                .container-fluid.header {
+                    padding-top: 60px !important;  /* Reduced from default */
+                }
+
+                .container-fluid.py-5 {
+                    padding-top: 3rem !important;
+                    padding-bottom: 2rem !important;
+                }
+
+                /* Adjust hero section spacing */
+                .hero-header {
+                    padding-top: 3rem !important;
+                    margin-top: 0 !important;
+                }
+
+                /* Ensure content doesn't overlap with navbar */
+                .container-fluid:first-of-type {
+                    margin-top: 0 !important;
+                }
+            }
         </style>
     </head>
 
-    <body>
+    <body class="genai-page">
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -72,79 +252,40 @@
 
 
         <!-- Navbar & Hero Start -->
-        <div class="container-fluid header position-relative overflow-hidden p-0">
-            <nav class="navbar navbar-expand-lg fixed-top navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <style>
-                    @media (max-width: 992px) {
-                        .navbar-collapse {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                            padding: 20px;
-                            border-radius: 10px;
-                            margin-top: 15px;
-                        }
-                        
-                        .navbar.navbar-expand-lg {
-                            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-                        }
-                        
-                        .navbar-toggler {
-                            border-color: rgba(255, 255, 255, 0.5) !important;
-                        }
-                        
-                        .dropdown-menu {
-                            background: transparent !important;
-                            border: none;
-                            padding-left: 20px;
-                        }
-                        
-                        .dropdown-item {
-                            color: white !important;
-                        }
-                        
-                        .dropdown-item:hover {
-                            background: rgba(255, 255, 255, 0.1) !important;
-                        }
-
-                        /* Add these new rules */
-                        .nav-item .nav-link {
-                            color: white !important;
-                        }
-                        
-                        .nav-item .nav-link:hover {
-                            color: var(--bs-primary) !important;
-                        }
-                    }
-                </style>
-                <a href="../index.html" class="navbar-brand p-0">
-                    <H1 class="text-white">Company Logo</H1>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="fa fa-bars text-white"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto py-0">
-                        <a href="../index.html" class="nav-item nav-link active text-white">Home</a>
-                        <a href="#" class="nav-item nav-link text-white">Company</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu m-0">
-                                <a href="#" class="dropdown-item">GenAI solutions</a>
-                                <a href="#" class="dropdown-item">Cloud and Security</a>
-                                <a href="#" class="dropdown-item">Product Development</a>
-                                <a href="#" class="dropdown-item">Technology Consulting</a>
-                            </div>
-                        </div>
-                        <a href="#" class="nav-item nav-link text-white">Join Us</a>
-                    </div>
-                    <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">
-                        <img src="../icon/build.png" alt="build" class="build-icon me-2">
-                        Build With Us
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5">
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Tech</span></h1>
                     </a>
-                </div>
-            </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link text-white">Home</a>
+                            <a href="../company/about" class="nav-item nav-link text-white">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="genAI" class="dropdown-item active">GenAI solutions</a>
+                                    <a href="cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link text-white">Join Us</a>
+                        </div>
+                        <a href="../company/contact" class="btn btn-primary rounded-pill text-white py-2 px-4">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
             
-              <!-- Hero Header Start -->
-              <div class="hero-header overflow-hidden px-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-5" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d);">
                 <div class="rotate-img">
                     <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
                     <div class="rotate-sty-2"></div>
@@ -153,18 +294,20 @@
                     <div class="col-lg-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                         <h1 class="display-4 mb-4 wow fadeInUp text-white" data-wow-delay="0.3s">The Future of <span class="text-primary">Artificial Intelligence</span> is now</h1>
                         <div class="wow fadeInUp ai-animation-container" data-wow-delay="0.5s">
-                            <img src="../img/genAihead.gif?raw=true" alt="AI Animation" class="img-fluid">
+                            <img src="../img/genAIhead.gif" alt="AI Animation" class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <!-- Add subtle shine effect -->
                 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
-              </div>
+            </div>
             
-              <!-- Hero Header End -->
+            <!-- Hero Header End -->
+        </div>
+        <!-- Navbar & Hero End -->
 
-               <!-- About Start -->
-        <div class="container-fluid overflow-hidden py-5 about-section" style="margin-top: 6rem;">
+        <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5 about-section">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -357,7 +500,7 @@
                     </div>
                     <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="chatbot-container">
-                            <img src="../img/GenAI2.jpg" 
+                            <img src="../img/genai2.jpg" 
                                 class="chatbot-image" 
                                 alt="AI Training"
                                 loading="lazy"
@@ -376,43 +519,63 @@
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
                         <div class="footer-item d-flex flex-column">
-                            <a href="../index.html" class="mb-3 company-logo">
-                                <h1 class="text-white">Company Logo</h1>
+                            <a href="../" class="mb-3 company-logo">
+                                <h1 class="company-name text-white">TNV<span class="lab-text">Tech</span></h1>
+                                <div class="slogan" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9em; margin-top: -5px; color: #FE3B15; letter-spacing: 1px;">
+                                    <div>Shaping Ideas into</div>
+                                    <div style="text-align: right;">Innovation</div>
+                                </div>
                             </a>
+                            <div class="footer-divider" style="margin: 0.5rem 0;"></div>
+                            <div class="contact-info" style="margin-top: 0.5rem;">
+                                <h6 class="contact-heading mb-3">Get in Touch</h6>
+                                <div class="contact-links">
+                                    <a href="mailto:info@tnvtech.com" class="mb-2">
+                                        <i class="fas fa-envelope me-2"></i>info@tnvtech.com
+                                    </a>
+                                    <a href="tel:+447349180477" class="mb-2">
+                                        <i class="fas fa-phone me-2"></i>+44 7349 180477
+                                        <div class="text-muted small mt-1">Available 24/7 via WhatsApp</div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="vertical-line mx-4"></div>
+                        <div class="vertical-line"></div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Company</h4>
-                            <a href="">About Us</a>
-                            <a href="">Case Study</a>
+                            <a href="../company/about">About Us</a>
+                            <a href="../company/case-study">Case Study</a>
                             <h4 class="mb-4 text-white mt-4">Join Us</h4>
-                            <a href="">Career</a>
+                            <a href="../career/jobs">Career</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
                             <h4 class="mb-4 text-white">Services</h4>
-                            <a href="">GenAI Solutions</a>
-                            <a href="">Cloud and Security</a>
-                            <a href="">Product Development</a>
-                            <a href="">Technology Consulting</a>
+                            <a href="genAI">GenAI Solutions</a>
+                            <a href="cloudAndSecurity">Cloud and Security</a>
+                            <a href="productDevelopment">Product Development</a>
+                            <a href="technologyConsulting">Technology Consulting</a>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-6 col-xl-3">
                         <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-dark">Contact Info</h4>
-                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
-                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
-                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
-                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">UK Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Kristi House, Newtown Road<br><span class="ms-4">Ashford,TN24 0WH</span><br><span class="ms-4">Kent, United Kingdom</span></a>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">Nepal Office</h6>
+                                <a href=""><i class="fa fa-map-marker-alt me-2"></i>Sankamul, Baneshwor<br><span class="ms-4">Kathmandu, 44600</span><br><span class="ms-4"></span>Nepal</span></a>
+                            </div>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-share fa-2x text-secondary me-2"></i>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.linkedin.com/company/tnvlab"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -427,13 +590,10 @@
             <div class="container">
                 <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-start mb-md-0">
-                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNV<span class="lab-text">Tech</span></a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 text-center text-md-end text-white">
-                        <!--/*** This template is free as long as you keep the below author's credit link/attribution link/backlink. ***/-->
-                        <!--/*** If you'd like to use the template without the below author's credit link/attribution link/backlink, ***/-->
-                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        
                     </div>
                 </div>
             </div>
