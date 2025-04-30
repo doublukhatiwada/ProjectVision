@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>TNV | Contact Us</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta name="keywords" content="AI solutions, digital transformation, cloud security, technology consulting">
+        <meta name="description" content="TNVTech - Your partner in digital transformation. We specialize in GenAI solutions, cloud security, and technology consulting.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../icon/TNV.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+        <link rel="apple-touch-icon" href="../icon/TNV.png">
+        <meta name="msapplication-TileColor" content="#FE3B15">
+        <meta name="theme-color" content="#FE3B15">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.cdnfonts.com/css/netron" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="../lib/animate/animate.min.css" rel="stylesheet">
+        <link href="../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="../lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+
+        <style>
+            .btn-square.bg-orange {
+                background-color: #FE3B15 !important;
+            }
+
+            .navbar.sticky-top {
+                background: linear-gradient(145deg, #1a1a1a, #2d2d2d) !important;
+            }
+            
+            .navbar-nav .nav-link {
+                color: var(--bs-dark) !important;
+            }
+            
+            .navbar.sticky-top .nav-link {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar.sticky-top .company-name {
+                color: var(--bs-white) !important;
+            }
+            
+            .navbar.sticky-top .company-name .lab-text {
+                color: #FE3B15 !important;
+            }
+
+            /* Form validation styles */
+            .form-control.is-valid {
+                border-color: #198754 !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+                background-repeat: no-repeat !important;
+                background-position: right calc(0.375em + 0.1875rem) center !important;
+                background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+                padding-right: calc(1.5em + 0.75rem) !important;
+            }
+
+            .form-control.is-invalid {
+                border-color: #dc3545 !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") !important;
+                background-repeat: no-repeat !important;
+                background-position: right calc(0.375em + 0.1875rem) center !important;
+                background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+                padding-right: calc(1.5em + 0.75rem) !important;
+            }
+
+            /* Remove validation icons when empty or showing placeholder */
+            .form-control:placeholder-shown {
+                background-image: none !important;
+                border-color: #ced4da !important;
+            }
+
+            /* Update placeholder styles to match */
+            .form-control::placeholder {
+                color: #6c757d !important;
+                opacity: 0.5 !important;
+            }
+
+            textarea.form-control::placeholder {
+                opacity: 0.5 !important;
+            }
+
+            /* Aggressive removal of all validation styles for phone */
+            #phone,
+            #phone:valid,
+            #phone.is-valid,
+            #phone:invalid,
+            #phone.is-invalid,
+            .was-validated #phone:valid,
+            .was-validated #phone:invalid,
+            #phone:-webkit-autofill,
+            #phone:-webkit-autofill:hover,
+            #phone:-webkit-autofill:focus {
+                background-image: none !important;
+                border-color: #ced4da !important;
+                padding-right: 0.75rem !important;
+                -webkit-box-shadow: none !important;
+                box-shadow: none !important;
+                background-color: transparent !important;
+            }
+
+            /* Custom class for 10-digit validation */
+            #phone.phone-valid {
+                border-color: #198754 !important;
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") !important;
+                background-repeat: no-repeat !important;
+                background-position: right calc(0.375em + 0.1875rem) center !important;
+                background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+                padding-right: calc(1.5em + 0.75rem) !important;
+            }
+
+            /* Remove validation styling for country code */
+            #countryCode {
+                background-image: none !important;
+                border-color: #ced4da !important;
+            }
+
+            #countryCode:focus {
+                border-color: #86b7fe !important;
+                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+            }
+        </style>
+    </head>
+
+    <body class="contact-page">
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid header overflow-hidden p-0">
+            <div class="container-fluid fixed-top px-0">
+                <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="../" class="navbar-brand p-0">
+                        <h1 class="company-name">TNV<span class="lab-text">Tech</span></h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars text-white"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="../" class="nav-item nav-link">Home</a>
+                            <a href="../company/about" class="nav-item nav-link">Company</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                                <div class="dropdown-menu m-0">
+                                    <a href="../services/genAI" class="dropdown-item">GenAI Solutions</a>
+                                    <a href="../services/cloudAndSecurity" class="dropdown-item">Cloud and Security</a>
+                                    <a href="../services/productDevelopment" class="dropdown-item">Product Development</a>
+                                    <a href="../services/technologyConsulting" class="dropdown-item">Technology Consulting</a>
+                                </div>
+                            </div>
+                            <a href="../career/jobs" class="nav-item nav-link">Join Us</a>
+                        </div>
+                        <a href="contact" class="btn btn-primary rounded-pill text-white py-2 px-4 ms-3">
+                            <img src="../icon/build.png" alt="build" class="build-icon me-2">
+                            Build With Us
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!-- Banner Start -->
+        <div class="container-fluid page-header py-5" style="margin-bottom: 3.5rem;margin-top:4rem;">
+            <div class="hero-header overflow-hidden px-4" style="background: linear-gradient(145deg, #1a1a1a, #2d2d2d); position: relative;">
+                <div class="rotate-img">
+                    <img src="../img/sty-1.png" class="img-fluid w-100" alt="" style="opacity: 0.1;">
+                    <div class="rotate-sty-2"></div>
+                </div>
+                <div class="row gy-4 align-items-center">
+                    <div class="col-lg-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="display-4 mb-3 wow fadeInUp text-white" data-wow-delay="0.3s">Begin Your <span class="text-primary">Technology Innovation</span> Journey With Us</h1>
+                        <p class="text-light fs-5 mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                            Let's collaborate to transform your ideas into reality and accelerate your digital transformation
+                        </p>
+                    </div>
+                </div>
+                <!-- Add subtle shine effect -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03)); pointer-events: none;"></div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+        <!-- Add this after the Banner End and before Contact Form Start -->
+        <div id="formErrorAlert" class="alert alert-danger d-none mb-4" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-exclamation-circle me-2"></i>
+                <strong>Please fill in all mandatory fields marked with *</strong>
+                <button type="button" class="btn-close ms-auto" onclick="hideError()"></button>
+            </div>
+        </div>
+
+        <!-- Add this success banner HTML after the form error alert and before the form -->
+        <div id="successBanner" class="alert alert-success d-none" role="alert" style="border-radius: 10px;">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-check-circle me-2"></i>
+                <strong>Message sent successfully! We'll get back to you soon.</strong>
+                <button type="button" class="btn-close ms-auto" onclick="hideSuccess()"></button>
+            </div>
+        </div>
+
+        
+
+        <!-- Contact Form Start -->
+        
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <h1 class="display-5 mb-4">Let's discuss your project</h1>
+                        <p class="mb-4">Get in touch with us to explore how we can help bring your ideas to life. Our team is ready to collaborate and create innovative solutions tailored to your needs.</p>
+                        <div><img src="../img/contact.jpg" alt="contact.jpg" class="img-fluid" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 0 45px rgba(254, 59, 21, 0.15);"></div><br><br>
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="d-flex align-items-center p-3">
+                                    <div class="icon me-4" style="width: 55px; height: 55px;">
+                                        <i class="fas fa-phone-alt text-primary" style="font-size: 1.8rem;"></i>
+                                    </div>
+                                    <div class="ms-1">
+                                        <h5 class="mb-1">Let's Talk</h5>
+                                        <p class="text-muted mb-1" style="font-size: 0.9rem;">Ping us on WhatsApp</p>
+                                        <p class="mb-0">+44 7496 123456</p>
+                                        <p class="mb-0">Available 24/7 on whatsapp.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="p-3">
+                                <div class="d-flex align-items-center p-3">
+                                    <div class="icon me-4" style="width: 55px; height: 55px;">
+                                        <i class="fas fa-envelope-open text-primary" style="font-size: 1.8rem;"></i>
+                                    </div>
+                                    <div class="ms-1">
+                                        <h5 class="mb-1">Write Us</h5>
+                                        <p class="text-muted mb-1" style="font-size: 0.9rem;">Send us a personalized email</p>
+                                        <p class="mb-0">info@TNVTech.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                        <form class="contact-form" id="contactForm">
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <h2 class="mb-2">Simply fill out this form</h2>
+                                    <p class="text-muted mb-4">We will promptly respond to your inquiry to discuss potential collaboration opportunities. You can expect to hear from us within two business days.</p>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control custom-input" id="name" placeholder="Ex. John Doe">
+                                        <label for="name" class="form-label">Full Name<span class="text-danger">*</span></label>
+                                        <div class="error-message text-danger" style="display: none; font-size: 0.875rem; margin-top: 0.25rem;">
+                                            Full Name is required
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control custom-input" id="company" placeholder="Ex. Tech Solutions Inc.">
+                                        <label for="company" class="form-label">Company</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="countryCode" placeholder="Ex. +1">
+                                        <label for="countryCode" class="form-label">Country Code</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" id="phone" placeholder="Ex. 123-456-7890">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control custom-input" id="email" placeholder="youremail@example.com">
+                                        <label for="email" class="form-label">Email Address<span class="text-danger">*</span></label>
+                                        <div class="error-message text-danger" style="display: none; font-size: 0.875rem; margin-top: 0.25rem;">
+                                            Please enter a valid email address
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Service<span class="text-danger">*</span></label>
+                                        <div class="service-options">
+                                            <div class="service-option">
+                                                <input type="radio" name="service" id="genai" value="genai" class="service-input" required>
+                                                <label for="genai" class="service-box">
+                                                    <i class="fas fa-robot service-icon"></i>
+                                                    <span class="service-text">GenAI solutions</span>
+                                                </label>
+                                            </div>
+                                            <div class="service-option">
+                                                <input type="radio" name="service" id="cloud" value="cloud" class="service-input">
+                                                <label for="cloud" class="service-box">
+                                                    <i class="fas fa-cloud service-icon"></i>
+                                                    <span class="service-text">Cloud and Security</span>
+                                                </label>
+                                            </div>
+                                            <div class="service-option">
+                                                <input type="radio" name="service" id="product" value="product" class="service-input">
+                                                <label for="product" class="service-box">
+                                                    <i class="fas fa-code service-icon"></i>
+                                                    <span class="service-text">Product Development</span>
+                                                </label>
+                                            </div>
+                                            <div class="service-option">
+                                                <input type="radio" name="service" id="consulting" value="consulting" class="service-input">
+                                                <label for="consulting" class="service-box">
+                                                    <i class="fas fa-lightbulb service-icon"></i>
+                                                    <span class="service-text">Technology Consulting</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="error-message text-danger" style="display: none; font-size: 0.875rem; margin-top: 0.25rem;">
+                                            Please select a service
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control custom-input" id="message" rows="5" 
+                                            placeholder="Ex. I have got a fantastic idea for a product..."></textarea>
+                                        <label for="message" class="form-label">Message<span class="text-danger">*</span></label>
+                                        <div class="error-message text-danger" style="display: none; font-size: 0.875rem; margin-top: 0.25rem;">
+                                            Message is required
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-primary rounded-pill py-3 px-5" onclick="submitForm()">
+                                        Send Message
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- After the form section -->
+         <div class="container-fluid gray-section">
+        <div class="container py-5" >
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h4 style="color: #FE3B15" class="fw-normal mb-2">Visit Us</h4>
+                <h1 class="display-5 mb-3">Drop by for a coffee ☕</h1>
+                <p class="text-muted">Let's discuss your ideas in person if you're nearby one of our offices</p>
+            </div>
+            <div class="row g-2 justify-content-center">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="p-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div>
+                                <h5 class="mb-1" style="color: #FE3B15">United Kingdom</h5>
+                                <p class="mb-0">Kristi House, Newtown Road</p>
+                                <p class="mb-0">Ashford,TN24 0WH</p>
+                                <p class="mb-0">Kent, United Kingdom</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid rounded" src="../img/uk-office.jpg" alt="UK Office" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="p-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div>
+                                <h5 class="mb-1" style="color: #FE3B15">Nepal</h5>
+                                <p class="mb-0">Sankamul, Baneshwor</p>
+                                <p class="mb-0">Kathmandu, 44600</p>
+                                <p class="mb-0">Nepal</p>
+                            </div>
+                        </div>
+                        <img class="img-fluid rounded" src="../img/nepal-office.jpg" alt="Nepal Office" style="width: 100%; height: 250px; object-fit: cover;">
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </body>
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3 d-flex">
+                        <div class="footer-item d-flex flex-column">
+                            <a href="../" class="mb-3 company-logo">
+                                <h1 class="company-name text-white">TNV<span class="lab-text">Tech</span></h1>
+                                <div class="slogan" style="font-family: 'Share Tech Mono', monospace; font-size: 0.9em; margin-top: -5px; color: #FE3B15; letter-spacing: 1px;">
+                                    <div>Shaping Ideas into</div>
+                                    <div style="text-align: right;">Innovation</div>
+                                </div>
+                            </a>
+                            <div class="footer-divider" style="margin: 0.5rem 0;"></div>
+                            <div class="contact-info" style="margin-top: 0.5rem;">
+                                <h6 class="contact-heading mb-3">Get in Touch</h6>
+                                <div class="contact-links">
+                                    <a href="mailto:info@tnvtech.com" class="mb-2">
+                                        <i class="fas fa-envelope me-2"></i>info@tnvtech.com
+                                    </a>
+                                    <a href="tel:+447349180477" class="mb-2">
+                                        <i class="fas fa-phone me-2"></i>+44 7349 180477
+                                        <div class="text-muted small mt-1">Available 24/7 via WhatsApp</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vertical-line"></div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Company</h4>
+                            <a href="about">About Us</a>
+                            <a href="case-study">Case Study</a>
+                            <h4 class="mb-4 text-white mt-4">Join Us</h4>
+                            <a href="../career/jobs">Career</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Services</h4>
+                            <a href="../services/genAI">GenAI Solutions</a>
+                            <a href="../services/cloudAndSecurity">Cloud and Security</a>
+                            <a href="../services/productDevelopment">Product Development</a>
+                            <a href="../services/technologyConsulting">Technology Consulting</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Contact Info</h4>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">UK Office</h6>
+                                <i class="fa fa-map-marker-alt me-2"></i>Kristi House, Newtown Road<br><span class="ms-4">Ashford,TN24 0WH</span><br><span class="ms-4">United Kingdom</span>
+                            </div>
+                            <div class="mb-3">
+                                <h6 class="text-white mb-2">Nepal Office</h6>
+                                <i class="fa fa-map-marker-alt me-2"></i>Sankamul, Baneshwor<br><span class="ms-4">Kathmandu,44600</span><br><span class="ms-4">Nepal</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="../404error"><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href="https://www.linkedin.com/company/tnvtech"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="#"><i class="fas fa-copyright text-light me-2"></i>TNVLab</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-white">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../lib/wow/wow.min.js"></script>
+    <script src="../lib/easing/easing.min.js"></script>
+    <script src="../lib/waypoints/waypoints.min.js"></script>
+    <script src="../lib/counterup/counterup.min.js"></script>
+    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1050;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-primary" style="font-size: 4rem;"></i>
+                    </div>
+                    <h4 class="mb-3">Message Sent Successfully!</h4>
+                    <p class="text-muted mb-4">Thank you for reaching out. We'll review your message and get back to you within two business days.</p>
+                    <button type="button" class="btn btn-primary rounded-pill px-4 py-2" onclick="closeModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Add EmailJS initialization with obfuscated values -->
+    <script type="text/javascript">
+        (function() {
+            // Obfuscated public key
+            const _0x5f4e=['R1ItcEpPUWtLdzFWNDFzN1o='];
+            const _0x2d8f=function(_0x5f4e){return atob(_0x5f4e);};
+            emailjs.init(_0x2d8f(_0x5f4e[0]));
+        })();
+    </script>
+
+    <script>
+    function submitForm() {
+        // Get all form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const company = document.getElementById('company').value.trim();
+        const countryCode = document.getElementById('countryCode').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+        const service = document.querySelector('input[name="service"]:checked')?.value;
+
+        // Validate required fields
+        if (!validateRequiredFields(name, email, message, service)) return;
+
+        // Prepare email parameters
+        const templateParams = {
+            to_name: "Admin",
+            from_name: name,
+            from_email: email,
+            company_name: company || 'Not provided',
+            phone_number: (countryCode ? countryCode + ' ' : '') + (phone || 'Not provided'),
+            message: message,
+            service_type: service
+        };
+
+        // Obfuscated service and template IDs
+        const _0x4f8d = ['c2VydmljZV9odXcxYjJy', 'dGVtcGxhdGVfb2V0c3JjNQ=='];
+        const _0x22b1 = function(_0x4f8d){return atob(_0x4f8d);};
+
+        // Show loading state
+        const submitButton = document.querySelector('button[onclick="submitForm()"]');
+        const originalText = submitButton.innerHTML;
+        submitButton.innerHTML = 'Sending...';
+        submitButton.disabled = true;
+
+        // Send email using EmailJS with obfuscated IDs
+        emailjs.send(_0x22b1(_0x4f8d[0]), _0x22b1(_0x4f8d[1]), templateParams)
+            .then(function(response) {
+                console.log("SUCCESS!", response.status, response.text);
+                document.getElementById('successModal').style.display = 'block';
+                document.getElementById('contactForm').reset();
+                // Remove validation states
+                document.querySelectorAll('.form-control').forEach(input => {
+                    input.classList.remove('is-valid', 'is-invalid');
+                });
+            })
+            .catch(function(error) {
+                console.log("FAILED...", error);
+                alert('Failed to send message. Please try again later.');
+            })
+            .finally(function() {
+                // Reset button state
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+            });
+    }
+
+    function validateRequiredFields(name, email, message, service) {
+        let hasError = false;
+
+        // Reset previous errors
+        document.querySelectorAll('.error-message').forEach(msg => {
+            msg.style.display = 'none';
+        });
+
+        if (!name) {
+            document.querySelector('#name').closest('.form-control').classList.add('is-invalid');
+            hasError = true;
+        }
+        
+        if (!email || !validateEmail(email)) {
+            document.querySelector('#email').closest('.form-control').classList.add('is-invalid');
+            hasError = true;
+        }
+        
+        if (!message) {
+            document.querySelector('#message').closest('.form-control').classList.add('is-invalid');
+            hasError = true;
+        }
+
+        if (!service) {
+            const serviceError = document.querySelector('.service-options .error-message');
+            if (serviceError) serviceError.style.display = 'block';
+            hasError = true;
+        }
+
+        return !hasError;
+    }
+
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // Clear errors on input
+    document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('input', function() {
+            const errorMessage = this.closest('.form-group').querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+            this.classList.remove('is-invalid');
+        });
+    });
+
+    // Clear service errors on selection
+    document.querySelectorAll('input[name="service"]').forEach(input => {
+        input.addEventListener('change', function() {
+            const serviceError = document.querySelector('.service-options .error-message');
+            if (serviceError) {
+                serviceError.style.display = 'none';
+            }
+        });
+    });
+
+    function closeModal() {
+        document.getElementById('successModal').style.display = 'none';
+    }
+    </script>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky-top');
+            } else {
+                navbar.classList.remove('sticky-top');
+            }
+        });
+    </script>
+
+    <script>
+    // Update validateInput function
+    function validateInput(input) {
+        // Skip validation for phone and country code
+        if (input.id === 'phone' || input.id === 'countryCode') {
+            input.classList.remove('is-valid', 'is-invalid');
+            return;
+        }
+
+        // Remove all validation classes first
+        input.classList.remove('is-valid', 'is-invalid');
+        
+        // If empty or showing placeholder, remove validation state
+        if (!input.value || input.value === input.placeholder) {
+            return;
+        }
+
+        const value = input.value.trim();
+        
+        // Don't validate if empty
+        if (!value) {
+            return;
+        }
+
+        // Email validation
+        if (input.type === 'email') {
+            const isValid = validateEmail(value);
+            input.classList.add(isValid ? 'is-valid' : 'is-invalid');
+            return;
+        }
+
+        // Message validation (minimum 10 characters)
+        if (input.id === 'message') {
+            const isValid = value.length >= 10;
+            input.classList.add(isValid ? 'is-valid' : 'is-invalid');
+            return;
+        }
+
+        // Name validation (not empty)
+        if (input.id === 'name' && value) {
+            input.classList.add('is-valid');
+        }
+    }
+
+    // Add input event listeners
+    document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('input', function() {
+            validateInput(this);
+            const errorMessage = this.closest('.form-group').querySelector('.error-message');
+            if (errorMessage) {
+                errorMessage.style.display = 'none';
+            }
+        });
+
+        // Remove validation on focus
+        input.addEventListener('focus', function() {
+            if (!this.value || this.value === this.placeholder) {
+                this.classList.remove('is-valid', 'is-invalid');
+            }
+        });
+
+        // Validate on blur only if has value
+        input.addEventListener('blur', function() {
+            if (this.value.trim()) {
+                validateInput(this);
+            } else {
+                this.classList.remove('is-valid', 'is-invalid');
+            }
+        });
+    });
+
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    </script>
+
+    <script>
+    // Remove any existing validation classes on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.getElementById('phone');
+        phoneInput.classList.remove('is-valid', 'is-invalid', 'phone-valid');
+        phoneInput.value = '';
+    });
+
+    // Update phone input validation
+    document.getElementById('phone').addEventListener('input', function(e) {
+        // Remove all validation classes
+        this.classList.remove('is-valid', 'is-invalid', 'phone-valid');
+        
+        // Remove non-digits
+        this.value = this.value.replace(/\D/g, '');
+        
+        // Limit to 10 digits
+        if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+        }
+        
+        // Add custom validation class only when exactly 10 digits
+        if (this.value.length === 10) {
+            this.classList.add('phone-valid');
+        }
+    });
+
+    // Remove validation on blur if not 10 digits
+    document.getElementById('phone').addEventListener('blur', function() {
+        if (this.value.length !== 10) {
+            this.classList.remove('is-valid', 'is-invalid', 'phone-valid');
+        }
+    });
+
+    // Remove validation on focus
+    document.getElementById('phone').addEventListener('focus', function() {
+        this.classList.remove('is-valid', 'is-invalid', 'phone-valid');
+    });
+    </script>
+
+    <style>
+    @media (max-width: 768px) {
+        /* Global reset */
+        *, *::before, *::after {
+            max-width: 100vw !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            box-sizing: border-box !important;
+            overflow-x: clip !important;
+        }
+
+        /* Root and body level control */
+        :root, html, body {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            overflow-x: clip !important;
+            position: relative !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            touch-action: pan-y !important;
+            -webkit-overflow-scrolling: touch !important;
+        }
+
+        /* Every possible container */
+        body > *,
+        .container, 
+        .container-fluid,
+        .container-fluid.header,
+        .container-fluid.fixed-top,
+        .row,
+        [class*="col-"],
+        .hero-header,
+        .contact-form,
+        .map-container,
+        .footer,
+        .navbar,
+        .navbar-collapse,
+        .dropdown-menu,
+        section,
+        div {
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            overflow-x: clip !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+
+        /* Content padding only for specific elements */
+        .navbar-collapse,
+        .contact-form,
+        .hero-header > *:not(.row),
+        [class*="col-"] > * {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        /* Force single column layout */
+        .row {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        /* Remove all transforms and translations */
+        [class*="transform-"],
+        [class*="translate-"],
+        [style*="transform"] {
+            transform: none !important;
+            -webkit-transform: none !important;
+        }
+
+        /* Remove all absolute/fixed positioning except navbar */
+        *:not(.navbar):not(.fixed-top) {
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+        }
+
+        /* Handle images and iframes */
+        img, iframe {
+            max-width: 100% !important;
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+
+        /* Fix for rotated elements */
+        .rotate-img,
+        [class*="rotate-"] {
+            transform: none !important;
+            position: relative !important;
+            width: 100% !important;
+            overflow: hidden !important;
+        }
+
+        /* Remove all animations and transitions */
+        * {
+            animation: none !important;
+            transition: none !important;
+        }
+
+        /* Force hardware acceleration */
+        body {
+            -webkit-transform: translateZ(0) !important;
+            -webkit-backface-visibility: hidden !important;
+            -webkit-perspective: 1000 !important;
+        }
+
+        /* Footer adjustments for mobile */
+        .footer {
+            padding: 2rem 0 !important;
+        }
+
+        .footer .container {
+            padding: 0 15px !important;
+        }
+
+        .footer-item {
+            padding-left: 0 !important;
+            align-items: flex-start !important;
+            text-align: left !important;
+        }
+
+        .footer .row > div {
+            padding-left: 15px !important;
+            text-align: left !important;
+        }
+
+        .footer .vertical-line {
+            display: none !important;
+        }
+
+        .footer p,
+        .footer h4,
+        .footer .contact-info,
+        .footer .contact-links,
+        .footer .social-links {
+            text-align: left !important;
+            justify-content: flex-start !important;
+        }
+
+        .footer .d-flex {
+            justify-content: flex-start !important;
+        }
+
+        /* Ensure all footer links align left */
+        .footer a,
+        .footer .nav-link {
+            text-align: left !important;
+            justify-content: flex-start !important;
+            padding-left: 0 !important;
+        }
+    }
+    </style>
+</body>
+
+</html>
