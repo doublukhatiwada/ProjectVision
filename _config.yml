@@ -6,7 +6,7 @@ url: "" # Fill this with your GitHub Pages URL when ready
 
 # Build settings
 permalink: pretty
-markdown: kramdown
+#markdown: kramdown
 
 # Exclude files from processing
 exclude:
