@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tnvtech.com/sitemap.xml 
+Sitemap: https://www.tnvtech.com/sitemap.xml 
